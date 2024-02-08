@@ -8,7 +8,7 @@ export default function TopBar() {
     <section className='TopBar'>
           <LogoImg width={300} id='logo'/>
           <SectionsList/>
-          <Button text='SIGN IN' press='none'/>
+          <Button text='SIGN IN' press='none' id='SigInButton'/>
     </section> 
   );
 }

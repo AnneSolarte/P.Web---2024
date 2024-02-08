@@ -8,21 +8,28 @@
 
   }
   
-#button{
+.button{
     background-color: rgba(255, 255, 255, 0);
     border-color: white;
+    justify-content: center;
     border-radius: 0.5em;
     font-weight: 600;
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-left: 5%;
 }
+
+.button:hover{
+    color: #15B4FF;
+    border-color: #15B4FF;
+}
+
 
 .SectionsList{
     display: flex;
     margin-left: 20%;
+    margin-right: 5%;
 
 }
 
@@ -50,7 +57,7 @@
 .BlockTextG512{
     width: 40%;
     margin-left: 8%;
-    margin-top: 10%;
+    margin-top: 6%;
 }
 
 .title{
@@ -75,4 +82,13 @@
     font-size: 32px;
     font-weight: 600;
     color:#15b5ff4d ;
+}
+
+.on{
+    background-color: #15B4FF;
+    border-color: #15B4FF;
+}
+
+#InfoButton{
+    margin-left: 5%;
 }
