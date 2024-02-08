@@ -1,7 +1,7 @@
 import logo from '../../resources/logo.png'
 export function LogoImg(props) {
-    const {width} = props
+    const {width, id} = props
     return (
-        <img src={logo} width={width} className='logoImg'/>
+        <img src={logo} width={width} id={id}/>
     )
 }

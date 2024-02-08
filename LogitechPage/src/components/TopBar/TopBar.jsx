@@ -6,7 +6,7 @@ import { LogoImg } from '../LogoImg/LogoImg'
 export default function TopBar() {
   return (
     <section className='TopBar'>
-          <LogoImg width={300} />
+          <LogoImg width={300} id='logo'/>
           <SectionsList/>
           <Button text='SIGN IN' press='none'/>
     </section> 
