@@ -1,6 +1,6 @@
 export function Text(props) {
-    const {text, size} = props
+    const {clas, text} = props
     return (
-        <p className={size} >{text}</p>
+        <p className={clas}>{text}</p>
     )
 }
