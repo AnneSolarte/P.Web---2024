@@ -1,12 +1,10 @@
-
-import { Button } from './components/Button/Button';
-import { SectionsList } from './components/TopBarSectionsList/TopBarSectionsList';
+import TopBar  from './components/TopBar/TopBar'
+import './App.css'
 
 export default function App() {
   return (
     <>
-          <Button text='SIGN IN' press='none'/>
-          <SectionsList/>
+          <TopBar/>
     </> 
   );
 }

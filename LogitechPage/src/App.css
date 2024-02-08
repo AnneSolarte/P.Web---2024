@@ -1,0 +1,37 @@
+#root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 ;
+    padding: 0;
+
+  }
+  
+#button{
+    background-color: rgba(255, 255, 255, 0);
+    border-color: white;
+    border-radius: 0.5em;
+    font-weight: 500;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.SectionsList{
+    display: flex;
+
+}
+
+.SectionsList li{
+    padding: 1rem;
+    list-style: none;
+    font-weight: 500;
+}
+
+.SectionsList li:hover{
+    color: aqua;
+}
+
+.TopBar {
+    margin-top: 0;
+}
+
