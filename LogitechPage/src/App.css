@@ -21,7 +21,7 @@
     padding-right: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    font-size: 0.5em;
+    font-size: 0.75em;
 }
 
 @media (min-width: 600px){
@@ -45,15 +45,19 @@
 }
 
 #logo{
-    margin-right: 20%;
+    display: flex;
+    margin-right: 15%;
+    align-self: flex-start;
 }
 
 #menuIcon{
+    display: flex;
     margin-left: 5%;
+    
 }
 
 .SectionsList{
-    display: flex;
+    display: none;
     position: absolute;
     top: 10%;
     left: 0;
@@ -87,9 +91,10 @@
 }
 
 .TopBar {
-    width: 100%;
+    width: 80%;
     margin-top: 7%;
     margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     align-items: center;
 }
@@ -105,10 +110,18 @@
 
 .container{
     display: flex;
-    position: relative;
+    flex-direction: column;
     width: 86%;
     margin-left: 10%;
     margin-top: 7%;
+}
+
+.mouseG02Img{
+    width: 80%;
+    height: 40%;
+    padding-left: 12%;
+    padding-top: 8%;
+
 }
 
 @media (min-width: 600px){
@@ -118,7 +131,7 @@
 }
 
 .title{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin: 0;
 }
@@ -126,8 +139,7 @@
 
 
 .subTitle{
-    width: 60%;
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: gray;
     margin: 0;
@@ -135,12 +147,12 @@
 
 
 .text{
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
 .price{
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color:#15b5ff4d ;
 }
