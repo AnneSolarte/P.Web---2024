@@ -1,4 +1,4 @@
-export function ImgBorder(props) {
+export default function ImgBorder(props) {
     const { img, id} = props
     return (
         <div className="imgBordeSection">

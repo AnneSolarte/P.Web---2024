@@ -194,3 +194,27 @@
 #InfoButton{
     margin-left: 5%;
 }
+
+.sectionImgsBorder{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8%;
+}
+
+.imgBordeSection{
+    display: flex;
+    width: 40%;
+    margin-right: 5%;
+    border-color: #15B4FF;
+    background-color: #15B4FF;
+}
+
+#imgG502Side1{
+    width: 100%;
+
+}
+
+#imgG502Side2{
+    width: 100%;
+
+}
