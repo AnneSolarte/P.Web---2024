@@ -6,6 +6,9 @@
     margin: 0;
     padding: 0;
 
+    --ts--mobile: 3.3rem;
+    --ss-mobile:
+
   }
   
 .button{
@@ -14,10 +17,22 @@
     justify-content: center;
     border-radius: 0.5em;
     font-weight: 600;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 0.5em;
+}
+
+@media (min-width: 600px){
+    .button{
+        font-weight: 600;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-size: 0.8em;
+    }
 }
 
 .button:hover{
@@ -25,12 +40,39 @@
     border-color: #15B4FF;
 }
 
+.TopBar{
+    display: flex;
+}
+
+#logo{
+    margin-right: 20%;
+}
+
+#menuIcon{
+    margin-left: 5%;
+}
 
 .SectionsList{
     display: flex;
-    margin-left: 20%;
-    margin-right: 5%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    margin: 0;
+    flex-direction: column;
 
+}
+
+@media (min-width: 600px){
+    .TopBar{
+        display: flex;
+    }
+    .SectionsList{
+        display: flex;
+        flex-direction: row;
+        margin-left: 20%;
+        margin-right: 5%;
+    
+    }
 }
 
 .SectionsList li{
@@ -46,43 +88,91 @@
 
 .TopBar {
     width: 100%;
-    margin-top: 3%;
+    margin-top: 7%;
+    margin-left: 10%;
     display: flex;
     align-items: center;
 }
 
-#logo{
-    margin-left: 8%;
+@media (min-width: 600px){ 
+    .TopBar {
+        margin-top: 3%;
+        display: flex;
+        align-items: center;
+    }
 }
-.BlockTextG512{
-    width: 40%;
-    margin-left: 8%;
-    margin-top: 6%;
+
+
+.container{
+    display: flex;
+    position: relative;
+    width: 86%;
+    margin-left: 10%;
+    margin-top: 7%;
+}
+
+@media (min-width: 600px){
+    .container {
+        width: 50%;
+    }
 }
 
 .title{
-    font-size: 54px;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
 }
 
+
+
 .subTitle{
-    width: 70%;
-    font-size: 24px;
+    width: 60%;
+    font-size: 0.8rem;
     font-weight: 600;
     color: gray;
     margin: 0;
 }
 
+
 .text{
+    font-size: 0.5rem;
     font-weight: 600;
 }
 
 .price{
-    font-size: 32px;
+    font-size: 1rem;
     font-weight: 600;
     color:#15b5ff4d ;
 }
+
+@media (min-width: 600px){
+    .title{
+        font-size: 3.3rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .subTitle{
+        width: 70%;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: gray;
+        margin: 0;
+    }
+
+    .text{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .price{
+        font-size: 2rem;
+        font-weight: 600;
+        color:#15b5ff4d ;
+    }
+    
+}
+
 
 .on{
     background-color: #15B4FF;

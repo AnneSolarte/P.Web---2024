@@ -6,7 +6,10 @@ export default function App() {
   return (
     <>
           <TopBar/>
-          <BlockTextG512/>
+          <section className='container'  >
+              <BlockTextG512/>
+          </section>
+          
     </> 
   );
 }
