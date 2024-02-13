@@ -16,11 +16,15 @@ export default function TopBar() {
 
   return (
     <section className='TopBar'>
-          <LogoImg width={150} id='logo'/>
-          <Button text='SIGN IN' press='none' id='Button'/>
-          <img src={menuIcon} width={30} id='menuIcon' onClick={ e => displayMenu(e, "flex")}/>
-          <SectionsList display={display} />
-          
+        <img src={menuIcon} width={25} id='menuIconMobile' onClick={ e => displayMenu(e, "flex")}/>
+        <LogoImg width={100} id='logoMobile'/>
+        <LogoImg width={100} id='logoWeb'/>
+
+            <section className='iconsTopBar'>
+              <SectionsList display={display} />
+              <Button text='SIGN IN' press='none' id='Button'/>
+            </section>
+
     </section> 
   );
 }

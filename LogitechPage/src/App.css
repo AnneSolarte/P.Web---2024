@@ -17,11 +17,11 @@
     justify-content: center;
     border-radius: 0.5em;
     font-weight: 600;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    font-size: 0.75em;
+    font-size: 0.7em;
 }
 
 @media (min-width: 600px){
@@ -40,19 +40,19 @@
     border-color: #15B4FF;
 }
 
-.TopBar{
-    display: flex;
-}
 
-#logo{
+#logoMobile{
     display: flex;
-    margin-right: 15%;
     align-self: flex-start;
+    margin-left: 5%;
 }
 
-#menuIcon{
+#logoWeb{
+    display: none;
+}
+
+#menuIconMobile{
     display: flex;
-    margin-left: 5%;
     
 }
 
@@ -90,13 +90,19 @@
     border-bottom: 3px solid #15B4FF;
 }
 
+.iconsTopBar{
+    display: flex;
+    flex-direction: row;
+}
+
 .TopBar {
-    width: 80%;
+    width: 83.3%;
     margin-top: 7%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 @media (min-width: 600px){ 
@@ -111,9 +117,20 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 86%;
-    margin-left: 10%;
-    margin-top: 7%;
+    width: 83.3%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 10%;
+}
+
+.BlockTextG502 p{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonsBlockTextG502{
+    display: flex;
+    justify-content: center;
 }
 
 .mouseG02Img{
@@ -139,16 +156,23 @@
 
 
 .subTitle{
+    display: flex;
+    width: 90%;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 600;
     color: gray;
     margin: 0;
+    margin-left: 5%;
 }
 
 
 .text{
+    display:flex;
+    text-align: center;
+    color: rgb(227, 226, 226);
+    display: flex;
     font-size: 0.75rem;
-    font-weight: 600;
 }
 
 .price{
@@ -199,22 +223,22 @@
     display: flex;
     flex-direction: row;
     margin-top: 8%;
+    justify-content: space-between;
 }
 
 .imgBordeSection{
     display: flex;
-    width: 40%;
-    margin-right: 5%;
+    width: 46%;
     border-color: #15B4FF;
-    background-color: #15B4FF;
-}
-
-#imgG502Side1{
-    width: 100%;
+    border-width: 2px;
+    border-radius: 0.8em;
+    border-style: solid;
 
 }
 
-#imgG502Side2{
-    width: 100%;
+
+.imgBordeSection img{
+    width: 90%;
+    padding: 0.5em;
 
 }
