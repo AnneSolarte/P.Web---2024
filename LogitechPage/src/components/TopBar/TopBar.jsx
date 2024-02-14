@@ -6,22 +6,30 @@ import menuIcon from '../../resources/menuIcon.png'
 import React, {useState} from 'react'
 
 export default function TopBar() {
-  const [display, setDisplay] = useState('none');
+  const [display, setDisplay] = useState(false);
 
-  const displayMenu = (e, newDisplay) => {
-    console.log('entro a display')
-    console.log('display es', display)
-    setDisplay(newDisplay)
+  const handleDisplayMenu = (e) => {
+    setDisplay(!display)
+    console.log('Display menu', display)
   }
 
   return (
     <section className='TopBar'>
-        <img src={menuIcon} width={25} id='menuIconMobile' onClick={ e => displayMenu(e, "flex")}/>
+        <img src={menuIcon} width={25} id='menuIconMobile' onClick={ e => handleDisplayMenu()}/>
         <LogoImg width={100} id='logoMobile'/>
         <LogoImg width={100} id='logoWeb'/>
 
             <section className='iconsTopBar'>
-              <SectionsList display={display} />
+
+              {
+                display 
+                ? (
+                  <SectionsList/>
+                )
+                : null
+                
+              }
+              
               <Button text='SIGN IN' press='none' id='Button'/>
             </section>
 
