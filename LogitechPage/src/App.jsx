@@ -3,6 +3,8 @@ import BlockTextG512 from './components/BlockTextG512/BlockTextG512';
 import './App.css'
 import mouseG502Img from './resources/mouseG502.PNG'
 import ImgsBorder from './components/ImgsBorderSection/ImgsBorderSection';
+import SectionProducts from './components/SectionProducts/SectionProducts';
+
 
 export default function App() {
   return (
@@ -12,6 +14,7 @@ export default function App() {
               <BlockTextG512/>
               <ImgsBorder/>
               <img className='mouseG02Img' src={mouseG502Img} />
+              <SectionProducts/>
               
           </section>
           
