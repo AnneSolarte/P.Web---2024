@@ -1,38 +1,51 @@
-
-import { Button } from '../Button/Button';
-import { SectionsList } from '../TopBarSectionsList/TopBarSectionsList';
+import { Button } from '../Button/Button'
+import { SectionsList } from '../TopBarSectionsList/TopBarSectionsList'
 import { LogoImg } from '../LogoImg/LogoImg'
 import menuIcon from '../../resources/menuIcon.png'
-import React, {useState} from 'react'
+import { useState } from 'react'
 
-export default function TopBar() {
-  const [display, setDisplay] = useState(false);
+export default function TopBar () {
+  const [display, setDisplay] = useState(false)
 
-  const handleDisplayMenu = (e) => {
+  const handleDisplayMenu = () => {
     setDisplay(!display)
     console.log('Display menu', display)
   }
 
   return (
-    <section className='TopBar'>
-        <img src={menuIcon} width={25} id='menuIconMobile' onClick={ e => handleDisplayMenu()}/>
-        <LogoImg width={100} id='logoMobile'/>
-        <LogoImg width={100} id='logoWeb'/>
+    <section className='top-bar'>
+      <img
+        src={menuIcon}
+        width={25}
+        id='menu-icon-mobile'
+        onClick={() => handleDisplayMenu()}
+      />
+      <LogoImg
+        width={100}
+        id='logo-mobile'
+      />
+      <LogoImg
+        width={100}
+        id='logo-web'
+      />
 
-            <section className='iconsTopBar'>
+      <section className='icons-top-bar'>
 
-              {
-                display 
-                ? (
-                  <SectionsList/>
-                )
-                : null
-                
+        {
+                display
+                  ? (
+                    <SectionsList />
+                    )
+                  : null
               }
-              
-              <Button text='SIGN IN' press='none' id='Button'/>
-            </section>
 
-    </section> 
-  );
+        <Button
+          text='SIGN IN'
+          press='none'
+          id='Button'
+        />
+      </section>
+
+    </section>
+  )
 }

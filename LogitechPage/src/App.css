@@ -41,22 +41,22 @@
 }
 
 
-#logoMobile{
+#logo-mobile{
     display: flex;
     align-self: flex-start;
     margin-left: 5%;
 }
 
-#logoWeb{
+#logo-web{
     display: none;
 }
 
-#menuIconMobile{
+#menu-icon-mobile{
     display: flex;
     
 }
 
-.SectionsList{
+.list-section{
     display: flex;
     width: 100%;
     height: 35%;
@@ -72,10 +72,10 @@
 }
 
 @media (min-width: 600px){
-    .TopBar{
+    .top-bar{
         display: flex;
     }
-    .SectionsList{
+    .list-section{
         display: flex;
         position: relative;
         flex-direction: row;
@@ -85,23 +85,23 @@
     }
 }
 
-.SectionsList li{
+.list-section li{
     padding: 1rem;
     list-style: none;
     font-weight: 500;
 }
 
-.SectionsList li:hover{
+.list-section li:hover{
     color: #15B4FF;
     border-bottom: 3px solid #15B4FF;
 }
 
-.iconsTopBar{
+.icons-top-bar{
     display: flex;
     flex-direction: row;
 }
 
-.TopBar {
+.top-bar {
     width: 83.3%;
     margin-top: 7%;
     margin-left: 8%;
@@ -112,7 +112,7 @@
 }
 
 @media (min-width: 600px){ 
-    .TopBar {
+    .top-bar {
         margin-top: 3%;
         display: flex;
         align-items: center;
@@ -129,17 +129,17 @@
     margin-top: 10%;
 }
 
-.BlockTextG502 p{
+.block-text-g502 p{
     display: flex;
     justify-content: center;
 }
 
-.buttonsBlockTextG502{
+.buttons-block-text-g502{
     display: flex;
     justify-content: center;
 }
 
-.mouseG02Img{
+.mouse-g502-img{
     width: 80%;
     height: 40%;
     padding-left: 12%;
@@ -161,7 +161,7 @@
 
 
 
-.subTitle{
+.sub-title{
     display: flex;
     width: 90%;
     text-align: center;
@@ -194,7 +194,7 @@
         margin: 0;
     }
 
-    .subTitle{
+    .sub-title{
         width: 70%;
         font-size: 1.6rem;
         font-weight: 600;
@@ -221,18 +221,18 @@
     border-color: #15B4FF;
 }
 
-#InfoButton{
+#info-button{
     margin-left: 5%;
 }
 
-.sectionImgsBorder{
+.section-imgs-border{
     display: flex;
     flex-direction: row;
     margin-top: 8%;
     justify-content: space-between;
 }
 
-.imgBordeSection{
+.img-border-section{
     display: flex;
     width: 46%;
     border-color: #15B4FF;
@@ -242,19 +242,19 @@
 
 }
 
-.imgBordeSection img{
+.img-border-section img{
     width: 90%;
     padding: 0.5em;
 
 }
-.sectionProducts{
+.products-section{
     display: flex;
     margin-top: 6em;
     width: 100%;
     align-items: center;
 }
 
-.sectionProduct{
+.product-section{
     display: flex;
     position: relative;
     width: 80%;
@@ -269,7 +269,7 @@
     
 }
 
-.sectionProduct img{
+.product-section img{
     display: flex;
     width: 100%;
     top: -10%;
