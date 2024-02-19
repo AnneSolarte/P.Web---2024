@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-export function Text (props) {
-  const { clas, text } = props
+import './Text.css'
+
+export function Text ({ clas, text }) {
   return (
     <p className={clas}>
       {text}

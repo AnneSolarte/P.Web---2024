@@ -3,6 +3,7 @@ import { SectionsList } from '../TopBarSectionsList/TopBarSectionsList'
 import { LogoImg } from '../LogoImg/LogoImg'
 import menuIcon from '../../resources/menuIcon.png'
 import { useState } from 'react'
+import './TopBar.css'
 
 export default function TopBar () {
   const [display, setDisplay] = useState(false)

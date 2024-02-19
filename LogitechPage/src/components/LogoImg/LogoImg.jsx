@@ -1,5 +1,6 @@
 import logo from '../../resources/logo.png'
 import PropTypes from 'prop-types'
+import './LogoImg.css'
 
 export function LogoImg (props) {
   const { width, id } = props

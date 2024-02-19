@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './ImgBorder.css'
 
 export default function ImgBorder (props) {
   const { img, id } = props
