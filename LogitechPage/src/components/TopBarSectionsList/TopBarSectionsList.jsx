@@ -1,7 +1,7 @@
 import { Section } from '../TopBarSection/TopBarSection'
-import './TopBarSectionsList.css'
+import PropTypes from 'prop-types'
 
-export function SectionsList () {
+export function SectionsList ({ display }) {
   const sectionsData = [
     { text: 'HOME', press: 'none', id: crypto.randomUUID() },
     { text: 'PRODUCTS', press: 'none', id: crypto.randomUUID() },
@@ -11,10 +11,19 @@ export function SectionsList () {
   ]
 
   return (
-    <ul className='list-section'>
-      {sectionsData.map(({ id, text, press }) => (
-        <Section key={id} text={text} press={press} />
-      ))}
-    </ul>
+    <nav className={!display ? 'hidden' : ''}>
+      <ul>
+        {
+        sectionsData.map(({ id, text, press }) => (
+          <Section key={id} text={text} press={press} />
+        ))
+        }
+      </ul>
+    </nav>
+
   )
+}
+
+SectionsList.propTypes = {
+  display: PropTypes.bool.isRequired
 }

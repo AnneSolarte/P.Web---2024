@@ -8,7 +8,7 @@ import './TopBar.css'
 export default function TopBar () {
   const [display, setDisplay] = useState(false)
 
-  const handleDisplayMenu = () => {
+  const handleDisplayMenu = (e) => {
     setDisplay(!display)
     console.log('Display menu', display)
   }
@@ -19,7 +19,7 @@ export default function TopBar () {
         src={menuIcon}
         width={25}
         id='menu-icon-mobile'
-        onClick={() => handleDisplayMenu()}
+        onClick={handleDisplayMenu}
       />
       <LogoImg
         width={100}
@@ -32,13 +32,7 @@ export default function TopBar () {
 
       <section className='icons-top-bar'>
 
-        {
-                display
-                  ? (
-                    <SectionsList />
-                    )
-                  : null
-              }
+        <SectionsList display={display} />
 
         <Button
           text='SIGN IN'

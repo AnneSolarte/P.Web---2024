@@ -1,6 +1,6 @@
-import ImgBorder from '../ImgBorder/ImgBorder'
 import side1 from '../../resources/side1G502.png'
 import side2 from '../../resources/side2G502.png'
+import ImgBorder from '../imgBorder/ImgBorder'
 import './ImgsBorderSection.css'
 
 export default function ImgsBorderSection () {
