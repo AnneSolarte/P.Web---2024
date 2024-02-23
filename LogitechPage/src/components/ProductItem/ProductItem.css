@@ -1,0 +1,22 @@
+.product-item{
+    display: flex;
+    position: relative;
+    width: 70%;
+    margin-right: 2em;
+    margin-left: 2em;
+    height: 11em;
+    background-color: #313131;
+    flex-direction: column;
+    border-radius: 1em;
+    align-items:center;
+    justify-content: end;
+}
+
+.product-item img{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: -3.5rem;
+    
+    
+}

@@ -1,0 +1,16 @@
+
+.img-border-section{
+    display: flex;
+    width: 46%;
+    border-color: #15B4FF;
+    border-width: 2px;
+    border-radius: 0.8em;
+    border-style: solid;
+
+}
+
+.img-border-section img{
+    width: 90%;
+    padding: 0.5em;
+
+}
