@@ -20,11 +20,13 @@ export default function App () {
           className='mouse-g502-img'
           src={mouseG502Img}
         />
+
         <ItemsSection
           type='product'
           dataType={productsData}
           text='Wich type are you looking for?'
         />
+
         <ItemsSection
           type='service'
           dataType={servicesData}
