@@ -1,4 +1,4 @@
-import logo from '../../resources/logo.png'
+import logo from '../../../resources/logo.png'
 import PropTypes from 'prop-types'
 import './LogoImg.css'
 

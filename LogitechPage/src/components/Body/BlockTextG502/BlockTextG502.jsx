@@ -1,5 +1,7 @@
-import { Button } from '../Button/Button'
+import { Button } from '../../Elements/Button/Button'
+import ImgsBorderSection from './ImgsBorderSection/ImgsBorderSection'
 import './BlockTextG502.css'
+import mouseG502Img from '../../../resources/mouseG502.png'
 
 export default function BlockTextG502 () {
   const mouseG502Data = [
@@ -30,6 +32,12 @@ export default function BlockTextG502 () {
           id='info-button'
         />
       </section>
+
+      <ImgsBorderSection />
+      <img
+        className='mouse-g502-img'
+        src={mouseG502Img}
+      />
 
     </section>
   )

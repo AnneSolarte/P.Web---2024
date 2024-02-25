@@ -1,11 +1,11 @@
-import { Button } from '../Button/Button'
+import { Button } from '../../Elements/Button/Button'
 import { SectionsList } from '../TopBarSectionsList/TopBarSectionsList'
-import { LogoImg } from '../LogoImg/LogoImg'
-import menuIcon from '../../resources/menuIcon.png'
+import { LogoImg } from '../../Elements/LogoImg/LogoImg'
+import menuIcon from '../../../resources/menuIcon.png'
 import { useState } from 'react'
 import './TopBar.css'
 
-export default function TopBar () {
+export function TopBar () {
   const [display, setDisplay] = useState(false)
 
   const handleDisplayMenu = (e) => {

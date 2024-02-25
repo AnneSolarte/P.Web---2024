@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { ProductItem } from '../ProductItem/ProductItem'
-import { ServiceItem } from '../ServiceItem/ServiceItem'
-import { MemberItem } from '../MemberItem/MemberItem'
+import { ProductItem } from './ProductItem/ProductItem'
+import { ServiceItem } from './ServiceItem/ServiceItem'
+import { MemberItem } from './MemberItem/MemberItem'
 
 export function Item ({ type, title, text, img }) {
   switch (type) {

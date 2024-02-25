@@ -59,6 +59,7 @@
     color: rgb(227, 226, 226);
     display: flex;
     font-size: 0.75rem;
+    margin: 0;
 }
 
 .price{
@@ -98,27 +99,4 @@
     
 }
 
-*slider*/
-.slider{
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.slide-figure{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  left: 0;
-  width: 400%;
-  animation: 15s slide infinite;
-}
-
-.slide{
-  position: relative;
-  width: 100%;
-  height: 25%;
-  float: left;
-  margin: 0px 15px 0px 0px;
-}
 

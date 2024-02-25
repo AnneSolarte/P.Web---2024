@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export function Section (props) {
+export function TopBarSection (props) {
   const { text, press } = props
   return (
     <li className={press}>
@@ -9,7 +9,7 @@ export function Section (props) {
   )
 }
 
-Section.propTypes = {
+TopBarSection.propTypes = {
   text: PropTypes.string.isRequired,
   press: PropTypes.string.isRequired
 }

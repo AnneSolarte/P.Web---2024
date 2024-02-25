@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useMediaQuery } from 'react-responsive'
 import './Slider.css'
-import { Item } from '../Item/Item'
+import { Item } from '../../Item/Item'
 
 export function Slider ({ dataType, type }) {
   const [currentSlide, setCurrentSlide] = useState(0)

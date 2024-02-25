@@ -1,0 +1,33 @@
+.info-section{
+    display: flex;
+    flex-direction: column;
+}
+.direct-channels-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.social-media-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.imgs-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+.chanel{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+
+.imgs-info{
+    width: 5%;
+    margin-right: 4%;
+}
+
