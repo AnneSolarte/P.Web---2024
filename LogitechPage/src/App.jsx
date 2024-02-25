@@ -3,11 +3,9 @@ import './App.css'
 import mouseG502Img from './resources/mouseG502.PNG'
 import ImgsBorder from './components/ImgsBorderSection/ImgsBorderSection'
 import BlockTextG502 from './components/BlockTextG502/BlockTextG502'
+import dataSections from './data/dataSections' // Importar el objeto con todos los datos
 
 import { ItemsSection } from './components/ItemsSection/ItemsSection'
-import { productsData } from './data/products'
-import { servicesData } from './data/services'
-import { membersData } from './data/members'
 
 export default function App () {
   return (
@@ -21,25 +19,28 @@ export default function App () {
           src={mouseG502Img}
         />
 
+        {/* Utilizar los datos de products */}
         <ItemsSection
-          type='product'
-          dataType={productsData}
-          text='Wich type are you looking for?'
+          type={dataSections.product.name}
+          dataType={dataSections.product.items}
+          text={dataSections.product.text}
         />
 
+        {/* Utilizar los datos de services */}
         <ItemsSection
-          type='service'
-          dataType={servicesData}
-          text='Wich type are you looking for?'
+          type={dataSections.service.name}
+          dataType={dataSections.service.items}
+          text={dataSections.service.text}
         />
+
+        {/* Utilizar los datos de members */}
         <ItemsSection
-          type='member'
-          dataType={membersData}
-          text='Wich type are you looking for?'
+          type={dataSections.member.name}
+          dataType={dataSections.member.items}
+          text={dataSections.member.text}
         />
 
       </section>
-
     </>
   )
 }

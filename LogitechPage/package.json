@@ -16,7 +16,8 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "standard": "^17.1.0",
-    "swiper": "^11.0.6"
+    "swiper": "^11.0.6",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
