@@ -72,13 +72,13 @@
     .container{
         display: flex;
         align-items:flex-start;
-        margin-top: 4rem;
+        margin-top: 3rem;
     }
 
     .title{
         display: flex;
         width: 100%;
-        font-size: 3.3rem;
+        font-size: 3.2rem;
         font-weight: 600;
         margin: 0;
         text-align:left;
@@ -87,7 +87,7 @@
     .sub-title{
         display: flex;
         width: 100%;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 600;
         color: gray;
         margin: 0;
@@ -96,7 +96,7 @@
 
     .text{
         display: flex;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 400;
         text-align:left;
     }

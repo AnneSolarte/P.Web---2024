@@ -15,27 +15,26 @@
 @media (min-width: 600px){ 
     .block-text-g502{
         display: grid;
-        grid-template-columns: 53% 43%;
-        column-gap: 4%;
+        grid-template-columns: 46% 48%;
+        column-gap: 6%;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-bottom: 2rem;
     }
 
-    .block-text-g502 div{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content:baseline;
-    }
 
     .buttons-block-text-g502{
         display: flex;
-        width: fit-content;
+        width: 60%;
         margin-top: 1rem;
         margin-left: 0;
         align-items: center;
         justify-content:baseline;
 
+    }
+
+    .mouse-g502-img{
+        width: 82%;
     }
 }

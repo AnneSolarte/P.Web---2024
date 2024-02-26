@@ -29,12 +29,19 @@
 
 @media (min-width: 600px){
     .button{
+        width: 100%;
         font-weight: 600;
         padding-left: 2em;
         padding-right: 2em;
         padding-top: 1em;
         padding-bottom: 1em;
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
+
+    
+        #info-button{
+            display:flex;
+            width: 100%;
+        }
 }
 

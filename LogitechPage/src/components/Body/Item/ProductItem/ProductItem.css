@@ -23,10 +23,22 @@
 }
 
 @media (min-width: 600px){
-  .product-item{
-    display: flex;
-    position: relative;
-    width: 100%;
+    .product-item{
+        display: flex;
+        width: 24rem;
+        height: 15rem;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+    .product-item img{
+        display: flex;
+        position: absolute;
+        width: 95%;
+        top: -5rem;
+        
+    }
 
-}
+    .product-item p{
+        font-weight: 600;
+    }
 }
