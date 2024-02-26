@@ -53,4 +53,32 @@
     .slider{
         display: none;
     }
+
+    .slide-wrapper {
+        display: none;
+    }
+
+    .section-product{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 4rem;
+        justify-content: space-between;
+    }
+
+    .section-service{
+        display: grid;
+        grid-template-columns: 47% 47%;
+        column-gap: 6%;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+
+    .section-member{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 4rem;
+    }
 }

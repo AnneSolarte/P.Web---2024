@@ -14,26 +14,29 @@ export default function BlockTextG502 () {
   return (
     <section className='block-text-g502'>
 
-      {mouseG502Data.map(({ id, text, clas }) => (
-        <p key={id} className={clas}>
-          {text}
-        </p>
-      ))}
+      <div>
+        {mouseG502Data.map(({ id, text, clas }) => (
+          <p key={id} className={clas}>
+            {text}
+          </p>
+        ))}
 
-      <section className='buttons-block-text-g502'>
-        <Button
-          text='ADD TO CART'
-          press='on'
-          id='car-button'
-        />
-        <Button
-          text='MORE INFORMATION'
-          press='off'
-          id='info-button'
-        />
-      </section>
+        <section className='buttons-block-text-g502'>
+          <Button
+            text='ADD TO CART'
+            press='on'
+            id='car-button'
+          />
+          <Button
+            text='MORE INFORMATION'
+            press='off'
+            id='info-button'
+          />
+        </section>
 
-      <ImgsBorderSection />
+        <ImgsBorderSection />
+      </div>
+
       <img
         className='mouse-g502-img'
         src={mouseG502Img}

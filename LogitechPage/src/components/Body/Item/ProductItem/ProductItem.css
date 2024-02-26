@@ -11,7 +11,7 @@
     align-items:center;
     justify-content: end;
 
-  }
+}
   
 
 .product-item img{
@@ -20,4 +20,13 @@
     width: 100%;
     top: -3.5rem;
     
+}
+
+@media (min-width: 600px){
+  .product-item{
+    display: flex;
+    position: relative;
+    width: 100%;
+
+}
 }

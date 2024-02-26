@@ -9,6 +9,7 @@ const dataSections = {
     type: 'product',
     title: 'PRODUCTS',
     text: 'Wich type are you looking for?',
+    id: crypto.randomUUID(),
     items: [
       {
         title: 'Gaming',
@@ -30,6 +31,7 @@ const dataSections = {
   service: {
     type: 'service',
     title: 'SERVICES',
+    id: crypto.randomUUID(),
     text: 'We provide more than high-tech products!',
     items: [
       {
@@ -62,6 +64,7 @@ const dataSections = {
     type: 'member',
     title: 'MEMBERS',
     text: 'We proudly introduce our powerful members',
+    id: crypto.randomUUID(),
     items: [
       {
         title: 'Life Guarantee',
@@ -89,6 +92,7 @@ const dataSections = {
     type: 'contact',
     title: 'CONTACTS',
     text: 'Some ways for you to contact us ',
+    id: crypto.randomUUID(),
     channels: [
       {
         text: '+509 1234 567',

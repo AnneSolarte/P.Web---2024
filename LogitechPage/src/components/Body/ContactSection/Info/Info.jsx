@@ -9,11 +9,14 @@ export function Info ({ data }) {
     <div className='info-section'>
       <LogoImg
         width={60}
-        id='info-section'
+        id='logo-info'
       />
 
       <div className='direct-channels-section'>
-        <p className='text'>
+        <p
+          className='text'
+          id='info-title'
+        >
           Direct Channel
         </p>
 
@@ -36,6 +39,7 @@ export function Info ({ data }) {
       <div className='social-media-section'>
         <p
           className='text'
+          id='info-title'
         >
           Social media
         </p>
@@ -58,5 +62,5 @@ export function Info ({ data }) {
 }
 
 Info.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.object.isRequired
 }

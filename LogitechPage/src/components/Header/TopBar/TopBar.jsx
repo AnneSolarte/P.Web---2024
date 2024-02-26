@@ -26,7 +26,7 @@ export function TopBar () {
         id='logo-mobile'
       />
       <LogoImg
-        width={100}
+        width={150}
         id='logo-web'
       />
 

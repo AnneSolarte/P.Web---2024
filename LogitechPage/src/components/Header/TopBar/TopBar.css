@@ -34,11 +34,19 @@
         margin-top: 3%;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     #menu-icon-mobile{
         display: none;
         
+    }
+
+    #logo-mobile{
+        display: none;
+    }
+    #logo-web{
+        display: flex;
     }
 }
 
@@ -83,16 +91,18 @@
 @media (min-width: 600px){
 
     .top-bar nav{
-        display: block !important;
+        display: block!important;
         position: relative;
         width: auto;
         height: unset;
         top: unset;
         left: unset;
         background-color: transparent;
+        box-shadow: none;
     }
 
     .top-bar nav ul{
+        display: flex;
         flex-direction: row;
         font-size: 1rem;
         margin-top: 0;

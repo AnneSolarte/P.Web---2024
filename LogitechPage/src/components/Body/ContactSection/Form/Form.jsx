@@ -10,7 +10,7 @@ export function Form () {
     const datos = e.target
 
     const dataUser = {
-      name: datos.name.placeholdera,
+      name: datos.name.placeholder,
       email: datos.email.placeholder,
       subject: datos.subject.placeholder,
       message: datos.message.placeholder
@@ -42,7 +42,7 @@ export function Form () {
             onChange={changeDataUser}
           />
           <input
-            type='text'
+            type='email'
             placeholder='Your email'
             name='email'
             className='input'
@@ -62,10 +62,11 @@ export function Form () {
           placeholder='Message'
           name='message'
           className='input'
+          id='input-message'
           onChange={changeDataUser}
         />
 
-        <input type='submit' value='Enviar' />
+        <input className='button' type='submit' value='SUBMIT' />
 
       </form>
     </section>

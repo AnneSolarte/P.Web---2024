@@ -5,6 +5,7 @@ import './Slider.css'
 import { Item } from '../../Item/Item'
 
 export function Slider ({ dataType, type }) {
+  const clas = `section-${type}`
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const nextSlide = () => {
@@ -19,9 +20,9 @@ export function Slider ({ dataType, type }) {
 
   if (!isMobile) {
     return (
-      <div className='section'>
+      <div className={clas}>
         {dataType.map(({ title, id, src, text }) => (
-          <div className='slide' key={id}>
+          <div className='item' key={id}>
             <Item type={type} title={title} img={src} text={text} />
           </div>
         ))}
