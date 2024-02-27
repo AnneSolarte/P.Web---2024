@@ -12,6 +12,8 @@
     justify-content: end;
 
 }
+
+
   
 
 .product-item img{
@@ -40,5 +42,9 @@
 
     .product-item p{
         font-weight: 600;
+    }
+
+    .product-item:hover{
+        transform: scale(1.05);
     }
 }

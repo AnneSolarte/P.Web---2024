@@ -9,7 +9,13 @@ import member1 from '../resources/member1.png'
 import member2 from '../resources/member2.png'
 import member3 from '../resources/member3.png'
 import member4 from '../resources/member4.png'
-import img from '../resources/img.png'
+import social1 from '../resources/whats_icon.png'
+import social2 from '../resources/insta_icon.png'
+import social3 from '../resources/twitter.png'
+import social4 from '../resources/telegram_icon.png'
+import social5 from '../resources/git_icon.png'
+import chanel1 from '../resources/phone_icon.png'
+import chanel2 from '../resources/email_icon.png'
 
 const dataSections = {
   product: {
@@ -74,22 +80,22 @@ const dataSections = {
     id: crypto.randomUUID(),
     items: [
       {
-        title: 'Life Guarantee',
+        title: 'Electros Softwares',
         src: member1,
         id: crypto.randomUUID()
       },
       {
-        title: 'Good Price',
+        title: 'Tera Tech Lab',
         src: member2,
         id: crypto.randomUUID()
       },
       {
-        title: 'Free Software Updates',
+        title: 'TC Predator Gaming',
         src: member3,
         id: crypto.randomUUID()
       },
       {
-        title: '24/7 Support',
+        title: 'SpacePlay',
         src: member4,
         id: crypto.randomUUID()
       }
@@ -103,35 +109,35 @@ const dataSections = {
     channels: [
       {
         text: '+509 1234 567',
-        src: img,
+        src: chanel1,
         id: crypto.randomUUID()
       },
       {
-        text: 'supportQtechgear.com',
-        src: img,
+        text: 'support@logitech.com',
+        src: chanel2,
         id: crypto.randomUUID()
       }
 
     ],
     media: [
       {
-        src: img,
+        src: social1,
         id: crypto.randomUUID()
       },
       {
-        src: img,
+        src: social2,
         id: crypto.randomUUID()
       },
       {
-        src: img,
+        src: social3,
         id: crypto.randomUUID()
       },
       {
-        src: img,
+        src: social4,
         id: crypto.randomUUID()
       },
       {
-        src: img,
+        src: social5,
         id: crypto.randomUUID()
       }
 

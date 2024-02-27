@@ -21,9 +21,18 @@
     border-color: #15B4FF;
 }
 
+.on:hover{
+    color: aliceblue;
+}
+
+
 
 #info-button{
     margin-left: 5%;
+}
+
+.button:hover{
+    transform: scale(1.05);
 }
 
 

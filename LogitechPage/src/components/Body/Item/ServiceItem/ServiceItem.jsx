@@ -7,7 +7,7 @@ export function ServiceItem ({ title, text, img }) {
       <img src={img} />
 
       <div className='service-text'>
-        <p className='sub-title'>
+        <p id='title-service'>
           {title}
         </p>
 

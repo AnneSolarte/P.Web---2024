@@ -2,38 +2,42 @@
     display: flex;
     flex-direction: column;
     background-color: #393939;
-    width: 40%;
+    width: 48%;
     height: 80px;
     margin-bottom: -em;
-    height: 9em;
+    height: 14rem;
     padding-left: 1em;
     padding-right: 1em;
     border-radius: 0.6em;
-    align-items:center;
-    justify-content: end;
+    align-items: center;
+    justify-content:center
 }
 
 .service-text{
     display:flex;
     flex-direction: column;
     text-align: start;
-    width: 75%;
+    width: fit-content
 }
 
 .service-item img{
     display: flex;
-    width: 5%;
+    width: 90%;
     margin: 0.2em;
     
     
 }
 
 .service-item p{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
     color: aliceblue;
  
 }
 
 #text-service{
+    display: none;
     color: #d2d2d2;
     font-weight: 500;
 }
@@ -66,7 +70,19 @@
     }
 
     .service-text{
+        display: flex;
+        flex-direction: column;
         margin-left: 12rem;
+
+    }
+    #text-service{
+        display: flex ;
+    }
+
+    #title-service{
+        margin-top: 0;
+        font-size:larger;
+        font-weight: 500;
     }
   }
   

@@ -6,7 +6,7 @@ export function MemberItem (props) {
   return (
     <div className='member-item'>
       <img src={img} />
-      <p className='text'>
+      <p>
         {title}
       </p>
 

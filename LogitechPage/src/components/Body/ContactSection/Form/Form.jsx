@@ -57,7 +57,7 @@ export function Form () {
           className='input'
           onChange={changeDataUser}
         />
-        <input
+        <textarea
           type='text'
           placeholder='Message'
           name='message'

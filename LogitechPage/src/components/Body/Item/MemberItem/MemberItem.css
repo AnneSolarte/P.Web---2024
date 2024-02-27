@@ -42,4 +42,9 @@
         margin-bottom: 0.6em;
         font-weight: 600;
     }
+
+    .member-item:hover{
+        transform: scale(1.05);
+    }
+      
 }
