@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './Button.css'
 
 export function Button ({ type, text, handleClickCounter }) {
   const handleClick = () => {
@@ -6,7 +7,7 @@ export function Button ({ type, text, handleClickCounter }) {
     handleClickCounter(type)
   }
   return (
-    <button onClick={handleClick} type={type} id={`button${type}`} className='button'>{text}</button>
+    <button onClick={handleClick} type={type} id={`button-${type}`} className='button'>{text}</button>
   )
 }
 

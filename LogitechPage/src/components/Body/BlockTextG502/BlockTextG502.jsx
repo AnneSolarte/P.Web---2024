@@ -7,7 +7,6 @@ import dataBlockg502 from '../../../data/dataBlockg502'
 export default function BlockTextG502 () {
   return (
     <section className='block-text-g502'>
-
       <div>
         {dataBlockg502.map(({ id, text, clas }) => (
           <p key={id} className={clas}>
