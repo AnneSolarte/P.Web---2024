@@ -11,7 +11,15 @@
 .header-section h1{
     display: flex;
     margin-bottom: 0;
+    color: #86b8e7;
     z-index: 6;
+    background-color: #0F4374;
+    border-color: #459DEF;
+    border: 5px solid #161D2F;
+    border-style:groove;
+    padding: 1rem;
+    padding-top: 0.6rem;
+    border-radius: 2em;
 }
 
 .header-section h2{
