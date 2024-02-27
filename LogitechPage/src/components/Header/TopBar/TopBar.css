@@ -4,6 +4,7 @@
     margin-left: 8%;
     margin-right: 8%;
     display: flex;
+    height:fit-content ;
     align-items: center;
     justify-content: space-between;
 }
@@ -11,6 +12,7 @@
 .icons-top-bar{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 

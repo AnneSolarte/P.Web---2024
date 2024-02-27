@@ -6,7 +6,7 @@
     margin-left: 1em;
     padding: 1em;
     height: 11em;
-    background-color: #313131;
+    background-color: #393939;
     flex-direction: column;
     border-radius: 1em;
     align-items:center;
@@ -23,4 +23,23 @@
     margin: 0;
     margin-top: 1em;
     width: fit-content
+}
+
+@media (min-width: 600px){
+    .member-item{
+        display: flex;
+        width: 16rem;
+        height: 15rem;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+    .member-item img{
+        display: flex;
+        width: 80%;
+    }
+
+    .member-item p{
+        margin-bottom: 0.6em;
+        font-weight: 600;
+    }
 }

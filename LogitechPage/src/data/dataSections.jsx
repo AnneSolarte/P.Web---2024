@@ -1,7 +1,14 @@
 import gamingImg from '../resources/gaming.png'
 import graficImg from '../resources/graficDesign.png'
 import officeImg from '../resources/office.png'
-import serviceImg from '../resources/service.png'
+import service1 from '../resources/service1.png'
+import service2 from '../resources/service2.png'
+import service3 from '../resources/service3.png'
+import service4 from '../resources/service4.png'
+import member1 from '../resources/member1.png'
+import member2 from '../resources/member2.png'
+import member3 from '../resources/member3.png'
+import member4 from '../resources/member4.png'
 import img from '../resources/img.png'
 
 const dataSections = {
@@ -36,26 +43,26 @@ const dataSections = {
     items: [
       {
         title: 'Life Guarantee',
-        src: serviceImg,
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+        src: service1,
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum has been the industry's standard dummy.",
         id: crypto.randomUUID()
       },
       {
         title: 'Good Price',
-        src: serviceImg,
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+        src: service2,
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum has been the industry's standard dummy.",
         id: crypto.randomUUID()
       },
       {
         title: 'Free Software Updates',
-        src: serviceImg,
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+        src: service3,
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum has been the industry's standard dummy.",
         id: crypto.randomUUID()
       },
       {
         title: '24/7 Support',
-        src: serviceImg,
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+        src: service4,
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum has been the industry's standard dummy.",
         id: crypto.randomUUID()
       }
     ]
@@ -68,22 +75,22 @@ const dataSections = {
     items: [
       {
         title: 'Life Guarantee',
-        src: serviceImg,
+        src: member1,
         id: crypto.randomUUID()
       },
       {
         title: 'Good Price',
-        src: serviceImg,
+        src: member2,
         id: crypto.randomUUID()
       },
       {
         title: 'Free Software Updates',
-        src: serviceImg,
+        src: member3,
         id: crypto.randomUUID()
       },
       {
         title: '24/7 Support',
-        src: serviceImg,
+        src: member4,
         id: crypto.randomUUID()
       }
     ]

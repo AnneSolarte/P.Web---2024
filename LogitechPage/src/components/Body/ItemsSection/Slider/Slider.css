@@ -72,13 +72,14 @@
         column-gap: 6%;
         width: 100%;
         flex-direction: row;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 
     .section-member{
         display: flex;
         width: 100%;
         flex-direction: row;
-        margin-top: 4rem;
+        margin-top: 5rem;
+        justify-content: space-between;
     }
 }

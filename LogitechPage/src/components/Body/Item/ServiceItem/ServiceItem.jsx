@@ -11,7 +11,7 @@ export function ServiceItem ({ title, text, img }) {
           {title}
         </p>
 
-        <p className='text'>
+        <p className='text' id='text-service'>
           {text}
         </p>
       </div>
