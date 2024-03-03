@@ -31,6 +31,9 @@ function App () {
     }
   }, [taskslist, selectedFilter, showedTasks])
 
+  const allTasks = taskslist.length
+  const completedTasks = taskslist.filter(task => task.completed === true).length
+
   const addTask = (e, text) => {
     e.preventDefault()
     const newTask = {
@@ -66,7 +69,7 @@ function App () {
       <Form addTask={addTask} text={text} updateText={updateText} />
       <Filters selectedFilter={selectedFilter} changeFilterList={changeFilterList} />
       <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} />
-      <Footer />
+      <Footer completedTasks={completedTasks} allTasks={allTasks} />
     </>
   )
 }
