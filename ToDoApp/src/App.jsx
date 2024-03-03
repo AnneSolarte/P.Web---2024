@@ -8,13 +8,28 @@ import { List } from './components/List/List'
 
 function App () {
   const [taskslist, setTasksList] = useState([])
+  const [showedTasks, setshowedTasks] = useState([])
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [text, setText] = useState('')
 
   useEffect(() => {
     console.log('Task List', taskslist)
+    console.log('Task showed', showedTasks)
     console.log('selected Filter', selectedFilter)
-  }, [taskslist, selectedFilter])
+    switch (selectedFilter) {
+      case 'all':
+        setshowedTasks(taskslist)
+        break
+      case 'completed':
+        setshowedTasks(taskslist.filter(task => task.completed === true))
+        break
+      case 'pending':
+        setshowedTasks(taskslist.filter(task => task.completed !== true))
+        break
+      default:
+        break
+    }
+  }, [taskslist, selectedFilter, showedTasks])
 
   const addTask = (e, text) => {
     e.preventDefault()
@@ -40,6 +55,7 @@ function App () {
       return task
     }))
   }
+
   const changeFilterList = (e) => {
     setSelectedFilter(e.target.value)
   }
@@ -49,7 +65,7 @@ function App () {
       <Header />
       <Form addTask={addTask} text={text} updateText={updateText} />
       <Filters selectedFilter={selectedFilter} changeFilterList={changeFilterList} />
-      <List taskslist={taskslist} onToggleCompleted={handleToggleCompleted} />
+      <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} />
       <Footer />
     </>
   )

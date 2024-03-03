@@ -2,12 +2,12 @@ import './List.css'
 import PropTypes from 'prop-types'
 import { Task } from './Task/Task'
 
-export const List = ({ taskslist, onToggleCompleted }) => {
+export const List = ({ showedTasks, onToggleCompleted }) => {
   return (
     <section className='list'>
 
       {
-        taskslist.map(({ id, text, completed }) => (
+        showedTasks.map(({ id, text, completed }) => (
           <Task
             key={id}
             text={text}
@@ -22,6 +22,6 @@ export const List = ({ taskslist, onToggleCompleted }) => {
 }
 
 List.propTypes = {
-  taskslist: PropTypes.array.isRequired,
+  showedTasks: PropTypes.array.isRequired,
   onToggleCompleted: PropTypes.func.isRequired
 }
