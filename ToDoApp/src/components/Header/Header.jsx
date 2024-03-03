@@ -2,6 +2,6 @@ import './Header.css'
 
 export const Header = () => {
   return (
-    <div>Header</div>
+    <h1>To Do App</h1>
   )
 }

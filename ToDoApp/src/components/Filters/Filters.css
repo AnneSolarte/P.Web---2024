@@ -1,0 +1,8 @@
+.filters-section{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    background-color: rgb(23, 138, 122);
+    padding: 1rem;
+    justify-content: space-between;
+}
