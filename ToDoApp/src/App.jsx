@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { Form } from './components/Form/Form'
@@ -21,13 +21,18 @@ function App () {
     setText('')
   }
 
-  useEffect(() => {
-    console.log('list', taskslist)
-  }, [taskslist])
-
   const updateText = (e) => {
     setText(e.target.value)
     console.log('textUpdate', text)
+  }
+
+  const handleToggleCompleted = (taskId) => {
+    setTasksList(taskslist.map(task => {
+      if (task.id === taskId) {
+        return { ...task, completed: !task.completed }
+      }
+      return task
+    }))
   }
 
   return (
@@ -35,7 +40,7 @@ function App () {
       <Header />
       <Form addTask={addTask} text={text} updateText={updateText} />
       <Filters />
-      <List taskslist={taskslist} />
+      <List taskslist={taskslist} onToggleCompleted={handleToggleCompleted} />
       <Footer />
     </>
   )
