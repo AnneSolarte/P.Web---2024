@@ -14,8 +14,8 @@ function App () {
 
   useEffect(() => {
     console.log('Task List', taskslist)
-    console.log('Task showed', showedTasks)
     console.log('selected Filter', selectedFilter)
+
     switch (selectedFilter) {
       case 'all':
         setshowedTasks(taskslist)
@@ -29,7 +29,7 @@ function App () {
       default:
         break
     }
-  }, [taskslist, selectedFilter, showedTasks])
+  }, [selectedFilter, taskslist])
 
   const allTasks = taskslist.length
   const completedTasks = taskslist.filter(task => task.completed === true).length
@@ -63,13 +63,17 @@ function App () {
     setSelectedFilter(e.target.value)
   }
 
+  const clearAllCompletedTasks = () => {
+    setTasksList(taskslist.filter(task => task.completed !== true))
+  }
+
   return (
     <>
       <Header />
       <Form addTask={addTask} text={text} updateText={updateText} />
       <Filters selectedFilter={selectedFilter} changeFilterList={changeFilterList} />
       <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} />
-      <Footer completedTasks={completedTasks} allTasks={allTasks} />
+      <Footer completedTasks={completedTasks} allTasks={allTasks} handleClick={clearAllCompletedTasks} />
     </>
   )
 }
