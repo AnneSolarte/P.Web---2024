@@ -20,6 +20,7 @@ export const Form = ({ addTask, text, updateText }) => {
         className='submit-input'
         type='submit'
         value='Add task'
+        disabled={text.length === 0}
       />
     </form>
   )
