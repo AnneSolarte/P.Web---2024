@@ -2,7 +2,7 @@ import './List.css'
 import PropTypes from 'prop-types'
 import { Task } from './Task/Task'
 
-export const List = ({ showedTasks, onToggleCompleted }) => {
+export const List = ({ showedTasks, onToggleCompleted, deleteTask }) => {
   return (
     <section className='list'>
 
@@ -11,8 +11,10 @@ export const List = ({ showedTasks, onToggleCompleted }) => {
           <Task
             key={id}
             text={text}
+            id={id}
             completed={completed}
             onToggleCompleted={() => onToggleCompleted(id)}
+            deleteTask={deleteTask}
           />
           )))
         : 'No hay tareas para mostrar'}
@@ -23,5 +25,6 @@ export const List = ({ showedTasks, onToggleCompleted }) => {
 
 List.propTypes = {
   showedTasks: PropTypes.array.isRequired,
-  onToggleCompleted: PropTypes.func.isRequired
+  onToggleCompleted: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired
 }

@@ -7,10 +7,10 @@ export const Footer = ({ allTasks, completedTasks, handleClick }) => {
     <section className='footer'>
       <p>{completedTasks} {completedTasks <= 1 ? 'Tarea completada' : 'Tareas completadas'} de {allTasks} </p>
       <Button
-        type='clear-all-completed'
+        type='clear-completed'
         text='Clear All Completed'
         handleClick={handleClick}
-        id={crypto.randomUUID()}
+        id={Date.now()}
       />
     </section>
   )

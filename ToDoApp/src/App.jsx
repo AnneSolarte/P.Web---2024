@@ -45,6 +45,10 @@ function App () {
     setText('')
   }
 
+  const deleteTask = (idTask) => {
+    setTasksList(taskslist.filter(task => task.id !== idTask))
+  }
+
   const updateText = (e) => {
     setText(e.target.value)
     console.log('textUpdate', text)
@@ -72,7 +76,7 @@ function App () {
       <Header />
       <Form addTask={addTask} text={text} updateText={updateText} />
       <Filters selectedFilter={selectedFilter} changeFilterList={changeFilterList} />
-      <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} />
+      <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
       <Footer completedTasks={completedTasks} allTasks={allTasks} handleClick={clearAllCompletedTasks} />
     </>
   )

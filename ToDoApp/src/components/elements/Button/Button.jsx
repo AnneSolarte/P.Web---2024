@@ -10,7 +10,7 @@ export function Button ({ type, text, id, handleClick }) {
     <button
       type={type}
       id={id}
-      className='button'
+      className={`button ${type}-button`}
       onClick={handleClickButton}
     >{text}
     </button>
@@ -20,6 +20,6 @@ export function Button ({ type, text, id, handleClick }) {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired
 }
