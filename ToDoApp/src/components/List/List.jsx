@@ -6,16 +6,16 @@ export const List = ({ showedTasks, onToggleCompleted }) => {
   return (
     <section className='list'>
 
-      {
-        showedTasks.map(({ id, text, completed }) => (
+      {showedTasks.length !== 0
+        ? (showedTasks.map(({ id, text, completed }) => (
           <Task
             key={id}
             text={text}
             completed={completed}
             onToggleCompleted={() => onToggleCompleted(id)}
           />
-        ))
-      }
+          )))
+        : 'No hay tareas para mostrar'}
 
     </section>
   )
