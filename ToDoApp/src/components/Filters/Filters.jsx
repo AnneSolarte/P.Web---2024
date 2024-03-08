@@ -2,6 +2,8 @@ import './Filters.css'
 import PropTypes from 'prop-types'
 
 export const Filters = ({ selectedFilter, changeFilterList }) => {
+  const checkedInput = (value) => selectedFilter === value
+
   const handleFilterChange = (e) => {
     changeFilterList(e)
   }
@@ -14,7 +16,7 @@ export const Filters = ({ selectedFilter, changeFilterList }) => {
           type='radio'
           name='filter'
           value='all'
-          checked={selectedFilter === 'all'}
+          checked={checkedInput('all')}
           onChange={handleFilterChange}
         />All <br />
       </div>
@@ -24,7 +26,7 @@ export const Filters = ({ selectedFilter, changeFilterList }) => {
           type='radio'
           name='filter'
           value='completed'
-          checked={selectedFilter === 'completed'}
+          checked={checkedInput('completed')}
           onChange={handleFilterChange}
         />Completed <br />
       </div>
@@ -34,7 +36,7 @@ export const Filters = ({ selectedFilter, changeFilterList }) => {
           type='radio'
           name='filter'
           value='pending'
-          checked={selectedFilter === 'pending'}
+          checked={checkedInput('pending')}
           onChange={handleFilterChange}
         />Pending <br />
       </div>

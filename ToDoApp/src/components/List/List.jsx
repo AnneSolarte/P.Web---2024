@@ -2,12 +2,12 @@ import './List.css'
 import PropTypes from 'prop-types'
 import { Task } from './Task/Task'
 
-export const List = ({ showedTasks, onToggleCompleted, deleteTask }) => {
+export const List = ({ items, onToggleCompleted, deleteTask }) => {
   return (
     <section className='list'>
 
-      {showedTasks.length !== 0
-        ? (showedTasks.map(({ id, text, completed }) => (
+      {items.length !== 0
+        ? (items.map(({ id, text, completed }) => (
           <Task
             key={id}
             text={text}
@@ -24,7 +24,7 @@ export const List = ({ showedTasks, onToggleCompleted, deleteTask }) => {
 }
 
 List.propTypes = {
-  showedTasks: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   onToggleCompleted: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired
 }

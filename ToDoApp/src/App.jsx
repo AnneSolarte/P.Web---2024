@@ -7,55 +7,28 @@ import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
 
 function App () {
-  const [taskslist, setTasksList] = useState([])
-  const [showedTasks, setshowedTasks] = useState([])
+  const [tasks, setTasks] = useState([])
   const [selectedFilter, setSelectedFilter] = useState('all')
-  const [text, setText] = useState('')
 
   useEffect(() => {
-    console.log('Task List', taskslist)
-    console.log('selected Filter', selectedFilter)
+    console.log('Task List', tasks)
+  }, [tasks])
 
-    switch (selectedFilter) {
-      case 'all':
-        setshowedTasks(taskslist)
-        break
-      case 'completed':
-        setshowedTasks(taskslist.filter(task => task.completed === true))
-        break
-      case 'pending':
-        setshowedTasks(taskslist.filter(task => task.completed !== true))
-        break
-      default:
-        break
-    }
-  }, [selectedFilter, taskslist])
-
-  const allTasks = taskslist.length
-  const completedTasks = taskslist.filter(task => task.completed === true).length
-
-  const addTask = (e, text) => {
-    e.preventDefault()
+  const addTask = (text) => {
     const newTask = {
       id: Date.now(),
       text,
       completed: false
     }
-    setTasksList([...taskslist, newTask])
-    setText('')
+    setTasks([...tasks, newTask])
   }
 
   const deleteTask = (idTask) => {
-    setTasksList(taskslist.filter(task => task.id !== idTask))
-  }
-
-  const updateText = (e) => {
-    setText(e.target.value)
-    console.log('textUpdate', text)
+    setTasks(tasks.filter(task => task.id !== idTask))
   }
 
   const handleToggleCompleted = (taskId) => {
-    setTasksList(taskslist.map(task => {
+    setTasks(tasks.map(task => {
       if (task.id === taskId) {
         return { ...task, completed: !task.completed }
       }
@@ -63,21 +36,45 @@ function App () {
     }))
   }
 
+  const filteredTasks = tasks.filter(task => {
+    if (selectedFilter === 'completed') {
+      return task.completed
+    }
+    if (selectedFilter === 'pending') {
+      return !task.completed
+    }
+    return task
+  })
+
   const changeFilterList = (e) => {
-    setSelectedFilter(e.target.value)
+    const filterValue = e.target.value
+    setSelectedFilter(filterValue)
   }
 
   const clearAllCompletedTasks = () => {
-    setTasksList(taskslist.filter(task => task.completed !== true))
+    setTasks(tasks.filter(task => task.completed !== true))
   }
 
   return (
     <>
       <Header />
-      <Form addTask={addTask} text={text} updateText={updateText} />
-      <Filters selectedFilter={selectedFilter} changeFilterList={changeFilterList} />
-      <List showedTasks={showedTasks} onToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
-      <Footer completedTasks={completedTasks} allTasks={allTasks} handleClick={clearAllCompletedTasks} />
+      <Form
+        addTask={addTask}
+      />
+      <Filters
+        selectedFilter={selectedFilter}
+        changeFilterList={changeFilterList}
+      />
+
+      <List
+        items={filteredTasks}
+        onToggleCompleted={handleToggleCompleted}
+        deleteTask={deleteTask}
+      />
+      <Footer
+        tasks={tasks}
+        handleClick={clearAllCompletedTasks}
+      />
     </>
   )
 }
