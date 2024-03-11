@@ -5,14 +5,20 @@ import { Header } from './components/Header/Header'
 import { Form } from './components/Form/Form'
 import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
+import { saveStorage } from './helpers/saveStorage'
 
 function App () {
   const [tasks, setTasks] = useState([])
   const [selectedFilter, setSelectedFilter] = useState('all')
 
   useEffect(() => {
-    console.log('Task List', tasks)
-  }, [tasks])
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'))
+    if (savedTasks) {
+      setTasks(savedTasks)
+    } else {
+      console.log('No tasks stored in local storage')
+    }
+  }, [])
 
   const addTask = (text) => {
     const newTask = {
@@ -21,19 +27,24 @@ function App () {
       completed: false
     }
     setTasks([...tasks, newTask])
+    saveStorage('tasks', newTask)
   }
 
   const deleteTask = (idTask) => {
-    setTasks(tasks.filter(task => task.id !== idTask))
+    const newTasks = tasks.filter(task => task.id !== idTask)
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
 
   const handleToggleCompleted = (taskId) => {
-    setTasks(tasks.map(task => {
+    const newTasks = tasks.map(task => {
       if (task.id === taskId) {
         return { ...task, completed: !task.completed }
       }
       return task
-    }))
+    })
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
 
   const filteredTasks = tasks.filter(task => {
@@ -52,7 +63,9 @@ function App () {
   }
 
   const clearAllCompletedTasks = () => {
-    setTasks(tasks.filter(task => task.completed !== true))
+    const newTasks = tasks.filter(task => task.completed !== true)
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
 
   return (
