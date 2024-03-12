@@ -1,11 +1,11 @@
 import './Filters.css'
 import PropTypes from 'prop-types'
 
-export const Filters = ({ selectedFilter, changeFilterList }) => {
+export const Filters = ({ selectedFilter, onChange }) => {
   const checkedInput = (value) => selectedFilter === value
 
   const handleFilterChange = (e) => {
-    changeFilterList(e)
+    onChange(e)
   }
 
   return (
@@ -47,5 +47,5 @@ export const Filters = ({ selectedFilter, changeFilterList }) => {
 
 Filters.propTypes = {
   selectedFilter: PropTypes.string.isRequired,
-  changeFilterList: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 }

@@ -7,18 +7,15 @@ import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
 import { saveStorage } from './helpers/saveStorage'
 
+const initialState = JSON.parse(localStorage.getItem('tasks')) || []
+
 function App () {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(initialState)
   const [selectedFilter, setSelectedFilter] = useState('all')
 
   useEffect(() => {
-    const savedTasks = JSON.parse(localStorage.getItem('tasks'))
-    if (savedTasks) {
-      setTasks(savedTasks)
-    } else {
-      console.log('No tasks stored in local storage')
-    }
-  }, [])
+    saveStorage('tasks', tasks)
+  }, [tasks])
 
   const addTask = (text) => {
     const newTask = {
@@ -27,24 +24,19 @@ function App () {
       completed: false
     }
     setTasks([...tasks, newTask])
-    saveStorage('tasks', newTask)
   }
 
   const deleteTask = (idTask) => {
-    const newTasks = tasks.filter(task => task.id !== idTask)
-    setTasks(newTasks)
-    localStorage.setItem('tasks', JSON.stringify(newTasks))
+    setTasks(tasks.filter(task => task.id !== idTask))
   }
 
   const handleToggleCompleted = (taskId) => {
-    const newTasks = tasks.map(task => {
+    setTasks(tasks.map(task => {
       if (task.id === taskId) {
         return { ...task, completed: !task.completed }
       }
       return task
-    })
-    setTasks(newTasks)
-    localStorage.setItem('tasks', JSON.stringify(newTasks))
+    }))
   }
 
   const filteredTasks = tasks.filter(task => {
@@ -57,7 +49,7 @@ function App () {
     return task
   })
 
-  const changeFilterList = (e) => {
+  const changeSelectedFilter = (e) => {
     const filterValue = e.target.value
     setSelectedFilter(filterValue)
   }
@@ -76,7 +68,7 @@ function App () {
       />
       <Filters
         selectedFilter={selectedFilter}
-        changeFilterList={changeFilterList}
+        onChange={changeSelectedFilter}
       />
 
       <List
@@ -86,7 +78,7 @@ function App () {
       />
       <Footer
         tasks={tasks}
-        handleClick={clearAllCompletedTasks}
+        onClick={clearAllCompletedTasks}
       />
     </>
   )

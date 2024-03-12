@@ -2,7 +2,7 @@ import { Button } from '../elements/Button/Button'
 import PropTypes from 'prop-types'
 import './Footer.css'
 
-export const Footer = ({ tasks, handleClick }) => {
+export const Footer = ({ tasks, onClick }) => {
   const allTasks = tasks.length
   const completedTasks = tasks.filter(task => task.completed === true).length
 
@@ -12,7 +12,7 @@ export const Footer = ({ tasks, handleClick }) => {
       <Button
         type='clear-completed'
         text='Clear All Completed'
-        handleClick={handleClick}
+        handleClick={onClick}
         id={Date.now()}
       />
     </section>
@@ -21,5 +21,5 @@ export const Footer = ({ tasks, handleClick }) => {
 
 Footer.propTypes = {
   tasks: PropTypes.array.isRequired,
-  handleClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 }
