@@ -7,7 +7,7 @@ import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
 import { saveStorage } from './helpers/saveStorage'
 
-const initialState = JSON.parse(localStorage.getItem('tasks')) || []
+const initialState = JSON.parse(localStorage.getItem('tasks')) ?? []
 
 function App () {
   const [tasks, setTasks] = useState(initialState)
