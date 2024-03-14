@@ -2,10 +2,7 @@ import { Button } from '../elements/Button/Button'
 import PropTypes from 'prop-types'
 import './Footer.css'
 
-export const Footer = ({ tasks, onClick }) => {
-  const allTasks = tasks.length
-  const completedTasks = tasks.filter(task => task.completed === true).length
-
+export const Footer = ({ allTasks, completedTasks, onClick }) => {
   return (
     <section className='footer'>
       <p>{completedTasks} {completedTasks <= 1 & completedTasks !== 0 ? 'Tarea completada' : 'Tareas completadas'} de {allTasks} </p>
@@ -20,6 +17,7 @@ export const Footer = ({ tasks, onClick }) => {
 }
 
 Footer.propTypes = {
-  tasks: PropTypes.array.isRequired,
+  allTasks: PropTypes.number.isRequired,
+  completedTasks: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired
 }

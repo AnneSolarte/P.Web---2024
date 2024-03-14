@@ -1,17 +1,18 @@
 import './App.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer } from 'react'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { Form } from './components/Form/Form'
 import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
 import { saveStorage } from './helpers/saveStorage'
+import { ToDoReducer } from './reducers/ToDoReducer'
 
 const initialState = JSON.parse(localStorage.getItem('tasks')) ?? []
 
 function App () {
-  const [tasks, setTasks] = useState(initialState)
   const [selectedFilter, setSelectedFilter] = useState('all')
+  const [tasks, dispatch] = useReducer(ToDoReducer, initialState)
 
   useEffect(() => {
     saveStorage('tasks', tasks)
@@ -23,20 +24,31 @@ function App () {
       text,
       completed: false
     }
-    setTasks([...tasks, newTask])
+
+    const addAction = {
+      type: 'add',
+      payload: newTask
+    }
+
+    dispatch(addAction)
   }
 
-  const deleteTask = (idTask) => {
-    setTasks(tasks.filter(task => task.id !== idTask))
+  const deleteTask = (id) => {
+    const deleteAction = {
+      type: 'delete',
+      payload: id
+    }
+
+    dispatch(deleteAction)
   }
 
   const handleToggleCompleted = (taskId) => {
-    setTasks(tasks.map(task => {
-      if (task.id === taskId) {
-        return { ...task, completed: !task.completed }
-      }
-      return task
-    }))
+    // setTasks(tasks.map(task => {
+    //   if (task.id === taskId) {
+    //     return { ...task, completed: !task.completed }
+    //   }
+    //   return task
+    // }))
   }
 
   const filteredTasks = tasks.filter(task => {
@@ -55,10 +67,15 @@ function App () {
   }
 
   const clearAllCompletedTasks = () => {
-    const newTasks = tasks.filter(task => task.completed !== true)
-    setTasks(newTasks)
-    localStorage.setItem('tasks', JSON.stringify(newTasks))
+    const deleteAllCompletedAction = {
+      type: 'delete-all-completed'
+    }
+
+    dispatch(deleteAllCompletedAction)
   }
+
+  const allTasks = tasks.length
+  const completedTasks = tasks.filter(task => task.completed === true).length
 
   return (
     <>
@@ -77,7 +94,8 @@ function App () {
         deleteTask={deleteTask}
       />
       <Footer
-        tasks={tasks}
+        allTasks={allTasks}
+        completedTasks={completedTasks}
         onClick={clearAllCompletedTasks}
       />
     </>

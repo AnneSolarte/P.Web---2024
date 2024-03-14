@@ -1,16 +1,13 @@
-export const gameReducer = (state = [], action) => {
+export const ToDoReducer = (state = [], action) => {
   switch (action.type) {
     case 'add':
       return [...state, action.payload]
 
     case 'delete':
-      return state.filter(game => game.id !== action.payload)
+      return state.filter(task => task.id !== action.payload)
 
-    case 'edit':
-      const index = state.findIndex(game => game.id === action.payload.id)
-      state[index] = action.payload
-
-      return [...state]
+    case 'delete-all-completed':
+      return state.filter(task => task.completed !== true)
 
     default:
       return state
