@@ -13,7 +13,7 @@ export const List = ({ items, onToggleCompleted, deleteTask }) => {
             text={text}
             id={id}
             completed={completed}
-            onToggleCompleted={() => onToggleCompleted(id)}
+            onToggleCompleted={onToggleCompleted}
             deleteTask={deleteTask}
           />
           )))

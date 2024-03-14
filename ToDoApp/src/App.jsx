@@ -42,13 +42,15 @@ function App () {
     dispatch(deleteAction)
   }
 
-  const handleToggleCompleted = (taskId) => {
-    // setTasks(tasks.map(task => {
-    //   if (task.id === taskId) {
-    //     return { ...task, completed: !task.completed }
-    //   }
-    //   return task
-    // }))
+  const handleToggleCompleted = (id, checked) => {
+    const toggleAction = {
+      type: 'change-toggle',
+      payload: {
+        id, checked
+      }
+    }
+
+    dispatch(toggleAction)
   }
 
   const filteredTasks = tasks.filter(task => {

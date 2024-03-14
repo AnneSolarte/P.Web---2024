@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import './Task.css'
 import { Button } from '../../elements/Button/Button'
 
-export const Task = ({ text, completed, id, onToggleCompleted, deleteTask }) => {
-  const handleToggleCompleted = () => {
-    onToggleCompleted()
+export const Task = ({ text, id, onToggleCompleted, deleteTask }) => {
+  const handleToggleCompleted = (e) => {
+    onToggleCompleted(id, e.target.checked)
   }
 
   return (
@@ -14,8 +14,7 @@ export const Task = ({ text, completed, id, onToggleCompleted, deleteTask }) => 
       <div>
         <input
           type='checkbox'
-          checked={completed}
-          onChange={handleToggleCompleted}
+          onChange={(e) => handleToggleCompleted(e)}
         />
         <p>{text}</p>
       </div>
@@ -32,7 +31,6 @@ export const Task = ({ text, completed, id, onToggleCompleted, deleteTask }) => 
 
 Task.propTypes = {
   text: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
   id: PropTypes.number.isRequired,
   onToggleCompleted: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired

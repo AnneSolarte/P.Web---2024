@@ -9,6 +9,12 @@ export const ToDoReducer = (state = [], action) => {
     case 'delete-all-completed':
       return state.filter(task => task.completed !== true)
 
+    case 'change-toggle':
+      return state.map(task => task.id === action.payload.id
+        ? { ...task, completed: action.payload.checked }
+        : task
+      )
+
     default:
       return state
   }
