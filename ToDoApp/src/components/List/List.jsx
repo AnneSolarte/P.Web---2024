@@ -17,7 +17,7 @@ export const List = ({ items, onToggleCompleted, deleteTask }) => {
             deleteTask={deleteTask}
           />
           )))
-        : 'No hay tareas para mostrar'}
+        : 'No tasks to show'}
 
     </section>
   )
