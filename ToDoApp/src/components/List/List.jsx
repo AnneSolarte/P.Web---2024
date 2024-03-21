@@ -1,20 +1,20 @@
 import './List.css'
 import PropTypes from 'prop-types'
 import { Task } from './Task/Task'
+import { useContextHook } from '../../hooks/contextHook'
 
-export const List = ({ items, onToggleCompleted, deleteTask }) => {
+export const List = () => {
+  const { filteredTasks } = useContextHook()
   return (
     <section className='list'>
 
-      {items.length !== 0
-        ? (items.map(({ id, text, completed }) => (
+      {filteredTasks.length !== 0
+        ? (filteredTasks.map(({ id, text, completed }) => (
           <Task
             key={id}
             text={text}
             id={id}
             completed={completed}
-            onToggleCompleted={onToggleCompleted}
-            deleteTask={deleteTask}
           />
           )))
         : 'No tasks to show'}

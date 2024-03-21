@@ -1,11 +1,13 @@
+import { useContextHook } from '../../hooks/contextHook'
 import './Filters.css'
 import PropTypes from 'prop-types'
 
-export const Filters = ({ selectedFilter, onChange }) => {
+export const Filters = () => {
+  const { selectedFilter, changeSelectedFilter } = useContextHook()
   const checkedInput = (value) => selectedFilter === value
 
   const handleFilterChange = (e) => {
-    onChange(e)
+    changeSelectedFilter(e)
   }
 
   return (
@@ -17,7 +19,7 @@ export const Filters = ({ selectedFilter, onChange }) => {
           name='filter'
           value='all'
           checked={checkedInput('all')}
-          onChange={handleFilterChange}
+          onChange={changeSelectedFilter}
         />All <br />
       </div>
 

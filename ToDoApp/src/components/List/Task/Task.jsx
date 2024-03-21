@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Task.css'
 import { Button } from '../../elements/Button/Button'
+import { useContextHook } from '../../../hooks/contextHook'
 
-export const Task = ({ text, id, onToggleCompleted, deleteTask }) => {
+export const Task = ({ text, id }) => {
+  const { onToggleCompleted, deleteTask, editTask } = useContextHook()
   const handleToggleCompleted = (e) => {
     onToggleCompleted(id, e.target.checked)
   }
@@ -25,6 +27,15 @@ export const Task = ({ text, id, onToggleCompleted, deleteTask }) => {
         id={id}
         handleClick={() => deleteTask(id)}
       />
+
+      <Button
+        type='edit'
+        text='Edit'
+        id={id}
+        handleClick={() => editTask(id)}
+      >
+        <img src='' />
+      </Button>
     </div>
   )
 }

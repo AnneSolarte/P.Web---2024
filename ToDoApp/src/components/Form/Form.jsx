@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import { useContextHook } from '../../hooks/contextHook'
 import './Form.css'
 
-export const Form = ({ addTask }) => {
+export const Form = () => {
+  const { addTask } = useContextHook()
   const [text, setText] = useState('')
   const isSubmitDisabled = text.length < 1
 

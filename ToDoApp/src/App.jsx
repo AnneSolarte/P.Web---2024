@@ -7,20 +7,10 @@ import { Filters } from './components/Filters/Filters'
 import { List } from './components/List/List'
 import { saveStorage } from './helpers/saveStorage'
 import { useContextHook } from './hooks/contextHook'
+import { EditPopUp } from './components/EditPopUp/EditPopUp'
 
 function App () {
-  const {
-    tasks,
-    selectedFilter,
-    addTask,
-    deleteTask,
-    clearAllCompletedTasks,
-    handleToggleCompleted,
-    changeSelectedFilter,
-    filteredTasks,
-    allTasks,
-    completedTasks
-  } = useContextHook()
+  const { tasks, editing } = useContextHook()
 
   useEffect(() => {
     saveStorage('tasks', tasks)
@@ -29,24 +19,17 @@ function App () {
   return (
     <>
       <Header />
-      <Form
-        addTask={addTask}
-      />
-      <Filters
-        selectedFilter={selectedFilter}
-        onChange={changeSelectedFilter}
-      />
-
-      <List
-        items={filteredTasks}
-        onToggleCompleted={handleToggleCompleted}
-        deleteTask={deleteTask}
-      />
-      <Footer
-        allTasks={allTasks}
-        completedTasks={completedTasks}
-        onClick={clearAllCompletedTasks}
-      />
+      <Form />
+      <Filters />
+      <List />
+      {
+        editing
+          ? (
+            <EditPopUp />
+            )
+          : null
+      }
+      <Footer />
 
     </>
   )

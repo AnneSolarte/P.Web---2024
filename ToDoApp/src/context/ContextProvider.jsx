@@ -6,6 +6,7 @@ const initialState = JSON.parse(localStorage.getItem('tasks')) ?? []
 
 export const ContextProvider = ({ children }) => {
   const [selectedFilter, setSelectedFilter] = useState('all')
+  const [editing, setEditing] = useState(false)
   const [tasks, dispatch] = useReducer(ToDoReducer, initialState)
 
   const addTask = (text) => {
@@ -27,6 +28,22 @@ export const ContextProvider = ({ children }) => {
     const deleteAction = {
       type: 'delete',
       payload: id
+    }
+
+    dispatch(deleteAction)
+  }
+
+  const editTask = (id, newTitle) => {
+    setEditing(true)
+    const editedTask = {
+      id,
+      text: newTitle,
+      completed: false
+    }
+
+    const deleteAction = {
+      type: 'edit',
+      payload: editedTask
     }
 
     dispatch(deleteAction)
@@ -80,7 +97,9 @@ export const ContextProvider = ({ children }) => {
       changeSelectedFilter,
       filteredTasks,
       allTasks,
-      completedTasks
+      completedTasks,
+      editing,
+      editTask
     }}
     >
       {children}
