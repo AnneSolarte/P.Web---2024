@@ -7,6 +7,7 @@ const initialState = JSON.parse(localStorage.getItem('tasks')) ?? []
 export const ContextProvider = ({ children }) => {
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [editing, setEditing] = useState(false)
+  const [idEditing, setIdEditing] = useState('')
   const [tasks, dispatch] = useReducer(ToDoReducer, initialState)
 
   const addTask = (text) => {
@@ -34,11 +35,9 @@ export const ContextProvider = ({ children }) => {
   }
 
   const editTask = (id, newTitle) => {
-    setEditing(true)
     const editedTask = {
       id,
-      text: newTitle,
-      completed: false
+      text: newTitle
     }
 
     const deleteAction = {
@@ -49,7 +48,13 @@ export const ContextProvider = ({ children }) => {
     dispatch(deleteAction)
   }
 
-  const handleToggleCompleted = (id, checked) => {
+  const changeEditState = (id) => {
+    setEditing(!editing)
+    setIdEditing(id)
+  }
+
+  const onToggleCompleted = (id, checked) => {
+    console.log('changing toggle')
     const toggleAction = {
       type: 'change-toggle',
       payload: {
@@ -93,13 +98,17 @@ export const ContextProvider = ({ children }) => {
       addTask,
       deleteTask,
       clearAllCompletedTasks,
-      handleToggleCompleted,
+      onToggleCompleted,
       changeSelectedFilter,
       filteredTasks,
       allTasks,
       completedTasks,
       editing,
-      editTask
+      setEditing,
+      editTask,
+      changeEditState,
+      idEditing,
+      setIdEditing
     }}
     >
       {children}

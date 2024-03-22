@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useContextHook } from '../../hooks/contextHook'
 import './Form.css'
@@ -41,9 +40,4 @@ export const Form = () => {
       />
     </form>
   )
-}
-
-Form.propTypes = {
-  addTask: PropTypes.func.isRequired
-
 }

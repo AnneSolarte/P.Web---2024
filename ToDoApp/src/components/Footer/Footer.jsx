@@ -1,5 +1,4 @@
 import { Button } from '../elements/Button/Button'
-import PropTypes from 'prop-types'
 import './Footer.css'
 import { useContextHook } from '../../hooks/contextHook'
 
@@ -16,10 +15,4 @@ export const Footer = () => {
       />
     </section>
   )
-}
-
-Footer.propTypes = {
-  allTasks: PropTypes.number.isRequired,
-  completedTasks: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired
 }

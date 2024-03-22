@@ -4,9 +4,10 @@ import './Task.css'
 import { Button } from '../../elements/Button/Button'
 import { useContextHook } from '../../../hooks/contextHook'
 
-export const Task = ({ text, id }) => {
-  const { onToggleCompleted, deleteTask, editTask } = useContextHook()
+export const Task = ({ text, id, completed }) => {
+  const { onToggleCompleted, deleteTask, changeEditState } = useContextHook()
   const handleToggleCompleted = (e) => {
+    console.log('checked:', e.target.checked)
     onToggleCompleted(id, e.target.checked)
   }
 
@@ -16,6 +17,7 @@ export const Task = ({ text, id }) => {
       <div>
         <input
           type='checkbox'
+          checked={completed}
           onChange={(e) => handleToggleCompleted(e)}
         />
         <p>{text}</p>
@@ -32,10 +34,11 @@ export const Task = ({ text, id }) => {
         type='edit'
         text='Edit'
         id={id}
-        handleClick={() => editTask(id)}
+        handleClick={() => changeEditState(id)}
       >
         <img src='' />
       </Button>
+
     </div>
   )
 }
@@ -43,6 +46,6 @@ export const Task = ({ text, id }) => {
 Task.propTypes = {
   text: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  onToggleCompleted: PropTypes.func.isRequired,
-  deleteTask: PropTypes.func.isRequired
+  completed: PropTypes.bool.isRequired
+
 }

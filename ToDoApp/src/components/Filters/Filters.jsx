@@ -1,6 +1,5 @@
 import { useContextHook } from '../../hooks/contextHook'
 import './Filters.css'
-import PropTypes from 'prop-types'
 
 export const Filters = () => {
   const { selectedFilter, changeSelectedFilter } = useContextHook()
@@ -45,9 +44,4 @@ export const Filters = () => {
 
     </section>
   )
-}
-
-Filters.propTypes = {
-  selectedFilter: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
 }

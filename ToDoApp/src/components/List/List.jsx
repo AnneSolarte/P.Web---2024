@@ -1,5 +1,4 @@
 import './List.css'
-import PropTypes from 'prop-types'
 import { Task } from './Task/Task'
 import { useContextHook } from '../../hooks/contextHook'
 
@@ -21,10 +20,4 @@ export const List = () => {
 
     </section>
   )
-}
-
-List.propTypes = {
-  items: PropTypes.array.isRequired,
-  onToggleCompleted: PropTypes.func.isRequired,
-  deleteTask: PropTypes.func.isRequired
 }
