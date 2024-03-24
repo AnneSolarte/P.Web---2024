@@ -27,34 +27,39 @@ export const EditPopUp = () => {
   }
 
   return (
-    <form onSubmit={onSubmmit} className='pop-up-form'>
+    <>
+      <div className='opacity-div' />
 
-      <div className='header-pop-up'>
-        <h2> Edit Task </h2>
-        <Button
-          type='close-pop-up'
-          text=''
-          id={idEditing}
-          handleClick={closePopUp}
-          img={closeicon}
+      <form onSubmit={onSubmmit} className='pop-up-form'>
+
+        <div className='header-pop-up'>
+          <h2> Edit Task </h2>
+          <Button
+            type='close-pop-up'
+            text=''
+            id={idEditing}
+            handleClick={closePopUp}
+            img={closeicon}
+          />
+        </div>
+
+        <input
+          type='text'
+          placeholder='New title'
+          value={text}
+          className='task-input'
+          onChange={onChangeText}
         />
-      </div>
 
-      <input
-        type='text'
-        placeholder='New title'
-        value={text}
-        className='task-input'
-        onChange={onChangeText}
-      />
+        <input
+          className='submit-input'
+          type='submit'
+          value='Edit task'
+          disabled={isSubmitDisabled}
+        />
 
-      <input
-        className='submit-input'
-        type='submit'
-        value='Edit task'
-        disabled={isSubmitDisabled}
-      />
+      </form>
+    </>
 
-    </form>
   )
 }

@@ -22,10 +22,18 @@ export const Task = ({ text, id, completed }) => {
           checked={completed}
           onChange={(e) => handleToggleCompleted(e)}
         />
-        <p>{text}</p>
+        <p className={completed ? 'line-through-text' : ''}>{text}</p>
       </div>
 
       <div className='buttons-task'>
+        <Button
+          type='edit'
+          text=''
+          id={id}
+          handleClick={() => changeEditState(id)}
+          img={editicon}
+        />
+
         <Button
           type='delete'
           text=''
@@ -34,13 +42,6 @@ export const Task = ({ text, id, completed }) => {
           img={deleteicon}
         />
 
-        <Button
-          type='edit'
-          text=''
-          id={id}
-          handleClick={() => changeEditState(id)}
-          img={editicon}
-        />
       </div>
 
     </div>

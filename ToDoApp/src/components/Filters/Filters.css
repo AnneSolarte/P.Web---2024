@@ -12,7 +12,13 @@
     margin-right: 4rem;
 }
 
-.filters-section input[type="radio"]:checked + label {
-    color: blue; /* Color del texto cuando el input radio está seleccionado */
-    font-style: italic; /* Estilo del texto cuando el input radio está seleccionado */
-  }
+input[type="radio" i] {
+    background-color: var(--color-font);
+    color: blue;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: initial;
+}

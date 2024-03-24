@@ -24,3 +24,8 @@
     margin-left: 1rem;
 }
 
+.line-through-text{
+    text-decoration: line-through; /* Tachado */
+    text-decoration-color: var(--color-violet); 
+    color: var(--color-font-completed);
+}

@@ -18,10 +18,6 @@ function App () {
 
   return (
     <>
-      <Header />
-      <Form />
-      <Filters />
-      <List />
       {
         editing
           ? (
@@ -29,6 +25,10 @@ function App () {
             )
           : null
       }
+      <Header />
+      <Form />
+      <Filters />
+      <List />
       <Footer />
 
     </>

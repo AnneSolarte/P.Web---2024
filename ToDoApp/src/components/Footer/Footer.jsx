@@ -6,7 +6,7 @@ export const Footer = () => {
   const { allTasks, completedTasks, clearAllCompletedTasks } = useContextHook()
   return (
     <section className='footer'>
-      <p>{completedTasks} {completedTasks <= 1 & completedTasks !== 0 ? 'Tarea completada' : 'Tareas completadas'} de {allTasks} </p>
+      <p>{completedTasks} {completedTasks <= 1 & completedTasks !== 0 ? 'Task completed' : 'Tasks completed'} out of {allTasks} </p>
       <Button
         type='clear-completed'
         text='Clear All Completed'
