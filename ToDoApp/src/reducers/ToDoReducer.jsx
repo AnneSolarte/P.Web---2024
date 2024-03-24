@@ -12,7 +12,8 @@ export const ToDoReducer = (state = [], action) => {
     case 'edit':
       return state.map(task => {
         if (task.id === action.payload.id) {
-          return action.payload
+          const completed = task.completed
+          return { ...action.payload, completed }
         } else {
           return task
         }
