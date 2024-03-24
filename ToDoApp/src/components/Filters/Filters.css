@@ -2,7 +2,17 @@
     display:flex;
     width: 100%;
     flex-direction: row;
-    background-color: rgb(23, 138, 122);
+    background-color: var(--color-trasnparent);
     padding: 1rem;
-    justify-content: space-between;
+    justify-content: center;
 }
+
+.filters-section div{
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.filters-section input[type="radio"]:checked + label {
+    color: blue; /* Color del texto cuando el input radio está seleccionado */
+    font-style: italic; /* Estilo del texto cuando el input radio está seleccionado */
+  }

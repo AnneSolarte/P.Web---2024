@@ -33,7 +33,7 @@ export const Form = () => {
       />
 
       <input
-        className='submit-input'
+        className='button submit-input'
         type='submit'
         value='Add task'
         disabled={isSubmitDisabled}

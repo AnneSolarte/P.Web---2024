@@ -1,0 +1,54 @@
+.pop-up-form{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.5em;
+    background-color: var(--color-white);
+    position: absolute;
+    padding: 1.5rem;
+    top: 40%;
+    left: 35%;
+}
+
+.header-pop-up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pop-up-form h2{
+    margin: 0;
+    margin-bottom: 1rem;
+    background-image: var(--color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+.pop-up-form input[type='submit'] {
+    width: 40%;
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 0.4em;
+    background-color: var(--color-violet);
+    color: var(--color-white);
+    font-weight: 700;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.pop-up-form input{
+    width: 90%;
+    background-color: var(--color-checkbox);
+    color: var(--color-font);
+    margin: 0;
+    margin-bottom: 1rem;
+    
+}
+
+
+.pop-up-form input::placeholder{
+    color: var(--color-font-completed)
+}
+

@@ -1,28 +1,26 @@
 .form{
     display:flex;
-    width: 100%;
+    width: 60%;
     flex-direction: row;
-    background-color: rgb(214, 208, 208);
+    margin-top: 10rem;
+    background-color: var(--color-trasnparent);
     padding: 1rem;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.form input{
-    display: flex;
-    padding: 1rem;
-}
+
 
 .task-input{
-    width: 28rem ;
+    width: 100%;
     border: none;
     border-radius: 0.5em;
+    padding: 1rem;
+    background-color: var(--color-white-opacity);
+    outline: 0;
+    margin-right: 2rem;
 }
 
 .submit-input{
-    display: flex;
-    width: 6rem ;
-    background-color: rgb(23, 138, 122);
-    border: none;
-    border-radius: 0.5em;
-    font-weight: 600;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

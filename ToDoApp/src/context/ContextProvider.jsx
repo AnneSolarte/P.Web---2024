@@ -49,8 +49,13 @@ export const ContextProvider = ({ children }) => {
   }
 
   const changeEditState = (id) => {
-    setEditing(!editing)
+    setEditing(true)
     setIdEditing(id)
+  }
+
+  const closePopUp = () => {
+    setEditing(false)
+    setIdEditing('')
   }
 
   const onToggleCompleted = (id, checked) => {
@@ -108,7 +113,8 @@ export const ContextProvider = ({ children }) => {
       editTask,
       changeEditState,
       idEditing,
-      setIdEditing
+      setIdEditing,
+      closePopUp
     }}
     >
       {children}

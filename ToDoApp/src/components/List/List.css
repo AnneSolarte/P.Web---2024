@@ -1,9 +1,10 @@
 .list{
-    display:flex;
-    width: 100%;
+    display: flex;
+    width: 60%;
     height: min-content;
+    justify-content: center;
     flex-direction: column;
-    background-color: rgb(187, 187, 187);
-    color: rgb(45, 45, 45);
+    background-color: var(--color-trasnparent);
+    color: var(--color-white);
     padding: 1rem;
 }

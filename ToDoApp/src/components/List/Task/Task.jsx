@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import './Task.css'
 import { Button } from '../../elements/Button/Button'
 import { useContextHook } from '../../../hooks/contextHook'
+import deleteicon from '../../../assets/delete_icon.png'
+import editicon from '../../../assets/edit_icon.png'
 
 export const Task = ({ text, id, completed }) => {
   const { onToggleCompleted, deleteTask, changeEditState } = useContextHook()
@@ -23,21 +25,23 @@ export const Task = ({ text, id, completed }) => {
         <p>{text}</p>
       </div>
 
-      <Button
-        type='delete'
-        text='Delete'
-        id={id}
-        handleClick={() => deleteTask(id)}
-      />
+      <div className='buttons-task'>
+        <Button
+          type='delete'
+          text=''
+          id={id}
+          handleClick={() => deleteTask(id)}
+          img={deleteicon}
+        />
 
-      <Button
-        type='edit'
-        text='Edit'
-        id={id}
-        handleClick={() => changeEditState(id)}
-      >
-        <img src='' />
-      </Button>
+        <Button
+          type='edit'
+          text=''
+          id={id}
+          handleClick={() => changeEditState(id)}
+          img={editicon}
+        />
+      </div>
 
     </div>
   )

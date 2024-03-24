@@ -1,0 +1,25 @@
+
+.header-section{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 8rem;
+    background-color: var(--color-white);
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+
+}
+
+.header-section h1{
+    background-image: var(--color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+#logo-header-img{
+    width: 5%;
+    margin-right: 2%;
+}

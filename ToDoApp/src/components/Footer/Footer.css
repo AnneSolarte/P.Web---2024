@@ -1,8 +1,8 @@
 .footer{
     display:flex;
-    width: 100%;
+    width: 60%;
     flex-direction: row;
-    background-color: gray;
+    background-color: var(--color-trasnparent);
     padding: 1rem;
     justify-content: space-between;
 }
