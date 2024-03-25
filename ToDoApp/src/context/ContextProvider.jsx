@@ -97,14 +97,7 @@ export const ContextProvider = ({ children }) => {
   const allTasks = tasks.length
   const completedTasks = tasks.filter(task => task.completed === true).length
 
-  let prevText = ''
-  if (editing) {
-    const tasksEditing = tasks.filter(task => task.id === idEditing)
-    console.log('task editing', tasksEditing)
-    prevText = tasksEditing[0].text
-  } else {
-    prevText = ''
-  }
+  const prevText = editing ? tasks.find(task => task.id === idEditing)?.text || '' : ''
 
   return (
     <Context.Provider value={{
