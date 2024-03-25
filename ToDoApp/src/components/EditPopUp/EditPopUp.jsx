@@ -54,7 +54,7 @@ export const EditPopUp = () => {
         <input
           className='submit-input'
           type='submit'
-          value='Edit task'
+          value='Save'
           disabled={isSubmitDisabled}
         />
 

@@ -32,9 +32,9 @@
 
 }
 
-@media (min-width:  700px){
+@media (min-width: 700px){
     .form{
-        width: 60%;
+        width: 70%;
         flex-direction: row;
 
     }

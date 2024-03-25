@@ -40,7 +40,7 @@
 }
 
 .pop-up-form input[type='submit'] {
-    width: 5.5rem;
+    width: 3.8rem;
     border: 0;
     padding: 0.5rem;
     border-radius: 0.4em;
@@ -63,12 +63,9 @@
     
 }
 
-
 .pop-up-form input::placeholder{
     color: var(--color-font-completed)
 }
-
-
 
 @media (min-width: 700px){
     
@@ -82,7 +79,7 @@
     }
     
     .pop-up-form input[type='submit'] {
-        width: 7rem;
+        width: 5rem;
         font-weight: 700;
         padding: 1rem;
     }
