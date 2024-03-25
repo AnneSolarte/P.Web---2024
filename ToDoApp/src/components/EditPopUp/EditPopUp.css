@@ -12,7 +12,7 @@
 
 .pop-up-form{
     display: flex;
-    width: 30%;
+    width: 70%;
     flex-direction: column;
     justify-content: center;
     border-radius: 0.5em;
@@ -20,7 +20,7 @@
     position: absolute;
     padding: 1.5rem;
     top: 40%;
-    left: 35%;
+    left: 10%;
     z-index: 12; 
 }
 
@@ -40,19 +40,22 @@
 }
 
 .pop-up-form input[type='submit'] {
-    width: 40%;
+    width: 5.5rem;
     border: 0;
     padding: 0.5rem;
     border-radius: 0.4em;
     background-color: var(--color-violet);
     color: var(--color-white);
     font-weight: 700;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
 .pop-up-form input{
-    width: 90%;
+    display: flex;
+    width:  auto;
     background-color: var(--color-checkbox);
     color: var(--color-font);
     margin: 0;
@@ -63,5 +66,27 @@
 
 .pop-up-form input::placeholder{
     color: var(--color-font-completed)
+}
+
+
+
+@media (min-width: 700px){
+    
+    .pop-up-form{
+        width: 40%;
+        position: absolute;
+        padding: 1.5rem;
+        top: 40%;
+        left: 27%;
+        z-index: 12; 
+    }
+    
+    .pop-up-form input[type='submit'] {
+        width: 7rem;
+        font-weight: 700;
+        padding: 1rem;
+    }
+
+
 }
 

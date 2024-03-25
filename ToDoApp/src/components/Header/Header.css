@@ -18,9 +18,23 @@
     background-clip: text;
     -webkit-background-clip: text; 
     color: transparent;
+    font-size: 3rem;
 }
 
 #logo-header-img{
-    width: 5%;
-    margin-right: 2%;
+    width: 3rem;
+    margin-right: 4%;
+}
+
+
+@media (min-width:  700px){
+    .header-section h1{
+        font-size: 4rem;
+    }
+
+    #logo-header-img{
+        width: 4rem;
+        margin-right: 2%;
+    }
+
 }

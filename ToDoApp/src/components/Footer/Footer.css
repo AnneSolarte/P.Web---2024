@@ -1,8 +1,24 @@
 .footer{
     display:flex;
-    width: 60%;
-    flex-direction: row;
+    width: 80%;
+    font-size: 1.2rem;
+    flex-direction: column;
     background-color: var(--color-trasnparent);
     padding: 1rem;
-    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 700px){
+    .footer{
+        width: 60%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: normal;
+        font-size: 1.4rem;
+       align-items: center;
+    }
+
+    .footer h4{
+        margin: 0;
+    }
 }

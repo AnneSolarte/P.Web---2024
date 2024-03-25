@@ -1,6 +1,6 @@
 .list{
     display: flex;
-    width: 60%;
+    width: 80%;
     height: min-content;
     justify-content: center;
     flex-direction: column;
@@ -12,4 +12,25 @@
 
 .message-empty-tasks{
     display: flex;
+}
+
+@media (min-width: 700px){
+
+    .list{
+        display: flex;
+        width: 60%;
+        height: min-content;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-trasnparent);
+        color: var(--color-white);
+        padding: 1rem;
+    }
+    
+    .message-empty-tasks{
+        display: flex;
+    }
+    
+
 }
