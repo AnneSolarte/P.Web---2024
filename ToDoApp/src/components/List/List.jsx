@@ -16,7 +16,7 @@ export const List = () => {
             completed={completed}
           />
           )))
-        : 'No tasks to show'}
+        : <h2 className='message-empty-tasks'>No tasks to show</h2>}
 
     </section>
   )

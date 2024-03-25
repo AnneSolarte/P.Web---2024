@@ -8,6 +8,7 @@ import editicon from '../../../assets/edit_icon.png'
 
 export const Task = ({ text, id, completed }) => {
   const { onToggleCompleted, deleteTask, changeEditState } = useContextHook()
+
   const handleToggleCompleted = (e) => {
     console.log('checked:', e.target.checked)
     onToggleCompleted(id, e.target.checked)

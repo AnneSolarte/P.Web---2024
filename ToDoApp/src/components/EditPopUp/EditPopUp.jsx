@@ -5,7 +5,7 @@ import { Button } from '../elements/Button/Button'
 import closeicon from '../../assets/close_icon.png'
 
 export const EditPopUp = () => {
-  const { setEditing, idEditing, editTask, closePopUp } = useContextHook()
+  const { setEditing, idEditing, editTask, closePopUp, prevText } = useContextHook()
   const [text, setText] = useState('')
   const isSubmitDisabled = text.length < 1
 
@@ -45,7 +45,7 @@ export const EditPopUp = () => {
 
         <input
           type='text'
-          placeholder='New title'
+          placeholder={prevText}
           value={text}
           className='task-input'
           onChange={onChangeText}

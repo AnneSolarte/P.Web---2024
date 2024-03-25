@@ -12,13 +12,8 @@
     margin-right: 4rem;
 }
 
-input[type="radio" i] {
-    background-color: var(--color-font);
-    color: blue;
-    cursor: default;
-    appearance: auto;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: initial;
+.filters-section input:checked {
+    opacity: 1;
+    transform: scale(1, 1);
+    color: aqua;
 }

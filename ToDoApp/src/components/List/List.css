@@ -4,7 +4,12 @@
     height: min-content;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     background-color: var(--color-trasnparent);
     color: var(--color-white);
     padding: 1rem;
+}
+
+.message-empty-tasks{
+    display: flex;
 }
