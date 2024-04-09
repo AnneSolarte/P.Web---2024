@@ -1,7 +1,12 @@
 import './Body.css'
+import { Button } from './Button/Button'
+import { FactCard } from './FactCard/FactCard'
 
 export const Body = () => {
   return (
-    <h1>Body</h1>
+    <>
+      <FactCard />
+      <Button />
+    </>
   )
 }
