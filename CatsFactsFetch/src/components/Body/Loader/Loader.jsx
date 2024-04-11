@@ -3,6 +3,6 @@ import './Loader.css'
 
 export const Loader = () => {
   return (
-    <div>Loading..</div>
+    <div className='loader' />
   )
 }
