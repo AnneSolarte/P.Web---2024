@@ -53,7 +53,7 @@ export const Body = () => {
           : <Loader />
     }
 
-      <Button />
+      <Button type='new-fact' text='New Fact' id={1} handleClick={getFactResponse} />
     </>
   )
 }

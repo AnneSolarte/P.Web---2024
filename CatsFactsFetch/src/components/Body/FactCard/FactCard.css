@@ -1,0 +1,15 @@
+.card{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    width: 30rem;
+    height: fit-content;
+    background-color:antiquewhite;
+    padding: 1rem;
+    color: black;
+    border-radius: 2em;
+}
+
+img{
+    width:50%;
+}
