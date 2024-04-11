@@ -1,7 +1,7 @@
 import './Body.css'
 import { Button } from './Button/Button'
 import { FactCard } from './FactCard/FactCard'
-import getFact from '../../services/fetch-fact'
+import { fetchFact } from '../../services/fetch-fact'
 import { useEffect, useState } from 'react'
 import getImgCat from '../../services/fetch-img'
 import { Loader } from './Loader/Loader'
@@ -9,10 +9,24 @@ import { Loader } from './Loader/Loader'
 export const Body = () => {
   const [fact, setFact] = useState(null)
   const [imgCat, setImgCat] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const getFactResponse = async () => {
-    const factResponse = await getFact()
-    setFact(factResponse)
+  const getFactResponse = () => {
+    fetchFact()
+      .then((fact) => {
+        console.log('In FactFetch.then', fact)
+        setFact(fact)
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        console.error('Error al obtener el fact:', error)
+        setError(error.message || 'Error al obtener el fact')
+        setIsLoading(false)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   const getImgResponse = async (text) => {
@@ -21,6 +35,9 @@ export const Body = () => {
     const ImgResponse = await getImgCat(text)
     console.log(ImgResponse)
     setImgCat(ImgResponse)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
   }
 
   const getTextImg = () => {
@@ -40,17 +57,19 @@ export const Body = () => {
     }
     const text = getTextImg()
     console.log(text)
+    setImgCat(null)
     getImgResponse(text)
+    setIsLoading(true)
   }, [fact])
 
   return (
     <>
       {
-        (fact && imgCat)
-          ? (
-            <FactCard fact={fact} imgCat={imgCat} />
+        isLoading
+          ? <Loader />
+          : (
+            <FactCard fact={fact} imgCat={imgCat} error={error} />
             )
-          : <Loader />
     }
 
       <Button type='new-fact' text='New Fact' id={1} handleClick={getFactResponse} />

@@ -9,4 +9,12 @@ export const getFact = async () => {
     return 'Unknown'
   }
 }
-export default getFact
+
+export const fetchFact = async () => {
+  try {
+    const response = await getFact()
+    return response
+  } catch (error) {
+    throw new Error('Error al obtener datos del fact:', error)
+  }
+}
