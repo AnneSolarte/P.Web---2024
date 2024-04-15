@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchFact } from '../services/fetch-fact'
 import { fetchImg } from '../services/fetch-img'
+import { getTextImg } from '../utils/getImgText'
 
 export const UseCatsFetch = () => {
   const [fact, setFact] = useState(null)
@@ -8,29 +9,35 @@ export const UseCatsFetch = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
+  useEffect(() => {
+    setIsLoading(true)
+    console.log('UseEffect', isLoading)
+    getFactResponse()
+  }, [])
+
+  useEffect(() => {
+    if (fact) {
+      const text = getTextImg(fact)
+      getImgResponse(text)
+    }
+  }, [fact])
+
   const getFactResponse = () => {
+    console.log('inFact', isLoading)
     fetchFact()
       .then((fact) => {
-        console.log('In FactFetch.then', fact)
         setFact(fact)
-        setIsLoading(false)
       })
       .catch((error) => {
         console.error('Error obtaining fact:', error)
         setError(error.message || 'Error obtaining fact')
-        setIsLoading(false)
-      })
-      .finally(() => {
-        setIsLoading(false)
       })
   }
 
   const getImgResponse = (text) => {
-    console.log('En getImgResponse')
-    console.log(typeof text)
+    console.log('inImage', isLoading)
     fetchImg(text)
       .then((ImgResponse) => {
-        console.log(ImgResponse)
         setImgCat(ImgResponse)
       })
       .catch((error) => {
@@ -46,6 +53,7 @@ export const UseCatsFetch = () => {
     setFact(null)
     setImgCat(null)
     setError(null)
+    setIsLoading(true)
     getFactResponse()
   }
 

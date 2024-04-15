@@ -1,10 +1,11 @@
 import './Body.css'
 import { Button } from './Button/Button'
 import { FactCard } from './FactCard/FactCard'
-import { useEffect } from 'react'
-import { getTextImg } from '../../utils/getImgText'
+// import { useEffect } from 'react'
+// import { getTextImg } from '../../utils/getImgText'
 import { Loader } from './Loader/Loader'
-import { UseCatsFetch } from '../../hooks/CatsFetch'
+import { UseCatsFetch } from '../../hooks/UseCatsFetch'
+import imageCat1 from '../../assets/cat1.png'
 
 export const Body = () => {
   const {
@@ -12,24 +13,14 @@ export const Body = () => {
     imgCat,
     isLoading,
     error,
-    getFactResponse,
-    getImgResponse,
     handleNewFact
   } = UseCatsFetch()
 
-  useEffect(() => {
-    getFactResponse()
-  }, [])
-
-  useEffect(() => {
-    if (fact) {
-      const text = getTextImg(fact)
-      getImgResponse(text)
-    }
-  }, [fact])
-
   return (
-    <>
+    <section className='body-section'>
+
+      <img id='sticker-cat' src={imageCat1} />
+
       {
         isLoading
           ? <Loader />
@@ -48,6 +39,6 @@ export const Body = () => {
         id={1}
         handleClick={handleNewFact}
       />
-    </>
+    </section>
   )
 }

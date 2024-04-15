@@ -9,7 +9,7 @@ export const FactCard = ({ fact, imgCat, error }) => {
         (fact && imgCat)
           ? (
             <section className='card'>
-              <img src={imgCat} />
+              <img className='img' src={imgCat} />
               <h4>{fact}</h4>
             </section>
             )

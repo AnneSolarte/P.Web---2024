@@ -4,18 +4,19 @@
     flex-direction: column;
     width: 30rem;
     height: fit-content;
-    background-color:antiquewhite;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    color: black;
+    padding: 0.5rem;
+    color: var(--font-text-color);
     border-radius: 2em;
+    
 }
 
-img{
-    display: flex;
-    width: 60%;
+img {
+    max-width: 30rem; 
+    max-height: 18rem; 
+    border-radius: 0.5em;
+    object-fit: cover; 
+    border: 5px solid;
+    border-color: var(--green-dark-color);
 }
 
 h4{

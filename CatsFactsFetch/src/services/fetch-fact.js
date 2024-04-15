@@ -5,7 +5,6 @@ export const fetchFact = async () => {
       throw new Error('Unable to obtain the cat fact')
     }
     const data = await response.json()
-    console.log('data fact', data)
     return data.fact
   } catch (error) {
     console.error('Error getting data from the fact:', error)

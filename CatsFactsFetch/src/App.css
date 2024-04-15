@@ -1,6 +1,18 @@
 #root {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 35rem;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(221, 227, 204);
+  border: 3px solid;
+  border-color: var(--font-text-color);
+  border-radius: 1em;
+  
+  --green-light-color: rgb(149, 234, 97);
+  --green-dark-color: rgb(52, 120, 31);
+  --font-text-color: rgb(56, 63, 55);
 }
+
