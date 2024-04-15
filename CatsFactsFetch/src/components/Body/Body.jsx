@@ -30,19 +30,21 @@ export const Body = () => {
       })
   }
 
-  const getImgResponse = async (text) => {
-    try {
-      console.log('En getImgResponse')
-      console.log(typeof text)
-      const ImgResponse = await fetchImg(text)
-      console.log(ImgResponse)
-      setImgCat(ImgResponse)
-    } catch (error) {
-      console.error('Error obtaining img:', error)
-      setError(error.message || 'Error obtaining img')
-    } finally {
-      setIsLoading(false)
-    }
+  const getImgResponse = (text) => {
+    console.log('En getImgResponse')
+    console.log(typeof text)
+    fetchImg(text)
+      .then((ImgResponse) => {
+        console.log(ImgResponse)
+        setImgCat(ImgResponse)
+      })
+      .catch((error) => {
+        console.error('Error obtaining fact:', error)
+        setError(error.message || 'Error obtaining fact')
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   useEffect(() => {
