@@ -3,7 +3,8 @@ import { Button } from './Button/Button'
 import { FactCard } from './FactCard/FactCard'
 import { fetchFact } from '../../services/fetch-fact'
 import { useEffect, useState } from 'react'
-import getImgCat from '../../services/fetch-img'
+import { fetchImg } from '../../services/fetch-img'
+import { getTextImg } from '../../utils/getImgText'
 import { Loader } from './Loader/Loader'
 
 export const Body = () => {
@@ -20,8 +21,8 @@ export const Body = () => {
         setIsLoading(false)
       })
       .catch((error) => {
-        console.error('Error al obtener el fact:', error)
-        setError(error.message || 'Error al obtener el fact')
+        console.error('Error obtaining fact:', error)
+        setError(error.message || 'Error obtaining fact')
         setIsLoading(false)
       })
       .finally(() => {
@@ -30,21 +31,18 @@ export const Body = () => {
   }
 
   const getImgResponse = async (text) => {
-    console.log('En getImgResponse')
-    console.log(typeof text)
-    const ImgResponse = await getImgCat(text)
-    console.log(ImgResponse)
-    setImgCat(ImgResponse)
-    setTimeout(() => {
+    try {
+      console.log('En getImgResponse')
+      console.log(typeof text)
+      const ImgResponse = await fetchImg(text)
+      console.log(ImgResponse)
+      setImgCat(ImgResponse)
+    } catch (error) {
+      console.error('Error obtaining img:', error)
+      setError(error.message || 'Error obtaining img')
+    } finally {
       setIsLoading(false)
-    }, 1500)
-  }
-
-  const getTextImg = () => {
-    const factDivided = fact.split(' ')
-    const firstWords = factDivided.slice(0, 4).join(' ')
-    console.log(firstWords)
-    return firstWords
+    }
   }
 
   useEffect(() => {
@@ -55,9 +53,9 @@ export const Body = () => {
     if (!fact) {
       return
     }
-    const text = getTextImg()
-    console.log(text)
     setImgCat(null)
+    const text = getTextImg(fact)
+    console.log(text)
     getImgResponse(text)
     setIsLoading(true)
   }, [fact])
