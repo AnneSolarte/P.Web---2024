@@ -19,7 +19,17 @@ body {
   background-size: cover; /* Esto ajustará la imagen para que cubra todo el fondo sin distorsionarse */
   background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
   background-position: center; /* Esto posicionará la imagen en el centro del fondo */
+  
 }
+
+@media (max-width: 768px) {
+  body{
+    background-size: 100% 100%; /* Cambia el tamaño de la imagen para que se ajuste completamente en dispositivos móviles */
+  }
+  
+}
+
+
 
 a {
   font-weight: 500;
@@ -43,14 +53,3 @@ h1 {
   line-height: 1.1;
 }
 
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-}
