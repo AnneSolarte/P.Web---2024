@@ -19,7 +19,8 @@ export const DetailProject = () => {
   };
 
   return (
-    <div>
+    <div className='page-div'>
+      <h1>Detail Project</h1>
       {!name && <h2>There is no project to show</h2>}
       {name && <h2>Page to: {name} </h2>}
 
@@ -30,5 +31,6 @@ export const DetailProject = () => {
 
       <p>This is the project page</p>
     </div>
+      
   );
 };

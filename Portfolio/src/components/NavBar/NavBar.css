@@ -1,0 +1,43 @@
+nav{
+    display: flex;
+    position: fixed;
+    top: 7rem;
+    left: 4rem;
+    width: 6rem;
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50rem;
+}
+
+.icon-nav-img{
+    width: 45%;
+}
+#icon-Login{
+    width: 80%;
+}
+
+#icon-close-bar{
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+li{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+}
+#li-close-nav{
+    margin: 0;
+}
