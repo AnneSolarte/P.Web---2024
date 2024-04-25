@@ -1,22 +1,21 @@
-
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom'
 
 export const DetailProject = () => {
-  const navigate = useNavigate();
-  const { name } = useParams();
+  const navigate = useNavigate()
+  const { name } = useParams()
 
   const sendPage = (e) => {
-    e.preventDefault();
-    let projectName = e.target.project.value;
+    e.preventDefault()
+    const projectName = e.target.project.value
 
-    let url = '/projects/' + projectName;
+    const url = '/projects/' + projectName
 
     if (projectName.length <= 0) {
-      navigate("/home");
+      navigate('/home')
     } else {
-      navigate(url);
+      navigate(url)
     }
-  };
+  }
 
   return (
     <div className='page-div'>
@@ -31,6 +30,6 @@ export const DetailProject = () => {
 
       <p>This is the project page</p>
     </div>
-      
-  );
-};
+
+  )
+}

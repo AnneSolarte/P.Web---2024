@@ -1,0 +1,8 @@
+.filters-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.filters-section input{
+    margin-right: 1rem;
+}

@@ -5,8 +5,8 @@ import './Header.css'
 export const Header = () => {
   return (
     <div>
-        {/* <img className='ribbons-img' src={ribbons} ></img> */}
-        <NavBar></NavBar>
+      {/* <img className='ribbons-img' src={ribbons} ></img> */}
+      <NavBar />
 
     </div>
   )
