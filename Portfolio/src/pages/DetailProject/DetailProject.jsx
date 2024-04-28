@@ -1,35 +1,34 @@
+import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { ProjectDetailCard } from '../../components/ProjectDetailCard/ProjectDetailCard'
+import projects from '../../data/projects'
 
 export const DetailProject = () => {
+  const { projectName } = useParams()
+  const projectData = projects.find(project => project.name === projectName)
+  console.log('params', projectName, 'data', projectData)
+
   const navigate = useNavigate()
-  const { name } = useParams()
 
-  const sendPage = (e) => {
-    e.preventDefault()
-    const projectName = e.target.project.value
-
-    const url = '/projects/' + projectName
-
-    if (projectName.length <= 0) {
-      navigate('/home')
-    } else {
-      navigate(url)
-    }
+  const OnClick = () => {
+    navigate('/projects')
   }
 
   return (
     <div className='page-div'>
-      <h1>Detail Project</h1>
-      {!name && <h2>There is no project to show</h2>}
-      {name && <h2>Page to: {name} </h2>}
 
-      <form onSubmit={sendPage}>
-        <input type='text' name='project' />
-        <input type='submit' />
-      </form>
-
-      <p>This is the project page</p>
+      {projectData && (
+        <ProjectDetailCard
+          title={projectData.title}
+          description={projectData.description}
+          behanceLink={projectData.behanceLink}
+          image1={projectData.image1}
+          image2={projectData.image2}
+          image3={projectData.image3}
+          image4={projectData.image4}
+          OnClick={OnClick}
+        />
+      )}
     </div>
-
   )
 }

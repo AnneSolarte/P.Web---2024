@@ -6,10 +6,11 @@ import bopitImg1 from '../assets/bopit-img1.png'
 const projects = [
   {
     id: 1,
-    name: 'MIXME',
-    description: 'Description for Project 1',
+    title: 'MIXME',
+    name: 'mixme',
+    description: 'MIXME is a mobile app that empowers users to search, filter, index and buy outfits and clothes from big brands, fashion influencers or any other user of the app. ',
     category: 'UX Design',
-    project: 'Link to the project',
+    project: 'Branding and app design',
     behanceLink: 'Link to Behance',
     image1: mixmeImg1,
     image2: 'url/to/image2.jpg',
@@ -18,7 +19,8 @@ const projects = [
   },
   {
     id: 2,
-    name: 'PRODUCTIVITY APP',
+    title: 'PRODUCTIVITY APP',
+    name: 'productivityapp',
     description: 'Description for Project 2',
     category: 'UI Design',
     project: 'Link to the project',
@@ -30,7 +32,8 @@ const projects = [
   },
   {
     id: 3,
-    name: 'GEOME3D',
+    title: 'GEOME3D',
+    name: 'geome3d',
     description: 'Description for Project 2',
     category: 'UI Design',
     project: 'Link to the project',
@@ -42,7 +45,8 @@ const projects = [
   },
   {
     id: 4,
-    name: 'BOP IT',
+    title: 'BOP IT',
+    name: 'bopit',
     description: 'Description for Project 2',
     category: 'UI Design',
     project: 'Link to the project',
