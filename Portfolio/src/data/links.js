@@ -3,42 +3,39 @@ import iconAbout from '../assets/iconAbout.png'
 import iconProjects from '../assets/iconProjects.png'
 import iconContact from '../assets/iconContact.png'
 import iconLogin from '../assets/iconLogin.png'
+import iconLogOut from '../assets/iconLogOut.png'
+import iconDevPanel from '../assets/iconDevPanel.png'
 
-export const links = [
+export const navDevelop = [
   {
     id: '1',
     text: 'Home',
-    url: '/home'
+    url: '/home',
+    icon: iconHome
   },
   {
     id: '2',
-    text: 'About',
-    url: '/about'
+    text: 'Projects',
+    url: '/projects',
+    icon: iconProjects
   },
   {
     id: '3',
-    text: 'Contact',
-    url: '/contact'
+    text: 'Management Panel',
+    url: '/management-panel',
+    icon: iconDevPanel
   },
   {
     id: '4',
-    text: 'Projects',
-    url: '/projects'
+    text: 'Log Out',
+    url: '/log-out',
+    icon: iconLogOut
   },
   {
     id: '5',
-    text: 'Detail Project',
-    url: '/projects/:'
-  },
-  {
-    id: '6',
     text: 'Login',
-    url: '/login'
-  },
-  {
-    id: '7',
-    text: 'Management Panel',
-    url: '/management-panel'
+    url: '/login',
+    icon: iconLogin
   }
 ]
 
@@ -56,19 +53,19 @@ export const navClient = [
     icon: iconAbout
   },
   {
-    id: '4',
+    id: '3',
     text: 'Projects',
     url: '/projects',
     icon: iconProjects
   },
   {
-    id: '3',
+    id: '4',
     text: 'Contact',
     url: '/contact',
     icon: iconContact
   },
   {
-    id: '6',
+    id: '5',
     text: 'Login',
     url: '/login',
     icon: iconLogin

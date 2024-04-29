@@ -1,11 +1,10 @@
 import './App.css'
 import { Router } from './routers/Router'
 
-function App() {
-
+function App () {
   return (
     <div className='layout'>
-      <Router/>
+      <Router />
     </div>
   )
 }
