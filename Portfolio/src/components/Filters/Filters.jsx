@@ -1,11 +1,14 @@
 import './Filters.css'
 import filters from '../../data/filters'
+import PropTypes from 'prop-types'
 
-export const Filters = () => {
-//   const checkedInput = (value) => selectedFilter === value
-//   const handleFilterChange = (e) => {
-//     changeSelectedFilter(e)
-//   }
+export const Filters = ({ selectedFilter, changeSelectedFilter }) => {
+  const checkedInput = (value) => selectedFilter === value
+
+  const handleFilterChange = (e) => {
+    changeSelectedFilter(e)
+  }
+
   return (
     <section className='filters-section'>
       {filters.map(filter => (
@@ -14,12 +17,17 @@ export const Filters = () => {
             type='radio'
             name='filter'
             value={filter.value}
-            // checked={selectedFilter === filter.value}
-            // onChange={handleFilterChange}
+            checked={checkedInput(filter.value)}
+            onChange={handleFilterChange}
           />
           {filter.label} <br />
         </div>
       ))}
     </section>
   )
+}
+
+Filters.propTypes = {
+  selectedFilter: PropTypes.string,
+  changeSelectedFilter: PropTypes.func
 }

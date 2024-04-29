@@ -16,9 +16,9 @@ const projects = [
     image3: 'url/to/image3.jpg',
     image4: 'url/to/image4.jpg',
     categories: {
-      'UX Design': true,
-      'UI Design': false,
-      'FrontEnd Dev': false
+      'ux-design': true,
+      'ui-design': true,
+      'front-end-dev': false
     }
   },
   {
@@ -33,9 +33,9 @@ const projects = [
     image3: 'url/to/image3.jpg',
     image4: 'url/to/image4.jpg',
     categories: {
-      'UX Design': false,
-      'UI Design': true,
-      'FrontEnd Dev': false
+      'ux-design': true,
+      'ui-design': true,
+      'front-end-dev': false
     }
   },
   {
@@ -50,9 +50,9 @@ const projects = [
     image3: 'url/to/image3.jpg',
     image4: 'url/to/image4.jpg',
     categories: {
-      'UX Design': false,
-      'UI Design': true,
-      'FrontEnd Dev': false
+      'ux-design': true,
+      'ui-design': false,
+      'front-end-dev': false
     }
   },
   {
@@ -67,9 +67,9 @@ const projects = [
     image3: 'url/to/image3.jpg',
     image4: 'url/to/image4.jpg',
     categories: {
-      'UX Design': false,
-      'UI Design': true,
-      'FrontEnd Dev': false
+      'ux-design': false,
+      'ui-design': true,
+      'front-end-dev': true
     }
   }
 ]

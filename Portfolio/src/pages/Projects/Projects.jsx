@@ -1,13 +1,31 @@
+import { useState } from 'react'
 import { Filters } from '../../components/Filters/Filters'
 import { ProjectsList } from '../../components/ProjectsList/ProjectsList'
 import './Projects.css'
+import projects from '../../data/projects'
+
 export const Projects = () => {
+  const [selectedFilter, setSelectedFilter] = useState('all')
+
+  const filteredProjects = projects.filter(project => {
+    if (selectedFilter === 'all') {
+      return true
+    }
+    console.log(project.categories[selectedFilter])
+    return project.categories[selectedFilter]
+  })
+
+  const changeSelectedFilter = (e) => {
+    const filterValue = e.target.value
+    setSelectedFilter(filterValue)
+  }
+
   return (
     <div className='page-div'>
       <div>
         <h1>Projects</h1>
-        <Filters />
-        <ProjectsList />
+        <Filters selectedFilter={selectedFilter} changeSelectedFilter={changeSelectedFilter} />
+        <ProjectsList filteredProjects={filteredProjects} />
       </div>
 
     </div>

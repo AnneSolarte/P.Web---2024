@@ -2,8 +2,9 @@ import React from 'react'
 import projects from '../../data/projects'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
+import PropTypes from 'prop-types'
 
-export const ProjectsList = () => {
+export const ProjectsList = ({ filteredProjects }) => {
   const navigate = useNavigate()
 
   const navigateToProjectDetail = (id) => {
@@ -15,7 +16,7 @@ export const ProjectsList = () => {
 
   return (
     <div className='projects-list-div'>
-      {projects.map(project => (
+      {filteredProjects.map(project => (
         <div key={project.id} className='project-image-div'>
           <img
             onClick={() => navigateToProjectDetail(project.id)}
@@ -26,4 +27,8 @@ export const ProjectsList = () => {
       ))}
     </div>
   )
+}
+
+ProjectsList.propTypes = {
+  filteredProjects: PropTypes.array
 }
