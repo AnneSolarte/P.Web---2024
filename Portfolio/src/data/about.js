@@ -2,7 +2,7 @@ import behanceIcon from '../assets/behance-icon2.png'
 import instagramIcon from '../assets/instagram-icon.png'
 import aeIcon from '../assets/ae-icon.png'
 import aiIcon from '../assets/ai-icon.png'
-import psIcon from '../assets/psIcon-icon.png'
+import psIcon from '../assets/ps-icon.png'
 import prIcon from '../assets/pr-icon.png'
 import figmaIcon from '../assets/figma-icon.png'
 import jsIcon from '../assets/js-icon.png'
@@ -68,12 +68,12 @@ export const education = [
   }
 ]
 
-export const SoftwareSkills = {
-  'Design Software': {
+export const softwareSkills = {
+  DesignSoftware: {
     name: 'Design Software',
     icons: [aiIcon, aeIcon, psIcon, prIcon, figmaIcon]
   },
-  'Developer Software': {
+  DeveloperSoftware: {
     name: 'Developer Software',
     icons: [jsIcon, tsIcon, reactIcon]
   }
