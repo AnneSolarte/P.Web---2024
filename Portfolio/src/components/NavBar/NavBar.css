@@ -37,6 +37,7 @@ ul{
     margin-right: 1rem;
     padding: 0;
     align-items: center;
+    margin: 0;
     
 }
 
@@ -51,11 +52,49 @@ li{
 
 @media (min-width: 700px){
 
-    .filters-section div{
-        margin-left: 3rem;
-        margin-right: 3rem;
-        font-size: 1.2rem;
+    nav{
+        top: 7rem;
+        left: 4rem;
+        width: 5rem;
+        height: auto;
     }
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    li{
+        margin: 0%;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0;
+    }
+
+    #li-close-nav{
+        display: flex;
+        margin: 0;
+    }
+
+    .icon-nav-img{
+        width: 60%;
+    }
+
+    #icon-Login{
+        width: 70%;
+    }
+    
+    #icon-close-bar{
+        width: 100%;
+    }
+    
+    
+    
+    
     
 
 }
