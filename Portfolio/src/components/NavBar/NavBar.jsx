@@ -16,7 +16,7 @@ export const NavBar = () => {
                 <img className='icon-nav-img' id='icon-close-bar' src={iconCloseBar} />
               </li>
               {navClient.map(link => (
-                <li key={link.id}>
+                <li key={link.id} id={'li-' + link.text}>
                   <NavLink to={link.url} activeclassname='active'><img className='icon-nav-img' id={'icon-' + link.text} src={link.icon} /> </NavLink>
                 </li>
               ))}

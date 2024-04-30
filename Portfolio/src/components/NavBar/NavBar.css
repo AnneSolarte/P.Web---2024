@@ -2,10 +2,10 @@ nav{
     display: flex;
     position: fixed;
     flex-direction: row;
-    top: 85rem;
-    left: 2rem;
-    width: 40rem;
-    height: 8rem;
+    top: 50.5rem;
+    left: 1rem;
+    width: 24rem;
+    height: 4.5rem;
     background-color: #D9D9D9;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ nav{
 }
 
 .icon-nav-img{
-    width: 110%;
+    width: 100%;
 }
 #li-close-nav{
     display: none;
@@ -26,7 +26,8 @@ nav{
 }
 
 #icon-Login{
-    width: 100%;
+    width: 95%;
+    margin-right: 0.2rem;
 }
 
 ul{
@@ -42,9 +43,9 @@ ul{
 }
 
 li{
-    margin: 0.2rem;;
-    margin-bottom: 0.2rem;
-    margin-left: 3.4rem;
+    margin: 0;
+    margin: 0.2rem;
+    margin-left: 2rem;
     text-decoration: none;
     list-style: none;
     padding: 0;
@@ -53,9 +54,9 @@ li{
 @media (min-width: 700px){
 
     nav{
-        top: 7rem;
+        top: 10rem;
         left: 4rem;
-        width: 5rem;
+        width: 4rem;
         height: auto;
     }
 
@@ -70,7 +71,7 @@ li{
     
     li{
         margin: 0%;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         margin-bottom: 0.5rem;
         padding: 0;
     }
@@ -80,21 +81,22 @@ li{
         margin: 0;
     }
 
+    #li-Login{
+        margin-top: 0.3rem;
+        margin-bottom: 0.2rem;
+    }
+
     .icon-nav-img{
-        width: 60%;
+        width: 54%;
     }
 
     #icon-Login{
-        width: 70%;
+        width: 80%;
+        margin: 0;
     }
     
     #icon-close-bar{
         width: 100%;
     }
-    
-    
-    
-    
-    
 
 }

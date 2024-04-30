@@ -5,10 +5,23 @@
 }
 
 .page-div{
-  height: 35rem;
-  background-color: rgb(18, 18, 18);
-  margin-left: 12rem;
+  width: 20.5rem;
+  height: 40rem;
+  /* background-color: #484848; */
+  margin-left: 2.2rem;
+  margin-right: 2.2rem;
   margin-top: 8rem;
-  margin-top: 8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+  /* background-color: rgb(67, 67, 67); */
+}
+
+@media (min-width: 700px){
+  .page-div{
+    width: 70rem;
+    height: 32rem;
+    margin-left: 6rem;
+    margin-top: 10rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
 }
