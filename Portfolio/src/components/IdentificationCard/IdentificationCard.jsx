@@ -23,6 +23,7 @@ export const IdentificationCard = () => {
         </div>
 
         <div className='info-div'>
+
           <h3>ANNE SOLARTE</h3>
 
           <div className='data-identification-div'>
@@ -41,18 +42,17 @@ export const IdentificationCard = () => {
 
           <img src={identCardCode} id='code-img' />
 
-        </div>
-
-        <div className='social-networks-div-desktop'>
-          {socialNetworks.map((network, index) => (
-            <div
-              key={index}
-              className='social-networks-item'
-            >
-              <img src={network.icon} />
-              <p>{network.value}</p>
-            </div>
-          ))}
+          <div className='social-networks-div-desktop'>
+            {socialNetworks.map((network, index) => (
+              <div
+                key={index}
+                className='social-networks-item'
+              >
+                <img src={network.icon} />
+                <p>{network.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

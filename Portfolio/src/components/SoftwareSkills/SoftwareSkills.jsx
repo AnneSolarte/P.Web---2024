@@ -8,28 +8,33 @@ export const SoftwareSkills = () => {
 
   return (
     <div className='softaware-skills-div'>
-      <h1>SKILLS</h1>
-      <div className='white-line' />
+      <div>
+        <h1 id='title-software-skills'>SKILLS</h1>
+        <div className='white-line' />
 
-      <h3>Design Software</h3>
-      <div className='software-list'>
-        {DesignSoftwareData.icons.map((item, index) => (
-          <div key={index} className='software-item'>
-            <img src={item} alt='Design Software Icon' />
-          </div>
-        ))}
+        <h3>Design Software</h3>
+        <div className='software-list'>
+          {DesignSoftwareData.icons.map((item, index) => (
+            <div key={index} className='software-item'>
+              <img src={item} alt='Design Software Icon' />
+            </div>
+          ))}
+        </div>
+
+        <hr />
       </div>
 
-      <hr />
-
-      <h3>Developer Software</h3>
-      <div className='software-list'>
-        {DeveloperSoftwareData.icons.map((item, index) => (
-          <div key={index} className='software-item'>
-            <img src={item} alt='Developer Software Icon' />
-          </div>
-        ))}
+      <div>
+        <h3>Developer Software</h3>
+        <div className='software-list'>
+          {DeveloperSoftwareData.icons.map((item, index) => (
+            <div key={index} className='software-item'>
+              <img src={item} alt='Developer Software Icon' />
+            </div>
+          ))}
+        </div>
       </div>
+
     </div>
   )
 }

@@ -9,10 +9,22 @@ export const About = () => {
     <div className='page-div'>
       <div className='about-page-div'>
         <h1>About Me</h1>
-        <IdentificationCard />
-        <PersonalSkills />
-        <EducationServicesCard />
-        <SoftwareSkills />
+
+        <div className='about-page-container'>
+          <div className='edu-serv-card-desktop'>
+            <EducationServicesCard />
+          </div>
+
+          <div className='container-right'>
+            <IdentificationCard />
+            <PersonalSkills />
+            <div className='edu-serv-card-mobile'>
+              <EducationServicesCard />
+            </div>
+            <SoftwareSkills />
+          </div>
+        </div>
+
       </div>
 
     </div>

@@ -108,3 +108,84 @@
     top: 4rem;
     left: 15rem;
 }
+
+
+@media (min-width: 700px){
+    .mobile-card-img{
+        display: none;
+    }
+    
+    .desktop-card-img{
+        width: 50%;
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        
+    }
+
+    .info-div{
+        width: 14rem;
+    }
+
+    .info-card-div{
+        height: 12rem;
+        margin-top: 1.2rem;
+    }
+
+    .identification-card-div{
+        width: 29rem;
+        height: 13rem;
+        background-color: rgb(24, 214, 189);
+        z-index: 3;
+    }
+
+    .img-character-div{
+        width: 11rem;
+        height: 11rem;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    #code-img{
+        display: flex;
+        width: 5.2rem;
+        position: absolute;
+        top: 7.5rem;
+        left: 23rem;
+    }
+
+    
+    .social-networks-div-desktop{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .social-networks-div-mobile{
+        display: none;
+    }
+    .social-networks-item{
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        align-items: center;
+    }
+
+    .social-networks-item p{
+        font-size: 0.8rem;
+        margin-left: 0.2rem;
+    }
+
+    .data-identification-div{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.2rem;
+        margin-bottom: 1.5rem;
+        justify-content: space-between;
+    }
+
+    .data-identification-item p{
+       font-size: 0.9rem;
+    }
+  }
