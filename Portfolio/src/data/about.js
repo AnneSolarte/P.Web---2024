@@ -32,14 +32,14 @@ export const dataIdentification = [
 export const socialNetworks = [
   {
     id: '1',
-    icon: instagramIcon,
-    value: 'Anne_de_larregui98'
+    icon: behanceIcon,
+    value: 'AnneSolarte'
 
   },
   {
     id: '2',
-    icon: behanceIcon,
-    value: 'AnneSolarte'
+    icon: instagramIcon,
+    value: 'Anne_de_larregui98'
   }
 ]
 

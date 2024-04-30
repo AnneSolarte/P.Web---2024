@@ -5,14 +5,13 @@
 }
 
 .page-div{
-  width: 20.5rem;
+  width: 21.5rem;
   height: 40rem;
   /* background-color: #484848; */
-  margin-left: 2.2rem;
-  margin-right: 2.2rem;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
   margin-top: 8rem;
   margin-bottom: 0rem;
-  /* background-color: rgb(67, 67, 67); */
 }
 
 @media (min-width: 700px){

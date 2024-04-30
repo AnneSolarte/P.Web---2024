@@ -1,5 +1,6 @@
 import React from 'react'
 import { softwareSkills } from '../../data/about'
+import './SoftwareSkills.css'
 
 export const SoftwareSkills = () => {
   const DesignSoftwareData = softwareSkills.DesignSoftware
@@ -7,19 +8,24 @@ export const SoftwareSkills = () => {
 
   return (
     <div className='softaware-skills-div'>
-      <div className='design-software-div'>
-        <h2>Design Software</h2>
+      <h1>SKILLS</h1>
+      <div className='white-line' />
+
+      <h3>Design Software</h3>
+      <div className='software-list'>
         {DesignSoftwareData.icons.map((item, index) => (
-          <div key={index} className='design-software-item'>
+          <div key={index} className='software-item'>
             <img src={item} alt='Design Software Icon' />
           </div>
         ))}
       </div>
 
-      <div className='developer-software-div'>
-        <h2>Developer Software</h2>
+      <hr />
+
+      <h3>Developer Software</h3>
+      <div className='software-list'>
         {DeveloperSoftwareData.icons.map((item, index) => (
-          <div key={index} className='developer-software-item'>
+          <div key={index} className='software-item'>
             <img src={item} alt='Developer Software Icon' />
           </div>
         ))}

@@ -7,11 +7,14 @@ import './About.css'
 export const About = () => {
   return (
     <div className='page-div'>
-      <h1>About Me</h1>
-      <IdentificationCard />
-      <EducationServicesCard />
-      <PersonalSkills />
-      <SoftwareSkills />
+      <div className='about-page-div'>
+        <h1>About Me</h1>
+        <IdentificationCard />
+        <PersonalSkills />
+        <EducationServicesCard />
+        <SoftwareSkills />
+      </div>
+
     </div>
   )
 }
