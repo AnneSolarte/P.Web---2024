@@ -18,7 +18,7 @@
 @media (min-width: 700px){
     .project-image-div{
         display: flex;
-        width: 32rem;
+        width: 28.5rem;
         
     }
 
@@ -29,8 +29,8 @@
     }
     .project-image-div{
         flex: 0 0 auto;
-        margin-right: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
     }
     
   }

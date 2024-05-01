@@ -26,6 +26,8 @@ export const DetailProject = () => {
           image2={projectData.image2}
           image3={projectData.image3}
           image4={projectData.image4}
+          project={projectData.project}
+          categories={projectData.categories}
           OnClick={OnClick}
         />
       )}

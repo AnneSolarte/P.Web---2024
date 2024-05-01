@@ -1,4 +1,7 @@
 import mixmeImg1 from '../assets/mixme-img1.png'
+import mixmeImg2 from '../assets/mixme-img2.png'
+import mixmeImg3 from '../assets/mixme-img3.png'
+import mixmeImg4 from '../assets/mixme-img4.png'
 import proAppImg1 from '../assets/productivity-img1.png'
 import geome3dImg1 from '../assets/geome3d-img1.png'
 import bopitImg1 from '../assets/bopit-img1.png'
@@ -12,12 +15,12 @@ const projects = [
     project: 'Branding and app design',
     behanceLink: 'Link to Behance',
     image1: mixmeImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    image2: mixmeImg2,
+    image3: mixmeImg3,
+    image4: mixmeImg4,
     categories: {
       'ux-design': true,
-      'ui-design': true,
+      'ui-design': false,
       'front-end-dev': false
     }
   },

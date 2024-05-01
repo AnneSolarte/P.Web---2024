@@ -85,11 +85,11 @@
         align-items: flex-start;
         justify-content: center;
         padding-top: 0rem;
-        padding-left: 4rem;
+        padding-left: 0;
     }
 
     .text-home-div{
-        width: 26rem;
+        width: 40rem;
         margin: 0;
     }
 
