@@ -12,7 +12,7 @@ export const Filters = ({ selectedFilter, changeSelectedFilter }) => {
   return (
     <section className='filters-section'>
       {filters.map(filter => (
-        <div key={filter.value}>
+        <label key={filter.value} className='filter-label'>
           <input
             type='radio'
             name='filter'
@@ -20,8 +20,8 @@ export const Filters = ({ selectedFilter, changeSelectedFilter }) => {
             checked={checkedInput(filter.value)}
             onChange={handleFilterChange}
           />
-          {filter.label} <br />
-        </div>
+          {filter.label}
+        </label>
       ))}
     </section>
   )

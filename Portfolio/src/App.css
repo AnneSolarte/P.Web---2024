@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
 }
@@ -18,7 +18,7 @@
   .page-div{
     width: 70rem;
     height: 32rem;
-    margin-left: 8rem;
+    margin-left: 14rem;
     margin-top: 10rem;
     margin-right: 2rem;
     margin-bottom: 1rem;

@@ -22,9 +22,11 @@ export const Projects = () => {
 
   return (
     <div className='page-div'>
-      <div>
-        <h1>Projects</h1>
-        <Filters selectedFilter={selectedFilter} changeSelectedFilter={changeSelectedFilter} />
+      <div className='projects-page-div'>
+        <div className='projects-header'>
+          <h1>Projects</h1>
+          <Filters selectedFilter={selectedFilter} changeSelectedFilter={changeSelectedFilter} />
+        </div>
         <ProjectsList filteredProjects={filteredProjects} />
       </div>
 
