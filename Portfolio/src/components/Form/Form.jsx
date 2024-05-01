@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Form.css'
 import PropTypes from 'prop-types'
 
-export const Form = ({ dataForm, submitText, submitImg }) => {
+export const Form = ({ dataForm, submitText, submitImg, type }) => {
   const [user, setUser] = useState({})
 
   const onSubmmit = (e) => {
@@ -21,24 +21,27 @@ export const Form = ({ dataForm, submitText, submitImg }) => {
   }
 
   return (
-    <div className='form-card'>
-      <form onSubmit={onSubmmit} className='form'>
-        {dataForm.map((field, index) => (
-          <input
-            key={index}
-            type='text'
-            placeholder={field.placeholder}
-            name={field.name}
-            value={user[field.name] || ''}
-            onChange={onChangeText}
-          />
-        ))}
+    <div className={'form-' + type + '-card'}>
+      <form onSubmit={onSubmmit}>
+        <div className={'form-' + type + '-div'}>
+          {dataForm.map((field, index) => (
+            <input
+              key={index}
+              type='text'
+              placeholder={field.placeholder}
+              name={field.name}
+              value={user[field.name] || ''}
+              onChange={onChangeText}
+              id={'input-' + field.name}
+            />
+          ))}
+        </div>
 
         {
             submitText
               ? (
                 <input
-                  className='button submit-input'
+                  className={'submit-input-' + type}
                   type='submit'
                   value={submitText}
                 />
@@ -67,5 +70,6 @@ Form.propTypes = {
     })
   ).isRequired,
   submitText: PropTypes.string,
-  submitImg: PropTypes.string
+  submitImg: PropTypes.string,
+  type: PropTypes.string
 }

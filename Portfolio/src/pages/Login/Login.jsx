@@ -10,7 +10,11 @@ export const Login = () => {
         <h1>Welcome to management panel </h1>
         <p>Log in to make changes to the page</p>
       </div>
-      <Form dataForm={loginForm} submitImg={submitImg} />
+      <Form
+        dataForm={loginForm}
+        submitImg={submitImg}
+        type='login'
+      />
     </div>
   )
 }

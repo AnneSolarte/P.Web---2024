@@ -19,12 +19,21 @@
     .project-image-div{
         display: flex;
         width: 28.5rem;
+        height: 13.6rem;
+        border-radius: 0.6rem;
         
+    }
+
+    .project-image-div img{
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
     }
 
     .projects-list-div{
         flex-wrap: wrap;
         flex-direction: row;
+        margin-top: 1rem;
 
     }
     .project-image-div{
