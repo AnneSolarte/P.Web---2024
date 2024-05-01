@@ -43,6 +43,35 @@
     padding-bottom: 4rem;
 }
 
+.form-login-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-login-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.submit-input-login{
+    display: flex;
+    width: 35%;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+.form-login-div input{
+    border: 2px solid #0B997C;
+    background-color: transparent;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+}
+
+
 @media (min-width: 700px){
     
     .form-contact-div{

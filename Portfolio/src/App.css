@@ -5,6 +5,7 @@
 }
 
 .page-div{
+  display: flex;
   width: 21.5rem;
   height: 40rem;
   background-color: #484848;

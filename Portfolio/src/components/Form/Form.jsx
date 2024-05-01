@@ -49,6 +49,7 @@ export const Form = ({ dataForm, submitText, submitImg, type }) => {
               : submitImg
                 ? (
                   <input
+                    className={'submit-input-' + type}
                     type='image'
                     src={submitImg}
                     alt='Submit'
