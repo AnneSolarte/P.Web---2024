@@ -8,9 +8,18 @@ export const Home = () => {
   return (
     <div className='page-div'>
       <div className='home-page-div'>
-        <img src={nettingMobile} className='netting-img-mobile' />
-        <img src={nettingDesktop} className='netting-img-desktop' />
-        <img src={characterImgMobile} className='character-img-mobile' />
+        <img
+          src={nettingMobile}
+          className='netting-img-mobile'
+        />
+        <img
+          src={nettingDesktop}
+          className='netting-img-desktop'
+        />
+        <img
+          src={characterImgMobile}
+          className='character-img-mobile'
+        />
 
         <div className='text-home-div'>
           <h1>Hi,</h1>
@@ -18,7 +27,10 @@ export const Home = () => {
           <p>A Ux and UI Designer and front ed developer from Cali, Colombia</p>
         </div>
 
-        <img src={characterImgDesktop} className='character-img-desktop' />
+        <img
+          src={characterImgDesktop}
+          className='character-img-desktop'
+        />
       </div>
 
     </div>

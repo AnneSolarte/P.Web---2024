@@ -15,8 +15,14 @@ export const SoftwareSkills = () => {
         <h3>Design Software</h3>
         <div className='software-list'>
           {DesignSoftwareData.icons.map((item, index) => (
-            <div key={index} className='software-item'>
-              <img src={item} alt='Design Software Icon' />
+            <div
+              key={index}
+              className='software-item'
+            >
+              <img
+                src={item}
+                alt='Design Software Icon'
+              />
             </div>
           ))}
         </div>
@@ -28,8 +34,14 @@ export const SoftwareSkills = () => {
         <h3>Developer Software</h3>
         <div className='software-list'>
           {DeveloperSoftwareData.icons.map((item, index) => (
-            <div key={index} className='software-item'>
-              <img src={item} alt='Developer Software Icon' />
+            <div
+              key={index}
+              className='software-item'
+            >
+              <img
+                src={item}
+                alt='Developer Software Icon'
+              />
             </div>
           ))}
         </div>

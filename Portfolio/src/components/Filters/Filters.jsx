@@ -1,8 +1,9 @@
 import './Filters.css'
 import filters from '../../data/filters'
-import PropTypes from 'prop-types'
+import { useContextHook } from '../../hooks/contextHook'
 
-export const Filters = ({ selectedFilter, changeSelectedFilter }) => {
+export const Filters = () => {
+  const { selectedFilter, changeSelectedFilter } = useContextHook()
   const checkedInput = (value) => selectedFilter === value
 
   const handleFilterChange = (e) => {
@@ -25,9 +26,4 @@ export const Filters = ({ selectedFilter, changeSelectedFilter }) => {
       ))}
     </section>
   )
-}
-
-Filters.propTypes = {
-  selectedFilter: PropTypes.string,
-  changeSelectedFilter: PropTypes.func
 }

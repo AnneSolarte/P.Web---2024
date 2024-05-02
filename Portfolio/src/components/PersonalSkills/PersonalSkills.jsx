@@ -8,7 +8,11 @@ export const PersonalSkills = () => {
       <h2>Personal Skills</h2>
       <div className='personal-skills-list'>
         {personalSkills.map((item, index) => (
-          <div key={index} className='personal-skills-item' id={'personal-skill-' + index}>
+          <div
+            key={index}
+            className='personal-skills-item'
+            id={'personal-skill-' + index}
+          >
             <p>{item}</p>
           </div>
         ))}

@@ -10,8 +10,14 @@ export const IdentificationCard = () => {
   return (
     <div className='identification-card-div'>
 
-      <img src={identCardMobile} className='mobile-card-img' />
-      <img src={identCardDesktop} className='desktop-card-img' />
+      <img
+        src={identCardMobile}
+        className='mobile-card-img'
+      />
+      <img
+        src={identCardDesktop}
+        className='desktop-card-img'
+      />
 
       <div className='info-card-div'>
 

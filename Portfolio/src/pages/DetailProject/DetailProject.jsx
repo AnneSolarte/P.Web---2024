@@ -5,6 +5,7 @@ import projects from '../../data/projects'
 
 export const DetailProject = () => {
   const { projectName } = useParams()
+
   const projectData = projects.find(project => project.name === projectName)
   console.log('params', projectName, 'data', projectData)
 

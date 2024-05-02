@@ -3,7 +3,6 @@ import iconAbout from '../assets/iconAbout.png'
 import iconProjects from '../assets/iconProjects.png'
 import iconContact from '../assets/iconContact.png'
 import iconLogin from '../assets/iconLogin.png'
-import iconLogOut from '../assets/iconLogOut.png'
 import iconDevPanel from '../assets/iconDevPanel.png'
 
 export const navDevelop = [
@@ -27,12 +26,6 @@ export const navDevelop = [
   },
   {
     id: '4',
-    text: 'Log Out',
-    url: '/log-out',
-    icon: iconLogOut
-  },
-  {
-    id: '5',
     text: 'Login',
     url: '/login',
     icon: iconLogin

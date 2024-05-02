@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import projects from '../../data/projects'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
-import PropTypes from 'prop-types'
+import { useContextHook } from '../../hooks/contextHook'
 
-export const ProjectsList = ({ filteredProjects }) => {
+export const ProjectsList = () => {
+  const { filteredProjects } = useContextHook()
   const navigate = useNavigate()
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const projectsPerPage = 4
+  const indexOfLastProject = currentPage * projectsPerPage
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage
+  const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject)
 
   const navigateToProjectDetail = (id) => {
     const projectData = projects.find((project) => project.id === id)
@@ -14,9 +22,17 @@ export const ProjectsList = ({ filteredProjects }) => {
     }
   }
 
+  const nextPage = () => {
+    setCurrentPage(currentPage + 1)
+  }
+
+  const prevPage = () => {
+    setCurrentPage(currentPage - 1)
+  }
+
   return (
     <div className='projects-list-div'>
-      {filteredProjects.map(project => (
+      {currentProjects.map(project => (
         <div key={project.id} className='project-image-div'>
           <img
             onClick={() => navigateToProjectDetail(project.id)}
@@ -25,10 +41,20 @@ export const ProjectsList = ({ filteredProjects }) => {
           />
         </div>
       ))}
+      <div className='pagination-buttons'>
+        {currentPage > 1 &&
+          <button
+            className='prev-button'
+            onClick={prevPage}
+          >{'<'}
+          </button>}
+        {filteredProjects.length > indexOfLastProject &&
+          <button
+            className='next-button'
+            onClick={nextPage}
+          >{'>'}
+          </button>}
+      </div>
     </div>
   )
-}
-
-ProjectsList.propTypes = {
-  filteredProjects: PropTypes.array
 }

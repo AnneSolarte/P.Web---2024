@@ -1,20 +1,22 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { navClient, navDevelop } from '../../data/links'
 import './NavBar.css'
 import iconCloseBar from '../../assets/iconCloseBar.png'
 import iconMenuBar from '../../assets/iconMenuBar.png'
-import { useState } from 'react'
+import iconLogOut from '../../assets/iconLogOut.png'
+import { useContextHook } from '../../hooks/contextHook'
 
 export const NavBar = () => {
-  const [state, setState] = useState('client')
-  const [hiddenBar, setHiddenBar] = useState(false)
+  const { state, changeNavBar, changeState, hiddenBar } = useContextHook()
+  const navigate = useNavigate()
 
-  const changeNavBar = (type) => {
-    if (type === 'show') {
-      setHiddenBar(false)
-    } else if (type === 'hidden') {
-      setHiddenBar(true)
-    }
+  const onChangeNavBar = (type) => {
+    changeNavBar(type)
+  }
+
+  const onChangeState = (type) => {
+    changeState(type)
+    navigate('/home')
   }
 
   return (
@@ -27,7 +29,7 @@ export const NavBar = () => {
                 className='icon-nav-img'
                 id='icon-menu-bar'
                 src={iconMenuBar}
-                onClick={() => changeNavBar('show')}
+                onClick={() => onChangeNavBar('show')}
               />
             </li>
             )
@@ -39,7 +41,7 @@ export const NavBar = () => {
                     className='icon-nav-img'
                     id='icon-close-bar'
                     src={iconCloseBar}
-                    onClick={() => changeNavBar('hidden')}
+                    onClick={() => onChangeNavBar('hidden')}
                   />
                 </li>
                 {navClient.map(link => (
@@ -71,6 +73,14 @@ export const NavBar = () => {
                       src={iconCloseBar}
                     />
                   </li>
+                  <li>
+                    <img
+                      className='icon-nav-img'
+                      id='icon-log-out'
+                      src={iconLogOut}
+                      onClick={() => onChangeState('client')}
+                    />
+                  </li>
                   {navDevelop.map(link => (
                     <li key={link.id}>
                       <NavLink
@@ -83,6 +93,7 @@ export const NavBar = () => {
                           src={link.icon}
                         />
                       </NavLink>
+
                     </li>
                   ))}
                 </ul>

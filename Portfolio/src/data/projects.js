@@ -74,6 +74,40 @@ const projects = [
       'ui-design': true,
       'front-end-dev': true
     }
+  },
+  {
+    id: 5,
+    title: 'OTRO',
+    name: 'bopit',
+    description: 'Description for Project 2',
+    project: 'Link to the project',
+    behanceLink: 'Link to Behance',
+    image1: bopitImg1,
+    image2: 'url/to/image2.jpg',
+    image3: 'url/to/image3.jpg',
+    image4: 'url/to/image4.jpg',
+    categories: {
+      'ux-design': false,
+      'ui-design': true,
+      'front-end-dev': true
+    }
+  },
+  {
+    id: 6,
+    title: 'OTRO',
+    name: 'bopit',
+    description: 'Description for Project 2',
+    project: 'Link to the project',
+    behanceLink: 'Link to Behance',
+    image1: bopitImg1,
+    image2: 'url/to/image2.jpg',
+    image3: 'url/to/image3.jpg',
+    image4: 'url/to/image4.jpg',
+    categories: {
+      'ux-design': true,
+      'ui-design': false,
+      'front-end-dev': true
+    }
   }
 ]
 

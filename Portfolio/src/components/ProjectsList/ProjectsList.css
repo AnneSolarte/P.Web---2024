@@ -15,13 +15,29 @@
     border-radius: 1rem;
 }
 
+.pagination-buttons{
+    display: flex;
+    z-index: 3;
+    margin-left: 10rem;
+}
+
+.pagination-buttons button{
+    background-color: #E2FF0F ;
+    border: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 0.2rem;
+    border-radius: 50rem;
+    width: 2rem;
+}
+
 @media (min-width: 700px){
     .project-image-div{
         display: flex;
         width: 28.5rem;
-        height: 13.6rem;
+        height: 14.1rem;
         border-radius: 0.6rem;
-        
     }
 
     .project-image-div img{
@@ -41,5 +57,22 @@
         margin-right: 1rem;
         margin-bottom: 1rem;
     }
+
+    .pagination-buttons{
+        display: flex;
+        position: absolute;
+        top: 42rem;
+        left: 35rem;
+       
+    }
+
+    
+.pagination-buttons button{
+
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    width: 2.8rem;
+}
     
   }

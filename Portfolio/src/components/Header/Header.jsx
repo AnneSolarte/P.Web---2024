@@ -5,7 +5,10 @@ import ribbons from '../../assets/ribbons.png'
 export const Header = () => {
   return (
     <div className='header-div'>
-      <img className='ribbons-img' src={ribbons} />
+      <img
+        className='ribbons-img'
+        src={ribbons}
+      />
       <NavBar />
 
     </div>

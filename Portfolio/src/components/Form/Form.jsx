@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import './Form.css'
 import PropTypes from 'prop-types'
+import { useContextHook } from '../../hooks/contextHook'
 
 export const Form = ({ dataForm, submitText, submitImg, type }) => {
-  const [user, setUser] = useState({})
+  const { user, setUser, setState } = useContextHook()
 
   const onSubmmit = (e) => {
     e.preventDefault()
@@ -11,6 +11,10 @@ export const Form = ({ dataForm, submitText, submitImg, type }) => {
     const dataUser = Object.fromEntries(formData.entries())
     console.log(dataUser)
     setUser(dataUser)
+    if (type === 'login') {
+      console.log('CHANGE TO DEV')
+      setState('developer')
+    }
   }
 
   const onChangeText = (e) => {
