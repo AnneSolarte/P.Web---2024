@@ -1,26 +1,30 @@
 import React from 'react'
 import { useContextHook } from '../../hooks/contextHook'
+import './GifItem.css'
 
 export const GifItems = () => {
-  const { gifs } = useContextHook()
+  const { gifs, errors } = useContextHook()
   return (
-    <ul>
+    <ul className='gifs-container'>
       {
         gifs.length !== 0
           ? (
               gifs.map((gif, index) => {
                 return (
-                  <li key={index}>
+                  <li key={index} className='gif-item'>
                     <img src={gif.images.downsized.url} />
-                    <h2>{gif.title} </h2>
+                    <h3>{gif.title} </h3>
                   </li>
 
                 )
               })
             )
-          : null
+          : errors
+            ? <h2>{errors} </h2>
+            : null
 
       }
+
     </ul>
   )
 }
