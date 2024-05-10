@@ -3,7 +3,7 @@ import { useContextHook } from '../../hooks/contextHook'
 import './GifItem.css'
 
 export const GifItems = () => {
-  const { gifs, errors } = useContextHook()
+  const { gifs, errors, isFirstTime } = useContextHook()
   return (
     <ul className='gifs-container'>
       {
@@ -19,10 +19,14 @@ export const GifItems = () => {
                 )
               })
             )
-          : errors
-            ? <h2>{errors} </h2>
-            : null
+          : isFirstTime ? null : <h2>No GIFs to show</h2>
 
+      }
+
+      {
+        errors
+          ? <h2>{errors} </h2>
+          : null
       }
 
     </ul>

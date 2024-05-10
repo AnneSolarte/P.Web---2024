@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContextHook } from '../../hooks/contextHook'
+import './Form.css'
 
 export const Form = () => {
   const { query, setQuery } = useContextHook()
@@ -22,16 +23,19 @@ export const Form = () => {
 
   return (
     <form onSubmit={onSubmmit} className='form'>
-      <input
-        type='text'
-        placeholder='Task'
-        value={query}
-        className='task-input'
-        onChange={onChangeText}
-      />
+      <div className='query-input-box'>
+        <label>Gif query word</label>
+        <input
+          type='text'
+          placeholder='Gatos, pedro...'
+          value={query}
+          className='query-input'
+          onChange={onChangeText}
+        />
+      </div>
 
       <input
-        className='button submit-input'
+        className='submit-input'
         type='submit'
         value='Add task'
         disabled={isSubmitDisabled}

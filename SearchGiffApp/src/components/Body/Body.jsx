@@ -5,7 +5,6 @@ import './Body.css'
 export const Body = () => {
   return (
     <div>
-      <h2>Body</h2>
       <Form />
       <GifItems />
 
