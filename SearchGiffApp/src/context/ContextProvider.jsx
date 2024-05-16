@@ -3,6 +3,8 @@ import { Context } from './context'
 import PropTypes from 'prop-types'
 import { fetchGif } from '../services/fetch-gif'
 import debounce from 'just-debounce-it'
+const savedFavorites = localStorage.getItem('favorites')
+const initialFavorites = savedFavorites ? JSON.parse(savedFavorites) : []
 
 export const ContextProvider = ({ children }) => {
   const [gifs, setGifs] = useState([])
@@ -10,6 +12,11 @@ export const ContextProvider = ({ children }) => {
   const [errors, setErrors] = useState(null)
   const [searching, setSearching] = useState(false)
   const isFirstTime = useRef(true)
+  const [favorites, setFavorites] = useState(initialFavorites)
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
 
   useEffect(() => {
     console.log('isFirstTime?', isFirstTime)
@@ -42,6 +49,16 @@ export const ContextProvider = ({ children }) => {
       })
   }
 
+  const toggleFavorite = (gif) => {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.includes(gif)) {
+        return prevFavorites.filter((fav) => fav !== gif)
+      } else {
+        return [...prevFavorites, gif]
+      }
+    })
+  }
+
   return (
     <Context.Provider value={{
       query,
@@ -49,7 +66,9 @@ export const ContextProvider = ({ children }) => {
       gifs,
       errors,
       isFirstTime,
-      searching
+      searching,
+      toggleFavorite,
+      favorites
 
     }}
     >

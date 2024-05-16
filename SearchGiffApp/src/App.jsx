@@ -1,13 +1,11 @@
 import './App.css'
-import { Body } from './components/Body/Body'
-import { Header } from './components/Header/Header'
+import { Router } from './routers/router'
 
 function App () {
   return (
-    <>
-      <Header />
-      <Body />
-    </>
+    <div className='layout'>
+      <Router />
+    </div>
   )
 }
 

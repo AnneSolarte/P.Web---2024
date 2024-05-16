@@ -1,9 +1,10 @@
+import { NavBar } from '../NavBar/NavBar'
 import './Header.css'
 
 export const Header = () => {
   return (
     <div className='header-container'>
-      <h1>Search Giff App</h1>
+      <NavBar />
     </div>
   )
 }

@@ -1,3 +1,8 @@
+.tems-list-div{
+    display: flex;
+    flex-direction: column ;
+}
+
 .gifs-container{
     display: flex;
     flex-wrap: wrap;
@@ -6,17 +11,20 @@
 }
 
 .gif-item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
     list-style: none;
     width: 15rem;
     height: 21rem;
     flex-flow: 1;
     align-items: center;
-    justify-content: center;
     margin-right: 2rem;
+    z-index: 1;
 
 }
 
-.gif-item img{
+.img-gif{
     width: 100%;
     height: 15rem;
     object-fit: cover;
@@ -33,4 +41,20 @@
 
 .searching-div h3{
     margin-top: 3rem;
+}
+
+.gif-item button{
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    top: 1rem;
+    right: 0rem;
+    position: absolute;
+    z-index: 4;
+}
+
+.img-button{
+    width: 50%;
+    border: none;
+    
+   
 }

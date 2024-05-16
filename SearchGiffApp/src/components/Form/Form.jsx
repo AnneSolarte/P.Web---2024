@@ -1,6 +1,7 @@
 import React from 'react'
-import { useContextHook } from '../../../hooks/contextHook'
+
 import './Form.css'
+import { useContextHook } from '../../hooks/contextHook'
 
 export const Form = () => {
   const { query, setQuery } = useContextHook()
