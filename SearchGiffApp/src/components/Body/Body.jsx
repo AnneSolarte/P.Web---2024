@@ -1,5 +1,5 @@
-import { Form } from '../Form/Form'
-import { GifItems } from '../GifItem/GifItems'
+import { Form } from './Form/Form'
+import { GifItems } from './GifItem/GifItems'
 import './Body.css'
 
 export const Body = () => {

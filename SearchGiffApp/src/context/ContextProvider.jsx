@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [gifs, setGifs] = useState([])
   const [query, setQuery] = useState('')
   const [errors, setErrors] = useState(null)
+  const [searching, setSearching] = useState(false)
   const isFirstTime = useRef(true)
 
   useEffect(() => {
@@ -16,20 +17,22 @@ export const ContextProvider = ({ children }) => {
       isFirstTime.current = query.length === ''
     } else {
       setGifs([])
+      setSearching(true)
       DebounceFetchGif(query)
+
       console.log(query)
     }
   }, [query])
 
   console.log(isFirstTime)
   const DebounceFetchGif = useCallback(
-    debounce((value) => getGifResponse(value), 500)
-    , [])
+    debounce((value) => getGifResponse(value), 500), [])
 
   const getGifResponse = (value) => {
     fetchGif(value)
       .then((response) => {
         setGifs(response)
+        setSearching(false)
       })
       .catch((error) => {
         const errorString = error.toString()
@@ -45,7 +48,8 @@ export const ContextProvider = ({ children }) => {
       setQuery,
       gifs,
       errors,
-      isFirstTime
+      isFirstTime,
+      searching
 
     }}
     >
