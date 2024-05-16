@@ -1,0 +1,8 @@
+.team-item li{
+    display: flex;
+    flex-direction: row;
+}
+
+.team-item li p{
+    margin-right: 1rem;
+}
