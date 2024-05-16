@@ -19,7 +19,7 @@ export const Form = () => {
 
   const onSubmmit = (e) => {
     e.preventDefault()
-    setQuery('')
+    setQuery(query)
   }
 
   return (
@@ -38,7 +38,7 @@ export const Form = () => {
       <input
         className='submit-input'
         type='submit'
-        value='Add task'
+        value='Send'
         disabled={isSubmitDisabled}
       />
     </form>
