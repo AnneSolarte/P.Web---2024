@@ -1,0 +1,4 @@
+.magement-panel-page-div{
+    display: flex;
+    flex-direction: column;
+}

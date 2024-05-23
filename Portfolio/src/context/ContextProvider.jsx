@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Context } from './context'
 import PropTypes from 'prop-types'
-import projects from '../data/projects'
+import { getProjects } from '../services/firebase'
 
 export const ContextProvider = ({ children }) => {
   const [state, setState] = useState('client')
   const [hiddenBar, setHiddenBar] = useState(false)
-  const [user, setUser] = useState({})
+  const [error, setError] = useState()
+  const [formData, setFormData] = useState({})
   const [selectedFilter, setSelectedFilter] = useState('all')
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const savedProjects = await getProjects()
+        const initialProjects = savedProjects || []
+        setProjects(initialProjects)
+      } catch (error) {
+        console.error('Error fetching projects:', error)
+        setError(error)
+      }
+    }
+
+    fetchProjects()
+  }, [])
 
   const changeNavBar = (type) => {
     if (type === 'show') {
@@ -44,8 +61,10 @@ export const ContextProvider = ({ children }) => {
       selectedFilter,
       filteredProjects,
       changeSelectedFilter,
-      user,
-      setUser
+      formData,
+      setFormData,
+      error,
+      setError
     }}
     >
       {children}

@@ -1,6 +1,6 @@
-import { Form } from '../../components/Form/Form'
 import './Contact.css'
-import { contactForm } from '../../data/forms'
+import { contactFormData } from '../../data/forms'
+import { FormContact } from '../../components/FormContact/FormContact'
 
 export const Contact = () => {
   return (
@@ -13,10 +13,9 @@ export const Contact = () => {
           <p>Send me a message so we can talk</p>
         </div>
         <div>
-          <Form
-            dataForm={contactForm}
+          <FormContact
+            dataForm={contactFormData}
             submitText='SEND'
-            type='contact'
           />
         </div>
       </div>

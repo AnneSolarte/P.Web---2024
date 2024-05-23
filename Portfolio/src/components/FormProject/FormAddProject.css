@@ -1,0 +1,50 @@
+.form-add-project-card{
+
+}
+
+.form-add-project-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.submit-input-add-project{
+    display: flex;
+    width: 35%;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+.form-add-project-div input{
+    border: 2px solid #0B997C;
+    background-color: transparent;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+}
+
+
+
+@media (min-width: 700px){
+    
+    .form-contact-div{
+        width: 24rem;
+        padding: 2rem;
+        margin: 0;
+
+    }
+
+    .form-contact-div input{
+        padding: 0.5rem;
+
+    }
+
+    .submit-input-contact{
+        padding: 1.3rem;
+        font-size: 2rem;
+
+    }
+    
+    
+    
+  }

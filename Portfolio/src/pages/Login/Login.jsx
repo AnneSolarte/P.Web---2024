@@ -1,7 +1,7 @@
-import { Form } from '../../components/Form/Form'
 import './Login.css'
-import { loginForm } from '../../data/forms'
+import { loginFormData } from '../../data/forms'
 import submitImg from '../../assets/submit-img.png'
+import { FormLogin } from '../../components/FormLogin/FormLogin'
 
 export const Login = () => {
   return (
@@ -15,10 +15,9 @@ export const Login = () => {
 
         <div className='login-form-content'>
           <h3>Login</h3>
-          <Form
-            dataForm={loginForm}
+          <FormLogin
+            dataForm={loginFormData}
             submitImg={submitImg}
-            type='login'
           />
         </div>
       </div>

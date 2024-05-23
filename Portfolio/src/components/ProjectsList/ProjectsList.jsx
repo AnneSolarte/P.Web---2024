@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import projects from '../../data/projects'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
 import { useContextHook } from '../../hooks/contextHook'
 
 export const ProjectsList = () => {
-  const { filteredProjects } = useContextHook()
+  const { filteredProjects, projects } = useContextHook()
   const navigate = useNavigate()
 
   const [currentPage, setCurrentPage] = useState(1)
