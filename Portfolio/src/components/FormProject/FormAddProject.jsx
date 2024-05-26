@@ -1,9 +1,8 @@
 import './FormAddProject.css'
 import PropTypes from 'prop-types'
 import { useContextHook } from '../../hooks/contextHook'
-import { uploadImage } from '../../services/firebase'
-// import { uploadImage } from '../../services/firebase'
-// import { addProject } from '../../services/firebase'
+import { uploadImage, addProject } from '../../services/firebase'
+
 export const FormAddProject = ({ submitText, dataForm }) => {
   const { formData, setFormData } = useContextHook()
   const onSubmit = async (e) => {
@@ -15,7 +14,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
       id: '',
       title: data.title.value,
       name: data.title.value.toLowerCase(),
-      description: data.description.description,
+      description: data.description.value,
       project: data.project.value,
       behanceLink: data.project.value,
       images: urlImages,
@@ -27,6 +26,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
     }
     console.log(dataUser)
     setFormData(dataUser)
+    addProject(dataUser)
   }
 
   const uploadImages = async (e) => {

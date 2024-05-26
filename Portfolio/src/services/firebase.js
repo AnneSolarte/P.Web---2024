@@ -22,6 +22,7 @@ export const logIn = (formData) => {
 }
 
 export const addProject = async (formData) => {
+  console.log('Form in addproject', formData)
   try {
     const docRef = await addDoc(collection(db, 'projects'), formData)
     console.log('Document written with ID: ', docRef.id)
