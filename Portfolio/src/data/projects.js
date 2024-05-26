@@ -14,10 +14,12 @@ const projects = [
     description: 'MIXME is a mobile app that empowers users to search, filter, index and buy outfits and clothes from big brands, fashion influencers or any other user of the app. ',
     project: 'Branding and app design',
     behanceLink: 'Link to Behance',
-    image1: mixmeImg1,
-    image2: mixmeImg2,
-    image3: mixmeImg3,
-    image4: mixmeImg4,
+    images: {
+      image1: mixmeImg1,
+      image2: mixmeImg2,
+      image3: mixmeImg3,
+      image4: mixmeImg4
+    },
     categories: {
       'ux-design': true,
       'ui-design': false,
@@ -31,10 +33,12 @@ const projects = [
     description: 'Description for Project 2',
     project: 'Link to the project',
     behanceLink: 'Link to Behance',
-    image1: proAppImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    images: {
+      image1: proAppImg1,
+      image2: 'url/to/image2.jpg',
+      image3: 'url/to/image3.jpg',
+      image4: 'url/to/image4.jpg'
+    },
     categories: {
       'ux-design': true,
       'ui-design': true,
@@ -48,10 +52,12 @@ const projects = [
     description: 'Description for Project 2',
     project: 'Link to the project',
     behanceLink: 'Link to Behance',
-    image1: geome3dImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    images: {
+      image1: geome3dImg1,
+      image2: 'url/to/image2.jpg',
+      image3: 'url/to/image3.jpg',
+      image4: 'url/to/image4.jpg'
+    },
     categories: {
       'ux-design': true,
       'ui-design': false,
@@ -65,10 +71,12 @@ const projects = [
     description: 'Description for Project 2',
     project: 'Link to the project',
     behanceLink: 'Link to Behance',
-    image1: bopitImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    images: {
+      image1: bopitImg1,
+      image2: 'url/to/image2.jpg',
+      image3: 'url/to/image3.jpg',
+      image4: 'url/to/image4.jpg'
+    },
     categories: {
       'ux-design': false,
       'ui-design': true,
@@ -82,10 +90,12 @@ const projects = [
     description: 'Description for Project 2',
     project: 'Link to the project',
     behanceLink: 'Link to Behance',
-    image1: bopitImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    images: {
+      image1: bopitImg1,
+      image2: 'url/to/image2.jpg',
+      image3: 'url/to/image3.jpg',
+      image4: 'url/to/image4.jpg'
+    },
     categories: {
       'ux-design': false,
       'ui-design': true,
@@ -99,10 +109,12 @@ const projects = [
     description: 'Description for Project 2',
     project: 'Link to the project',
     behanceLink: 'Link to Behance',
-    image1: bopitImg1,
-    image2: 'url/to/image2.jpg',
-    image3: 'url/to/image3.jpg',
-    image4: 'url/to/image4.jpg',
+    images: {
+      image1: bopitImg1,
+      image2: 'url/to/image2.jpg',
+      image3: 'url/to/image3.jpg',
+      image4: 'url/to/image4.jpg'
+    },
     categories: {
       'ux-design': true,
       'ui-design': false,

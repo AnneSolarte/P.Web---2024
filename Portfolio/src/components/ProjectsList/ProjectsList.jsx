@@ -35,7 +35,7 @@ export const ProjectsList = () => {
         <div key={project.id} className='project-image-div'>
           <img
             onClick={() => navigateToProjectDetail(project.id)}
-            src={project.image1}
+            src={project.images.image1}
             alt={`Image for ${project.name}`}
           />
         </div>

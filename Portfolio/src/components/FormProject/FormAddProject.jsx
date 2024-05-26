@@ -1,63 +1,73 @@
 import './FormAddProject.css'
 import PropTypes from 'prop-types'
 import { useContextHook } from '../../hooks/contextHook'
-import { useState, useEffect } from 'react'
-import { addProject } from '../../services/firebase'
-
-export const FormAddProject = ({ submitText, checkboxData, dataForm }) => {
+import { uploadImage } from '../../services/firebase'
+// import { uploadImage } from '../../services/firebase'
+// import { addProject } from '../../services/firebase'
+export const FormAddProject = ({ submitText, dataForm }) => {
   const { formData, setFormData } = useContextHook()
-  const [categories, setCategories] = useState({})
-
-  useEffect(() => {
-    if (formData.categories) {
-      setCategories(formData.categories)
-    }
-  }, [formData.categories])
-
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
+    const data = e.target
+    const urlImages = await uploadImages(e)
 
-    // Crea el objeto categoriesObject desde el estado de categories
-    const categoriesObject = checkboxData.reduce((acc, checkbox) => {
-      acc[checkbox.name] = categories[checkbox.name] || false
-      return acc
-    }, {})
-
-    // Actualiza formData con categories
-    const updatedDataUser = {
-      ...formData,
-      categories: categoriesObject
+    const dataUser = {
+      id: '',
+      title: data.title.value,
+      name: data.title.value.toLowerCase(),
+      description: data.description.description,
+      project: data.project.value,
+      behanceLink: data.project.value,
+      images: urlImages,
+      categories: {
+        uxdesign: data.uxdesign.value,
+        uidesign: data.uidesign.value,
+        frontend: data.frontend.value
+      }
     }
+    console.log(dataUser)
+    setFormData(dataUser)
+  }
 
-    // Añade el nombre formateado a los datos del proyecto
-    const title = updatedDataUser.title
-    if (title) {
-      const name = title.toLowerCase().replace(/\s+/g, '')
-      const dataWithName = { ...updatedDataUser, name }
-      console.log(dataWithName)
-      setFormData(dataWithName)
-      addProject(dataWithName)
-    } else {
-      console.log('Error: No se proporcionó un título en el formulario')
-    }
+  const uploadImages = async (e) => {
+    const data = e.target
+    const imageNames = ['image1', 'image2', 'image3', 'image4']
+    const uploadPromises = imageNames.map(imageName =>
+      uploadImage(data[imageName].files[0], data.title.value)
+    )
+    const urlImages = await Promise.all(uploadPromises)
+    console.log('Saved Images URL:', urlImages)
+    return urlImages
   }
 
   const onChangeText = (e) => {
-    const { name, value, type, checked } = e.target
-
-    if (type === 'checkbox') {
-      setCategories(prevState => ({
-        ...prevState,
-        [name]: checked
-      }))
-    } else {
-      setFormData(prevState => ({
-        ...prevState,
-        [name]: value
-      }))
-    }
+    const { name, value } = e.target
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
   }
-
+  const onChangeImage = (e) => {
+    const { name, files } = e.target
+    console.log(files[0])
+    setFormData(prevState => ({
+      ...prevState,
+      images: {
+        ...prevState.images,
+        [name]: files[0]
+      }
+    }))
+  }
+  const onChangeCheckbox = (e) => {
+    const { name, checked } = e.target
+    setFormData(prevState => ({
+      ...prevState,
+      categories: {
+        ...prevState.categories,
+        [name]: checked
+      }
+    }))
+  }
   return (
     <div className='form-add-project-card'>
       <form onSubmit={onSubmit}>
@@ -70,38 +80,33 @@ export const FormAddProject = ({ submitText, checkboxData, dataForm }) => {
                   type='file'
                   id={'input-' + field.name}
                   name={field.name}
-                  accept='image/*'
-                  onChange={onChangeText}
+                  onChange={onChangeImage}
                 />
                 )
-              : (
-                <input
-                  key={index}
-                  type='text'
-                  placeholder={field.placeholder}
-                  name={field.name}
-                  value={formData[field.name] || ''}
-                  onChange={onChangeText}
-                  id={'input-' + field.name}
-                />
-                )
+              : field.type === 'checkbox'
+                ? (
+                  <label key={index}>
+                    <input
+                      type='checkbox'
+                      name={field.name}
+                      onChange={onChangeCheckbox}
+                    />
+                    {field.label}
+                  </label>
+                  )
+                : (
+                  <input
+                    key={index}
+                    type='text'
+                    placeholder={field.placeholder}
+                    name={field.name}
+                    value={formData[field.name] || ''}
+                    onChange={onChangeText}
+                    id={'input-' + field.name}
+                  />
+                  )
           ))}
         </div>
-
-        <div>
-          {checkboxData.map(checkbox => (
-            <label key={checkbox.id}>
-              <input
-                type='checkbox'
-                name={checkbox.name}
-                checked={categories[checkbox.name] || false} // Usar el estado de categorías
-                onChange={onChangeText}
-              />
-              {checkbox.label}
-            </label>
-          ))}
-        </div>
-
         <input
           className='submit-input-add-project'
           type='submit'
@@ -111,7 +116,6 @@ export const FormAddProject = ({ submitText, checkboxData, dataForm }) => {
     </div>
   )
 }
-
 FormAddProject.propTypes = {
   dataForm: PropTypes.array,
   checkboxData: PropTypes.array,

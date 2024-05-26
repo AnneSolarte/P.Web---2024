@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { collection, addDoc, getDocs, getFirestore } from 'firebase/firestore'
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
 import { firebaseConfig } from './firebaseConfig'
 
 const app = initializeApp(firebaseConfig)
@@ -39,4 +40,20 @@ export const getProjects = async () => {
   })
 
   return arrayProducts
+}
+
+export const uploadImage = async (image, project) => {
+  console.log(project, image)
+  try {
+    const storage = getStorage()
+
+    const storageRef = ref(storage, `${project}/${image.name}`)
+
+    await uploadBytes(storageRef, image)
+
+    const imageURL = await getDownloadURL(storageRef)
+    return imageURL
+  } catch (e) {
+    console.error('Error uploading img: ', e)
+  }
 }

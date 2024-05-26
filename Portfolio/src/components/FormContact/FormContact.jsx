@@ -35,6 +35,7 @@ export const FormContact = ({ dataForm, submitText }) => {
               id={'input-' + field.name}
             />
           ))}
+
         </div>
 
         <input

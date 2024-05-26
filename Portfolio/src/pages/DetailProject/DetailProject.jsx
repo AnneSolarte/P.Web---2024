@@ -23,10 +23,10 @@ export const DetailProject = () => {
           title={projectData.title}
           description={projectData.description}
           behanceLink={projectData.behanceLink}
-          image1={projectData.image1}
-          image2={projectData.image2}
-          image3={projectData.image3}
-          image4={projectData.image4}
+          image1={projectData.images.image1}
+          image2={projectData.images.image2}
+          image3={projectData.images.image3}
+          image4={projectData.images.image4}
           project={projectData.project}
           categories={projectData.categories}
           OnClick={OnClick}

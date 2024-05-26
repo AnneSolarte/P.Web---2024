@@ -72,23 +72,25 @@ export const addProjectFormData = [
   {
     name: 'image4',
     type: 'image'
+  },
+  {
+    name: 'uxdesign',
+    type: 'checkbox',
+    label: 'Ux-Design'
+  },
+  {
+    name: 'uidesign',
+    type: 'checkbox',
+    label: 'Ui-Design'
+  },
+  {
+    name: 'frontend',
+    type: 'checkbox',
+    label: 'Front-end'
   }
+
 ]
 
 export const checkboxData = [
-  {
-    id: 1,
-    name: 'ux-design',
-    label: 'UX Design'
-  },
-  {
-    id: 2,
-    name: 'ui-design',
-    label: 'UI Design'
-  },
-  {
-    id: 3,
-    name: 'front-end-dev',
-    label: 'Front-End Development'
-  }
+
 ]
