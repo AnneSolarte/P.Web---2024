@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
 import { useContextHook } from '../../hooks/contextHook'
-import { getProjects } from '../../services/firebase'
 
 export const ProjectsList = () => {
-  const { filteredProjects } = useContextHook()
+  const { filteredProjects, projects } = useContextHook()
   const navigate = useNavigate()
 
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,14 +14,15 @@ export const ProjectsList = () => {
   const indexOfFirstProject = indexOfLastProject - projectsPerPage
   const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject)
 
-  const navigateToProjectDetail = async (id) => {
-    const savedProjects = await getProjects()
-    if (!savedProjects || savedProjects.length === 0) {
-      console.error('Projects are not loaded yet')
-      return
-    }
+  const navigateToProjectDetail = (id) => {
+    console.log('Projects:', projects)
+    console.log('ID to find:', id)
 
-    const projectData = savedProjects.find((project) => project.id === id)
+    const projectData = projects.find((project) => {
+      console.log('Comparing:', project.id, 'with', id)
+      return project.id === id
+    })
+
     if (projectData) {
       navigate(`/projects/${projectData.name}`)
     } else {

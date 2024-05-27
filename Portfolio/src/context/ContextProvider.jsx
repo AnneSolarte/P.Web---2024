@@ -68,7 +68,8 @@ export const ContextProvider = ({ children }) => {
       formData,
       setFormData,
       error,
-      setError
+      setError,
+      projects
     }}
     >
       {children}
