@@ -44,7 +44,9 @@ export const ContextProvider = ({ children }) => {
     if (selectedFilter === 'all') {
       return true
     }
-    console.log(project.categories[selectedFilter])
+    console.log('filter', selectedFilter)
+    console.log('filtered', project.categories[selectedFilter])
+    console.log('projects in filter', projects)
     return project.categories[selectedFilter]
   })
 
