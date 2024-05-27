@@ -11,6 +11,7 @@ export const FormContact = ({ dataForm, submitText }) => {
     const dataUser = Object.fromEntries(formData.entries())
     console.log(dataUser)
     setFormData(dataUser)
+    setFormData('')
   }
 
   const onChangeText = (e) => {

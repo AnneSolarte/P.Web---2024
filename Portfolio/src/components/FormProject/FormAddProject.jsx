@@ -27,6 +27,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
     console.log(dataUser)
     setFormData(dataUser)
     addProject(dataUser)
+    setFormData('')
   }
 
   const uploadImages = async (e) => {
