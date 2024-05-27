@@ -26,7 +26,14 @@ export const ContextProvider = ({ children }) => {
     }
   }
 
-  console.log(projects)
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     console.log('CHANGE TO DEV')
+  //     setState('developer')
+  //   } else {
+  //     console.log('user not login')
+  //   }
+  // })
 
   const changeNavBar = (type) => {
     if (type === 'show') {

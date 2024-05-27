@@ -6,15 +6,20 @@ import { logIn } from '../../services/firebase'
 export const FormLogin = ({ dataForm, submitImg }) => {
   const { formData, setFormData, setState } = useContextHook()
 
-  const onSubmmit = (e) => {
+  const onSubmmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const dataUser = Object.fromEntries(formData.entries())
-    console.log(dataUser)
-    setFormData(dataUser)
-    logIn(dataUser)
-    console.log('CHANGE TO DEV')
-    setState('developer')
+
+    try {
+      const user = await logIn(dataUser)
+      setFormData(dataUser)
+      setState('developer')
+      console.log('User logged in: ', user)
+      setFormData('')
+    } catch (error) {
+      console.error('Failed to log in:', error)
+    }
   }
 
   const onChangeText = (e) => {

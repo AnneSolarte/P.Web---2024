@@ -8,17 +8,14 @@ const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 export const auth = getAuth(app)
 
-export const logIn = (formData) => {
-  signInWithEmailAndPassword(auth, formData.email, formData.password)
-    .then(async (userCredential) => {
-      const user = userCredential.user
-      console.log(user.uid)
-    })
-    .catch((error) => {
-      const errorCode = error.code
-      const errorMessage = error.message
-      console.error(errorCode, errorMessage)
-    })
+export const logIn = async (dataUser) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, dataUser.email, dataUser.password)
+    return userCredential.user
+  } catch (error) {
+    console.error('Error logging in: ', error)
+    throw error
+  }
 }
 
 export const addProject = async (formData) => {
@@ -26,7 +23,6 @@ export const addProject = async (formData) => {
   try {
     const docRef = await addDoc(collection(db, 'projects'), formData)
     console.log('Document written with ID: ', docRef.id)
-    // Luego, actualiza el documento con el ID generado
     await updateDoc(doc(db, 'projects', docRef.id), { id: docRef.id })
   } catch (e) {
     console.error('Error adding document: ', e)
