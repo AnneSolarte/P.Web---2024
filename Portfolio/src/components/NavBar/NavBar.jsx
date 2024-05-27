@@ -52,6 +52,7 @@ export const NavBar = () => {
                     <NavLink
                       to={link.url}
                       activeclassname='active'
+                      className={({ isActive }) => isActive ? 'active' : ''}
                     >
                       <img
                         className='icon-nav-img'

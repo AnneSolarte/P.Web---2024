@@ -13,13 +13,14 @@ export const Filters = () => {
   return (
     <section className='filters-section'>
       {filters.map(filter => (
-        <label key={filter.value} className='filter-label'>
+        <label key={filter.value} className={`filter-label ${checkedInput(filter.value) ? 'selected' : ''}`}>
           <input
             type='radio'
             name='filter'
             value={filter.value}
             checked={checkedInput(filter.value)}
             onChange={handleFilterChange}
+            className='filter-input'
           />
           {filter.label}
         </label>

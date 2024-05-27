@@ -40,29 +40,39 @@ export const ProjectsList = () => {
 
   return (
     <div className='projects-list-div'>
-      {currentProjects.map(project => (
-        <div key={project.id} className='project-image-div'>
-          <img
-            onClick={() => navigateToProjectDetail(project.id)}
-            src={project.images[0]}
-            alt={`Image for ${project.name}`}
-          />
-        </div>
-      ))}
-      <div className='pagination-buttons'>
-        {currentPage > 1 &&
-          <button
-            className='prev-button'
-            onClick={prevPage}
-          >{'<'}
-          </button>}
-        {filteredProjects.length > indexOfLastProject &&
-          <button
-            className='next-button'
-            onClick={nextPage}
-          >{'>'}
-          </button>}
-      </div>
+      {filteredProjects.length === 0
+        ? (
+          <p>No hay proyectos para mostrar.</p>
+          )
+        : (
+          <>
+            {currentProjects.map((project) => (
+              <div key={project.id} className='project-image-div'>
+                <img
+                  onClick={() => navigateToProjectDetail(project.id)}
+                  src={project.images[0]}
+                  alt={`Image for ${project.name}`}
+                />
+              </div>
+            ))}
+            <div className='pagination-buttons'>
+              {currentPage > 1 && (
+                <button
+                  className='prev-button'
+                  onClick={prevPage}
+                >{'<'}
+                </button>
+              )}
+              {filteredProjects.length > indexOfLastProject && (
+                <button
+                  className='next-button'
+                  onClick={nextPage}
+                >{'>'}
+                </button>
+              )}
+            </div>
+          </>
+          )}
     </div>
   )
 }

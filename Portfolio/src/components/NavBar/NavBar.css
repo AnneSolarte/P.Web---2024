@@ -17,6 +17,12 @@ nav{
 .icon-nav-img{
     width: 100%;
 }
+
+.active{
+    background-color: #e2fe0b4d;
+    border-radius: 50%;
+}
+
 #li-close-nav{
     display: none;
     margin-right: 0;
