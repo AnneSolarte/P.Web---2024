@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { collection, addDoc, getDocs, getFirestore } from 'firebase/firestore'
+import { collection, addDoc, getDocs, getFirestore, updateDoc, doc } from 'firebase/firestore'
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
 import { firebaseConfig } from './firebaseConfig'
 
@@ -26,6 +26,8 @@ export const addProject = async (formData) => {
   try {
     const docRef = await addDoc(collection(db, 'projects'), formData)
     console.log('Document written with ID: ', docRef.id)
+    // Luego, actualiza el documento con el ID generado
+    await updateDoc(doc(db, 'projects', docRef.id), { id: docRef.id })
   } catch (e) {
     console.error('Error adding document: ', e)
   }

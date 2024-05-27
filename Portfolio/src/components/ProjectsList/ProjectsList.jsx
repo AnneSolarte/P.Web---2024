@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
 import { useContextHook } from '../../hooks/contextHook'
+import { getProjects } from '../../services/firebase'
 
 export const ProjectsList = () => {
-  const { filteredProjects, projects } = useContextHook()
+  const { filteredProjects } = useContextHook()
   const navigate = useNavigate()
 
   const [currentPage, setCurrentPage] = useState(1)
@@ -14,10 +15,18 @@ export const ProjectsList = () => {
   const indexOfFirstProject = indexOfLastProject - projectsPerPage
   const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject)
 
-  const navigateToProjectDetail = (id) => {
-    const projectData = projects.find((project) => project.id === id)
+  const navigateToProjectDetail = async (id) => {
+    const savedProjects = await getProjects()
+    if (!savedProjects || savedProjects.length === 0) {
+      console.error('Projects are not loaded yet')
+      return
+    }
+
+    const projectData = savedProjects.find((project) => project.id === id)
     if (projectData) {
       navigate(`/projects/${projectData.name}`)
+    } else {
+      console.error('Project not found for ID:', id)
     }
   }
 
@@ -35,7 +44,7 @@ export const ProjectsList = () => {
         <div key={project.id} className='project-image-div'>
           <img
             onClick={() => navigateToProjectDetail(project.id)}
-            src={project.images.image1}
+            src={project.images[0]}
             alt={`Image for ${project.name}`}
           />
         </div>

@@ -19,9 +19,9 @@ export const FormAddProject = ({ submitText, dataForm }) => {
       behanceLink: data.project.value,
       images: urlImages,
       categories: {
-        uxdesign: data.uxdesign.value,
-        uidesign: data.uidesign.value,
-        frontend: data.frontend.value
+        uxdesign: data.uxdesign.checked,
+        uidesign: data.uidesign.checked,
+        frontend: data.frontend.checked
       }
     }
     console.log(dataUser)
@@ -47,17 +47,6 @@ export const FormAddProject = ({ submitText, dataForm }) => {
       [name]: value
     }))
   }
-  const onChangeImage = (e) => {
-    const { name, files } = e.target
-    console.log(files[0])
-    setFormData(prevState => ({
-      ...prevState,
-      images: {
-        ...prevState.images,
-        [name]: files[0]
-      }
-    }))
-  }
   const onChangeCheckbox = (e) => {
     const { name, checked } = e.target
     setFormData(prevState => ({
@@ -68,6 +57,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
       }
     }))
   }
+
   return (
     <div className='form-add-project-card'>
       <form onSubmit={onSubmit}>
@@ -80,7 +70,6 @@ export const FormAddProject = ({ submitText, dataForm }) => {
                   type='file'
                   id={'input-' + field.name}
                   name={field.name}
-                  onChange={onChangeImage}
                 />
                 )
               : field.type === 'checkbox'

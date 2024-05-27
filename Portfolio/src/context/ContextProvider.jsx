@@ -12,19 +12,21 @@ export const ContextProvider = ({ children }) => {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const savedProjects = await getProjects()
-        const initialProjects = savedProjects || []
-        setProjects(initialProjects)
-      } catch (error) {
-        console.error('Error fetching projects:', error)
-        setError(error)
-      }
-    }
-
     fetchProjects()
   }, [])
+
+  const fetchProjects = async () => {
+    try {
+      const savedProjects = await getProjects()
+      const initialProjects = savedProjects || []
+      setProjects(initialProjects)
+    } catch (error) {
+      console.error('Error fetching projects:', error)
+      setError(error)
+    }
+  }
+
+  console.log(projects)
 
   const changeNavBar = (type) => {
     if (type === 'show') {

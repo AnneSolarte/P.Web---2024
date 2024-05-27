@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ProjectDetailCard } from '../../components/ProjectDetailCard/ProjectDetailCard'
-import projects from '../../data/projects'
+import { getProjects } from '../../services/firebase'
 
 export const DetailProject = () => {
-  const { projectName } = useParams()
+  const { projectName, projects, setProjects } = useParams()
 
+  useEffect(() => {
+    getProjectsFB()
+  }, [])
+
+  const getProjectsFB = async () => {
+    const savedProjects = await getProjects()
+    setProjects(savedProjects)
+  }
+
+  console.log('projects in detail card', projects)
   const projectData = projects.find(project => project.name === projectName)
   console.log('params', projectName, 'data', projectData)
 
