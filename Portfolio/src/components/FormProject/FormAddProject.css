@@ -13,14 +13,6 @@
     margin-left: 5rem;
 }
 
-.form-add-project-div input{
-    border: 2px solid #0B997C;
-    background-color: transparent;
-    margin-bottom: 0.5rem;
-    padding: 0.3rem;
-    font-size: 0.8rem;
-}
-
 
 
 @media (min-width: 700px){

@@ -4,7 +4,7 @@ import { useContextHook } from '../../hooks/contextHook'
 import { logIn } from '../../services/firebase'
 
 export const FormLogin = ({ dataForm, submitImg }) => {
-  const { formData, setFormData, setState } = useContextHook()
+  const { formData, setFormData, logInUser } = useContextHook()
 
   const onSubmmit = async (e) => {
     e.preventDefault()
@@ -14,7 +14,7 @@ export const FormLogin = ({ dataForm, submitImg }) => {
     try {
       const user = await logIn(dataUser)
       setFormData(dataUser)
-      setState('developer')
+      logInUser()
       console.log('User logged in: ', user)
       setFormData('')
     } catch (error) {

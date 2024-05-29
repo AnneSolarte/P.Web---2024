@@ -71,6 +71,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
                   type='file'
                   id={'input-' + field.name}
                   name={field.name}
+                  className='input-file'
                 />
                 )
               : field.type === 'checkbox'

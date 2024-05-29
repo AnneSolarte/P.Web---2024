@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { navClient, navDevelop } from '../../data/links'
 import './NavBar.css'
 import iconCloseBar from '../../assets/iconCloseBar.png'
@@ -7,16 +7,14 @@ import iconLogOut from '../../assets/iconLogOut.png'
 import { useContextHook } from '../../hooks/contextHook'
 
 export const NavBar = () => {
-  const { state, changeNavBar, changeState, hiddenBar } = useContextHook()
-  const navigate = useNavigate()
+  const { userIsLogged, changeNavBar, logOutUser, hiddenBar } = useContextHook()
 
   const onChangeNavBar = (type) => {
     changeNavBar(type)
   }
 
-  const onChangeState = (type) => {
-    changeState(type)
-    navigate('/home')
+  const onhandleClick = () => {
+    logOutUser()
   }
 
   return (
@@ -33,38 +31,7 @@ export const NavBar = () => {
               />
             </li>
             )
-          : state === 'client'
-            ? (
-              <ul>
-                <li id='li-close-nav'>
-                  <img
-                    className='icon-nav-img'
-                    id='icon-close-bar'
-                    src={iconCloseBar}
-                    onClick={() => onChangeNavBar('hidden')}
-                  />
-                </li>
-                {navClient.map(link => (
-                  <li
-                    key={link.id}
-                    id={'li-' + link.text}
-                  >
-                    <NavLink
-                      to={link.url}
-                      activeclassname='active'
-                      className={({ isActive }) => isActive ? 'active' : ''}
-                    >
-                      <img
-                        className='icon-nav-img'
-                        id={'icon-' + link.text}
-                        src={link.icon}
-                      />
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-              )
-            : state === 'developer'
+          : !userIsLogged
               ? (
                 <ul>
                   <li id='li-close-nav'>
@@ -72,21 +39,18 @@ export const NavBar = () => {
                       className='icon-nav-img'
                       id='icon-close-bar'
                       src={iconCloseBar}
+                      onClick={() => onChangeNavBar('hidden')}
                     />
                   </li>
-                  <li>
-                    <img
-                      className='icon-nav-img'
-                      id='icon-log-out'
-                      src={iconLogOut}
-                      onClick={() => onChangeState('client')}
-                    />
-                  </li>
-                  {navDevelop.map(link => (
-                    <li key={link.id}>
+                  {navClient.map(link => (
+                    <li
+                      key={link.id}
+                      id={'li-' + link.text}
+                    >
                       <NavLink
                         to={link.url}
                         activeclassname='active'
+                        className={({ isActive }) => isActive ? 'active' : ''}
                       >
                         <img
                           className='icon-nav-img'
@@ -94,12 +58,46 @@ export const NavBar = () => {
                           src={link.icon}
                         />
                       </NavLink>
-
                     </li>
                   ))}
                 </ul>
                 )
-              : null
+              : userIsLogged
+                ? (
+                  <ul>
+                    <li id='li-close-nav'>
+                      <img
+                        className='icon-nav-img'
+                        id='icon-close-bar'
+                        src={iconCloseBar}
+                      />
+                    </li>
+                    <li>
+                      <img
+                        className='icon-nav-img'
+                        id='icon-log-out'
+                        src={iconLogOut}
+                        onClick={() => onhandleClick('client')}
+                      />
+                    </li>
+                    {navDevelop.map(link => (
+                      <li key={link.id}>
+                        <NavLink
+                          to={link.url}
+                          activeclassname='active'
+                        >
+                          <img
+                            className='icon-nav-img'
+                            id={'icon-' + link.text}
+                            src={link.icon}
+                          />
+                        </NavLink>
+
+                      </li>
+                    ))}
+                  </ul>
+                  )
+                : null
       }
 
     </nav>

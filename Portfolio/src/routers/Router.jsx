@@ -7,6 +7,7 @@ import { About } from '../pages/About/About'
 import { Contact } from '../pages/Contact/Contact'
 import { ManagementPanel } from '../pages/ManagementPanel/ManagementPanel'
 import { Login } from '../pages/Login/Login'
+import { PrivateRoute } from '../pages/PrivateRoute'
 
 export const Router = () => {
   return (
@@ -23,7 +24,10 @@ export const Router = () => {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/management-panel' element={<ManagementPanel />} />
+          <Route
+            path='/management-panel'
+            element={<PrivateRoute><ManagementPanel /></PrivateRoute>}
+          />
 
         </Routes>
       </section>

@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Context } from './context'
 import PropTypes from 'prop-types'
-import { getProjects } from '../services/firebase'
+import { auth, getProjects } from '../services/firebase'
 
 export const ContextProvider = ({ children }) => {
-  const [state, setState] = useState('client')
+  const [userIsLogged, setuserIsLogged] = useState(false)
   const [hiddenBar, setHiddenBar] = useState(false)
   const [error, setError] = useState()
   const [formData, setFormData] = useState({})
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [projects, setProjects] = useState([])
+
+  const logInUser = () => setuserIsLogged(true)
+
+  const logOutUser = () => setuserIsLogged(false)
 
   useEffect(() => {
     fetchProjects()
@@ -26,14 +30,14 @@ export const ContextProvider = ({ children }) => {
     }
   }
 
-  // onAuthStateChanged(auth, (user) => {
-  //   if (user) {
-  //     console.log('CHANGE TO DEV')
-  //     setState('developer')
-  //   } else {
-  //     console.log('user not login')
-  //   }
-  // })
+  const onAuthStateChanged = (auth, (user) => {
+    if (user) {
+      console.log('CHANGE TO DEV')
+      setuserIsLogged(true)
+    } else {
+      console.log('user not login')
+    }
+  })
 
   const changeNavBar = (type) => {
     if (type === 'show') {
@@ -44,7 +48,7 @@ export const ContextProvider = ({ children }) => {
   }
 
   const changeState = (type) => {
-    setState(type)
+    setuserIsLogged(type)
   }
 
   const filteredProjects = projects.filter(project => {
@@ -64,19 +68,22 @@ export const ContextProvider = ({ children }) => {
 
   return (
     <Context.Provider value={{
-      setState,
-      state,
+      setuserIsLogged,
+      userIsLogged,
       hiddenBar,
       changeNavBar,
       changeState,
       selectedFilter,
       filteredProjects,
       changeSelectedFilter,
+      onAuthStateChanged,
       formData,
       setFormData,
       error,
       setError,
-      projects
+      projects,
+      logInUser,
+      logOutUser
     }}
     >
       {children}
