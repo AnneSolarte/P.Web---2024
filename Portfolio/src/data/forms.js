@@ -58,6 +58,21 @@ export const addProjectFormData = [
     type: 'text'
   },
   {
+    name: 'uxdesign',
+    type: 'checkbox',
+    label: 'Ux-Design'
+  },
+  {
+    name: 'uidesign',
+    type: 'checkbox',
+    label: 'Ui-Design'
+  },
+  {
+    name: 'frontend',
+    type: 'checkbox',
+    label: 'Front-end'
+  },
+  {
     name: 'image1',
     type: 'image'
   },
@@ -72,21 +87,6 @@ export const addProjectFormData = [
   {
     name: 'image4',
     type: 'image'
-  },
-  {
-    name: 'uxdesign',
-    type: 'checkbox',
-    label: 'Ux-Design'
-  },
-  {
-    name: 'uidesign',
-    type: 'checkbox',
-    label: 'Ui-Design'
-  },
-  {
-    name: 'frontend',
-    type: 'checkbox',
-    label: 'Front-end'
   }
 
 ]

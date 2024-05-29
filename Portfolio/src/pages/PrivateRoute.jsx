@@ -7,7 +7,6 @@ export function PrivateRoute ({ children }) {
   const { userIsLogged } = useContextHook()
   const { pathname } = useLocation()
 
-  console.log(pathname)
   if (!userIsLogged) {
     return (
       <Navigate

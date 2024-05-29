@@ -2,9 +2,10 @@ import './FormLogin.css'
 import PropTypes from 'prop-types'
 import { useContextHook } from '../../hooks/contextHook'
 import { logIn } from '../../services/firebase'
+import { Message } from '../Message/Message'
 
 export const FormLogin = ({ dataForm, submitImg }) => {
-  const { formData, setFormData, logInUser } = useContextHook()
+  const { formData, setFormData, logInUser, error, setError } = useContextHook()
 
   const onSubmmit = async (e) => {
     e.preventDefault()
@@ -19,6 +20,8 @@ export const FormLogin = ({ dataForm, submitImg }) => {
       setFormData('')
     } catch (error) {
       console.error('Failed to log in:', error)
+      console.log(error)
+      setError(error)
     }
   }
 
@@ -54,6 +57,7 @@ export const FormLogin = ({ dataForm, submitImg }) => {
         />
 
       </form>
+
     </div>
   )
 }

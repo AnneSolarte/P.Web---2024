@@ -3,38 +3,233 @@
 .form-add-project-div{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-top: 1rem; 
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+
+.inputs-text-div{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+.input-text{
+ color: #000000;
+}
+
+.inputs-checkbox-div{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    padding: 2rem;
+    
+}
+
+.inputs-image-div{
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    padding: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.form-add-project-div p{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+
+.filter-label{
+    font-weight: 300;
+    font-size: 1rem;
+    color: black;
+    margin: 0;
+    margin-right: 0.5rem;
+    
+}
+.filter-label.selected {
+    font-weight: bold;
+    background-color: #E2FE0B;
+    padding: 0.2rem;
+    padding-right: 0.5rem;
+    border-radius: 0.4rem;
+   
+  }
+  
+  .check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .check-input:checked {
+    background-color: #E2FE0B;
+  }
+  
+  .check-input:hover {
+    border-color: #E2FE0B;
+    }
+
+.submit-input-add-project{
+    width: 100%;
+    background-color: #C9D509;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 600;
+    border-radius: 0.5rem;
     margin-top: 1rem;
 }
 
-.submit-input-add-project{
-    display: flex;
-    width: 35%;
-    margin-top: 2rem;
-    margin-left: 5rem;
+.form-add-project-div .input-text{
+    border: 3px solid #0B997C;
+    background-color: transparent;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    font-size: 0.9rem;
 }
 
+/**********File Inputs**********/
+.container-input {
+    display: flex;
+    text-align: center;
+    border-radius: 6px;
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.iborrainputfile {
+	font-size:0.7rem; 
+}
+
+/* style 5 */
+
+.inputfile-5 + label {
+    color: #333333;
+    font-weight: 300;
+}
+
+.inputfile-5:focus + label,
+.inputfile-5.has-focus + label,
+.inputfile-5 + label:hover {
+    color: #0B997C;
+}
+
+.inputfile-5 + label figure {
+    width: auto;
+    border-radius: 1rem;
+    background-color: #0B997B;
+    display: block;
+    padding: 20px;
+    margin: 0 auto ;
+}
+
+.inputfile-5:focus + label figure,
+.inputfile-5.has-focus + label figure,
+.inputfile-5 + label:hover figure {
+    background-color: #086b56;
+}
+
+.inputfile-5 + label img {
+    width: 90%;
+    height: 90%;
+}
 
 
 @media (min-width: 700px){
     
-    .form-contact-div{
-        width: 24rem;
-        padding: 2rem;
-        margin: 0;
+    .form-add-project-div{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 1rem; 
+        
 
     }
 
-    .form-contact-div input{
-        padding: 0.5rem;
-
-    }
-
-    .submit-input-contact{
-        padding: 1.3rem;
-        font-size: 2rem;
-
+    .form-add-project-div p{
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
     }
     
+
+    .inputs-text-div{
+        width: 29rem;
+        background-color: #D9D9D9;
+
+    }
+
+    .inputs-image-div{
+        width: 21rem;
+        margin-left: 2rem;
+        padding: 1rem;
+        background-color: #D9D9D9;
+ 
+    }
+
+
+    .inputs-checkbox-div{
+        width: 80%;
+        background-color: #D9D9D9;
+
+        
+    }
+
+    .filter-label{
+        font-size: 1.4rem;
+        margin-right: 1rem;
+        
+    }
+
+    .container-input {
+        display: flex;
+        text-align: center;
+        border-radius: 6px;
+        width: 9rem;
+        margin-bottom: 0.5rem;
+    }
+
     
     
   }
