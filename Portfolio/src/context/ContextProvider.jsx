@@ -4,16 +4,23 @@ import PropTypes from 'prop-types'
 import { auth, getProjects } from '../services/firebase'
 
 export const ContextProvider = ({ children }) => {
-  const [userIsLogged, setuserIsLogged] = useState(false)
+  const userState = localStorage.getItem('user')
+  const [userIsLogged, setuserIsLogged] = useState(userState || false)
   const [hiddenBar, setHiddenBar] = useState(false)
   const [error, setError] = useState()
   const [formData, setFormData] = useState({})
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [projects, setProjects] = useState([])
 
-  const logInUser = () => setuserIsLogged(true)
+  const logInUser = () => {
+    setuserIsLogged(true)
+    localStorage.setItem('user', true)
+  }
 
-  const logOutUser = () => setuserIsLogged(false)
+  const logOutUser = () => {
+    setuserIsLogged(false)
+    localStorage.setItem('user', false)
+  }
 
   useEffect(() => {
     fetchProjects()

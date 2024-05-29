@@ -4,8 +4,9 @@
     
 }
 
-.filter-label{
+.filters-section .filter-label{
     font-weight: 200;
+    color: #D9D9D9;
     
 }
 .filter-label.selected {
@@ -45,6 +46,7 @@
         font-weight: 200;
         margin-right: 2rem;
         margin-top: 1rem;
+        
         
     }
     .filters-section{
