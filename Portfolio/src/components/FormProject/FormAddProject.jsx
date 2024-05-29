@@ -100,56 +100,70 @@ export const FormAddProject = ({ submitText, dataForm }) => {
               )}
             </div>
 
-            <div className='inputs-checkbox-div'>
-              {dataForm.map((field, index) => (
-                field.type === 'checkbox'
-                  ? (
-                    <label key={index} className={`filter-label ${field.value ? 'selected' : ''}`}>
-                      <input
-                        type='checkbox'
-                        name={field.name}
-                        checked={field.value}
-                        onChange={onChangeCheckbox}
-                        className='check-input'
-                      />
-                      {field.label}
-                    </label>)
-                  : null
-              )
+            <div className='checkbox-div'>
+              <p>Choose categories</p>
+              <div className='inputs-checkbox-div'>
 
-              )}
+                {dataForm.map((field, index) => (
+                  field.type === 'checkbox'
+                    ? (
+                      <label key={index} className={`filter-label ${field.value ? 'selected' : ''}`}>
+                        <input
+                          type='checkbox'
+                          name={field.name}
+                          checked={field.value}
+                          onChange={onChangeCheckbox}
+                          className='check-input'
+                        />
+                        {field.label}
+                      </label>)
+                    : null
+                )
+
+                )}
+              </div>
             </div>
+
           </div>
 
-          <div className='inputs-image-div'>
-            {dataForm.map((field, index) => (
-              field.type === 'image'
-                ? (
-                  <div className='container-input' key={index}>
-                    <input
-                      type='file'
-                      name={field.name}
-                      id={`file-${index}`}
-                      className='inputfile inputfile-5'
-                      onChange={onFileChange}
+          <div className='section-form2'>
+            <div className='inputs-image-div'>
+              {dataForm.map((field, index) => (
+                field.type === 'image'
+                  ? (
+                    <div className='container-input' key={index}>
+                      <input
+                        type='file'
+                        name={field.name}
+                        id={`file-${index}`}
+                        className='inputfile inputfile-5'
+                        onChange={onFileChange}
+                      />
+                      <label htmlFor={`file-${index}`}>
+                        <figure>
+                          <img src={imgIcon} alt='icon' />
+                        </figure>
+                        <span className='iborrainputfile'>
+                          {selectedFiles[field.name] || `Seleccionar ${field.name}`}
+                        </span>
+                      </label>
+                    </div>
+                    )
+                  : null
+              ))}
 
-                    />
-                    <label htmlFor={`file-${index}`}>
-                      <figure>
-                        <img src={imgIcon} alt='icon' />
-                      </figure>
-                      <span className='iborrainputfile'>
-                        {selectedFiles[field.name] || `Seleccionar ${field.name}`}
-                      </span>
-                    </label>
-                  </div>
-                  )
-                : null
-            ))}
+            </div>
+            <input
+              className='submit-input-add-project'
+              type='submit'
+              value={submitText}
+              id='submit-desktop'
+            />
           </div>
 
         </div>
         <input
+          id='submit-mobile'
           className='submit-input-add-project'
           type='submit'
           value={submitText}
