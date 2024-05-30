@@ -37,6 +37,7 @@ export const ContextProvider = ({ children }) => {
       const savedProjects = await getProjects()
       const initialProjects = savedProjects || []
       setProjects(initialProjects)
+      console.log('Projects tradídos en fetch')
       setLoading(false)
     } catch (error) {
       console.error('Error fetching projects:', error)
@@ -85,7 +86,8 @@ export const ContextProvider = ({ children }) => {
       projects,
       logInUser,
       logOutUser,
-      loading
+      loading,
+      fetchProjects
     }}
     >
       {children}

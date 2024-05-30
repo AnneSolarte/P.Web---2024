@@ -6,7 +6,7 @@ import imgIcon from '../../assets/imgIcon.png'
 import { useState } from 'react'
 
 export const FormAddProject = ({ submitText, dataForm }) => {
-  const { formData, setFormData } = useContextHook()
+  const { formData, setFormData, fetchProjects } = useContextHook()
   const [selectedFiles, setSelectedFiles] = useState({})
 
   const onFileChange = (e) => {
@@ -40,6 +40,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
     setFormData(dataUser)
     addProject(dataUser)
     setFormData('')
+    fetchProjects()
   }
 
   const uploadImages = async (e) => {
