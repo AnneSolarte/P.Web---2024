@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './ProjectsList.css'
 import { useContextHook } from '../../hooks/contextHook'
+import { Loader } from '../Loader/Loader'
 
 export const ProjectsList = () => {
-  const { filteredProjects, projects } = useContextHook()
+  const { filteredProjects, projects, loading } = useContextHook()
   const navigate = useNavigate()
 
   const [currentPage, setCurrentPage] = useState(1)
@@ -40,39 +41,41 @@ export const ProjectsList = () => {
 
   return (
     <div className='projects-list-div'>
-      {filteredProjects.length === 0
-        ? (
-          <p>No hay proyectos para mostrar.</p>
-          )
-        : (
-          <>
-            {currentProjects.map((project) => (
-              <div key={project.id} className='project-image-div'>
-                <img
-                  onClick={() => navigateToProjectDetail(project.id)}
-                  src={project.images[0]}
-                  alt={`Image for ${project.name}`}
-                />
+      {loading
+        ? <Loader />
+        : filteredProjects.length !== 0
+          ? (
+            <>
+              {currentProjects.map((project) => (
+                <div key={project.id} className='project-image-div'>
+                  <img
+                    onClick={() => navigateToProjectDetail(project.id)}
+                    src={project.images[0]}
+                    alt={`Image for ${project.name}`}
+                  />
+                </div>
+              ))}
+              <div className='pagination-buttons'>
+                {currentPage > 1 && (
+                  <button
+                    className='prev-button'
+                    onClick={prevPage}
+                  >{'<'}
+                  </button>
+                )}
+                {filteredProjects.length > indexOfLastProject && (
+                  <button
+                    className='next-button'
+                    onClick={nextPage}
+                  >{'>'}
+                  </button>
+                )}
               </div>
-            ))}
-            <div className='pagination-buttons'>
-              {currentPage > 1 && (
-                <button
-                  className='prev-button'
-                  onClick={prevPage}
-                >{'<'}
-                </button>
-              )}
-              {filteredProjects.length > indexOfLastProject && (
-                <button
-                  className='next-button'
-                  onClick={nextPage}
-                >{'>'}
-                </button>
-              )}
-            </div>
-          </>
-          )}
+            </>
+            )
+          : (
+            <p>No hay proyectos para mostrar.</p>
+            )}
     </div>
   )
 }

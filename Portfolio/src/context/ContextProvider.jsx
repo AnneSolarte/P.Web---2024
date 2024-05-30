@@ -11,6 +11,7 @@ export const ContextProvider = ({ children }) => {
   const [formData, setFormData] = useState({})
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const logInUser = () => {
     setuserIsLogged(true)
@@ -23,6 +24,7 @@ export const ContextProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    setLoading(true)
     fetchProjects()
   }, [])
 
@@ -31,6 +33,7 @@ export const ContextProvider = ({ children }) => {
       const savedProjects = await getProjects()
       const initialProjects = savedProjects || []
       setProjects(initialProjects)
+      setLoading(false)
     } catch (error) {
       console.error('Error fetching projects:', error)
       setError(error)
@@ -90,7 +93,8 @@ export const ContextProvider = ({ children }) => {
       setError,
       projects,
       logInUser,
-      logOutUser
+      logOutUser,
+      loading
     }}
     >
       {children}

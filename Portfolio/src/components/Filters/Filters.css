@@ -1,6 +1,7 @@
 .filters-section{
     display: flex;
     flex-direction: row;
+    margin-top: 1rem;
     
 }
 
@@ -51,6 +52,7 @@
     }
     .filters-section{
         margin-left: 2rem;
+        margin-top: 0;
         
         
     }

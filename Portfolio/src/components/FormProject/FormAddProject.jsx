@@ -107,7 +107,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
                 {dataForm.map((field, index) => (
                   field.type === 'checkbox'
                     ? (
-                      <label key={index} className={`filter-label ${field.value ? 'selected' : ''}`}>
+                      <label key={index} className={`filter-label-b ${field.value ? 'selected' : ''}`}>
                         <input
                           type='checkbox'
                           name={field.name}

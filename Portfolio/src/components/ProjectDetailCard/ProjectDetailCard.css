@@ -1,7 +1,4 @@
-.project-detail-card-div{
 
-
-}
 
 .data-project-detail{
   width: 20rem;
@@ -10,7 +7,7 @@
   position: absolute;
   z-index: 6;
   left: 3rem;
-  top: 8rem;
+  top: 8.5rem;
 }
 .back-icon{
   width: 14%;
@@ -18,9 +15,10 @@
 
 .behance-icon{
   display: flex;
+  position: relative;
   width: 6%;
-  margin-left: 19.2rem;
-  margin-top: 0.3rem;
+  margin-left: 19rem;
+  margin-top: 1.6rem;
 }
 
 
@@ -117,7 +115,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 6;
-    left: 19rem;
+    left: 22rem;
     top: 8rem;
   }
 
@@ -129,8 +127,9 @@
   .behance-icon{
     display: flex;
     position: absolute;
-    left: 17rem;
+    left: 36rem;
     top: 15rem;
+    margin: 0;
   }
 
   .back-icon{

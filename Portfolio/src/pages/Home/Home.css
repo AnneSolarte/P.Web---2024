@@ -19,7 +19,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem
+    margin-top: 3rem;
+    margin-left: 0.5rem
 }
 
 .text-home-div{
@@ -44,6 +45,7 @@
     position: absolute;
     width: 80%;
     top: 8rem;
+    left: 2.5rem;
     z-index: 1;
 }
 

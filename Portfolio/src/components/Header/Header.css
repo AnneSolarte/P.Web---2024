@@ -1,7 +1,7 @@
 .ribbons-img{
     display: flex;
     position: fixed;
-    width: 160%;
+    width: 200%;
     top: 0rem;
     left: -15rem;
     z-index: 10;
@@ -10,12 +10,12 @@
 
 @media (min-width: 700px){
     .ribbons-img{
+        width: 120%;
         display: flex;
         margin: 0;
         position: fixed;
-        width: 100%;
-        top: -3rem;
-        left: 0;
+        top: -6rem;
+        left: -3rem;
     
     }
   }
