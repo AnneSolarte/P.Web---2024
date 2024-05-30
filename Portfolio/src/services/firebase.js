@@ -43,16 +43,18 @@ export const getProjects = async () => {
 
 export const uploadImage = async (image, project) => {
   console.log(project, image)
+  if (image === undefined) {
+    throw new Error('Image is undefined')
+  }
+
   try {
     const storage = getStorage()
-
     const storageRef = ref(storage, `${project}/${image.name}`)
-
     await uploadBytes(storageRef, image)
-
     const imageURL = await getDownloadURL(storageRef)
     return imageURL
   } catch (e) {
-    console.error('Error uploading img: ', e)
+    console.error('Error uploading image: ', e)
+    throw e // Re-lanzar el error para que pueda ser manejado por el código que llama a esta función
   }
 }

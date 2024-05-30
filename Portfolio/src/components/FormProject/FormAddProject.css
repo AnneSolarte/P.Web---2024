@@ -84,7 +84,7 @@
   }
   
   .check-input:checked {
-    background-color: #E2FE0B;
+    background-color: #0B997B;
   }
   
   .check-input:hover {
@@ -246,7 +246,7 @@
         
     }
 
-    .filter-label{
+    .filter-label-b{
         font-size: 1.4rem;
         margin-right: 1rem;
         

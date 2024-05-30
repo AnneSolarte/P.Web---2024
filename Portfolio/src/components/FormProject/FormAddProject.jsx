@@ -4,6 +4,7 @@ import { useContextHook } from '../../hooks/contextHook'
 import { uploadImage, addProject } from '../../services/firebase'
 import imgIcon from '../../assets/imgIcon.png'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export const FormAddProject = ({ submitText, dataForm }) => {
   const { formData, setFormData, fetchProjects } = useContextHook()
@@ -19,28 +20,56 @@ export const FormAddProject = ({ submitText, dataForm }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const data = e.target
-    const urlImages = await uploadImages(e)
 
-    const dataUser = {
-      id: '',
-      title: data.title.value,
-      name: data.title.value.toLowerCase().replace(/\s+/g, ''),
-      description: data.description.value,
-      project: data.project.value,
-      behanceLink: data.project.value,
-      images: urlImages,
-      categories: {
-        uxdesign: data.uxdesign.checked,
-        uidesign: data.uidesign.checked,
-        frontend: data.frontend.checked
+    const data = e.target
+
+    try {
+      const urlImages = await uploadImages(e)
+
+      // Verificar que todos los campos requeridos estén presentes
+      const requiredFields = ['title', 'description', 'project', 'behanceLink']
+      const missingFields = requiredFields.filter(field => !data[field].value.trim())
+
+      if (missingFields.length > 0) {
+        // Mostrar un toast con los campos que faltan
+        toast.error(`Missing fields: ${missingFields.join(', ')}`, {
+          position: 'bottom-center',
+          theme: 'colored'
+        })
+        return
       }
+
+      const dataUser = {
+        id: '',
+        title: data.title.value,
+        name: data.title.value.toLowerCase().replace(/\s+/g, ''),
+        description: data.description.value,
+        project: data.project.value,
+        behanceLink: data.project.value,
+        images: urlImages,
+        categories: {
+          uxdesign: data.uxdesign.checked,
+          uidesign: data.uidesign.checked,
+          frontend: data.frontend.checked
+        }
+      }
+
+      console.log(dataUser)
+      setFormData(dataUser)
+      addProject(dataUser)
+      setFormData('')
+      fetchProjects()
+      toast.success('Project added successfully', {
+        position: 'bottom-center',
+        theme: 'colored'
+      })
+    } catch (error) {
+      console.error('Error uploading images: ', error)
+      toast.error('Error uploading images: ' + error.message, {
+        position: 'bottom-center',
+        theme: 'colored'
+      })
     }
-    console.log(dataUser)
-    setFormData(dataUser)
-    addProject(dataUser)
-    setFormData('')
-    fetchProjects()
   }
 
   const uploadImages = async (e) => {
