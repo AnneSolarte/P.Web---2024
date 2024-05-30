@@ -11,7 +11,7 @@ export const contactFormData = [
   },
   {
     id: '3',
-    name: 'phoneNumber',
+    name: 'phone',
     placeholder: 'Phone Number'
   },
   {

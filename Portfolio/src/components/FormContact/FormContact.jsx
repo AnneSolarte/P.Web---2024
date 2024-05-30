@@ -6,16 +6,6 @@ import { toast } from 'react-toastify'
 export const FormContact = ({ dataForm, submitText }) => {
   const { formData, setFormData } = useContextHook()
 
-  const onSubmmit = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    const dataUser = Object.fromEntries(formData.entries())
-    console.log(dataUser)
-    setFormData(dataUser)
-    setFormData('')
-    toast.success('Message send')
-  }
-
   const onChangeText = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -23,9 +13,35 @@ export const FormContact = ({ dataForm, submitText }) => {
     }))
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    const requiredFields = ['name', 'email', 'phone', 'message']
+    const missingFields = requiredFields.filter(field => !formData[field])
+
+    if (missingFields.length > 0) {
+      toast.error(`Missing fields: ${missingFields.join(', ')}`, {
+        position: 'bottom-center',
+        theme: 'colored'
+      })
+      return
+    }
+
+    console.log(formData)
+
+    // Aquí puedes enviar los datos del formulario al servidor o realizar otras acciones necesarias
+
+    e.target.reset()
+
+    toast.success('Message sent', {
+      position: 'bottom-center',
+      theme: 'colored'
+    })
+  }
+
   return (
     <div className='form-contact-card'>
-      <form onSubmit={onSubmmit}>
+      <form onSubmit={onSubmit}>
         <div className='form-contact-div'>
           {dataForm.map((field, index) => (
             <input
@@ -38,7 +54,6 @@ export const FormContact = ({ dataForm, submitText }) => {
               id={'input-' + field.name}
             />
           ))}
-
         </div>
 
         <input
@@ -46,7 +61,6 @@ export const FormContact = ({ dataForm, submitText }) => {
           type='submit'
           value={submitText}
         />
-
       </form>
     </div>
   )
@@ -60,5 +74,4 @@ FormContact.propTypes = {
     })
   ).isRequired,
   submitText: PropTypes.string
-
 }
