@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { navClient, navDevelop } from '../../data/links'
 import './NavBar.css'
 import iconCloseBar from '../../assets/iconCloseBar.png'
@@ -8,6 +8,7 @@ import { useContextHook } from '../../hooks/contextHook'
 
 export const NavBar = () => {
   const { userIsLogged, changeNavBar, logOutUser, hiddenBar } = useContextHook()
+  const navigate = useNavigate()
 
   const onChangeNavBar = (type) => {
     changeNavBar(type)
@@ -15,6 +16,7 @@ export const NavBar = () => {
 
   const onhandleClick = () => {
     logOutUser()
+    navigate('/home')
   }
 
   return (

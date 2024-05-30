@@ -42,3 +42,14 @@
 #input-message{
     padding-bottom: 4rem;
 }
+
+@media (min-width: 700px){
+    
+   .form-contact-div{
+    width: 22rem;
+   margin-top: 0;
+   padding-top: 2rem;
+   height: 16rem;
+   }
+    
+  }

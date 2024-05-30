@@ -2,10 +2,12 @@ import './FormLogin.css'
 import PropTypes from 'prop-types'
 import { useContextHook } from '../../hooks/contextHook'
 import { logIn } from '../../services/firebase'
-import { Message } from '../Message/Message'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 export const FormLogin = ({ dataForm, submitImg }) => {
-  const { formData, setFormData, logInUser, error, setError } = useContextHook()
+  const { formData, setFormData, logInUser } = useContextHook()
+  const navigate = useNavigate()
 
   const onSubmmit = async (e) => {
     e.preventDefault()
@@ -16,12 +18,19 @@ export const FormLogin = ({ dataForm, submitImg }) => {
       const user = await logIn(dataUser)
       setFormData(dataUser)
       logInUser()
+      toast.success('Welcome developer', {
+        position: 'bottom-center',
+        theme: 'colored'
+      })
       console.log('User logged in: ', user)
       setFormData('')
+      navigate('/home')
     } catch (error) {
       console.error('Failed to log in:', error)
-      console.log(error)
-      setError(error)
+      toast.error('Failed to log in: ' + error.message, {
+        position: 'bottom-center',
+        theme: 'colored'
+      })
     }
   }
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import './FormContact.css'
 import { useContextHook } from '../../hooks/contextHook'
+import { toast } from 'react-toastify'
 
 export const FormContact = ({ dataForm, submitText }) => {
   const { formData, setFormData } = useContextHook()
@@ -12,6 +13,7 @@ export const FormContact = ({ dataForm, submitText }) => {
     console.log(dataUser)
     setFormData(dataUser)
     setFormData('')
+    toast.success('Message send')
   }
 
   const onChangeText = (e) => {

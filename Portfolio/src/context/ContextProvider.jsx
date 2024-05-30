@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Context } from './context'
 import PropTypes from 'prop-types'
-import { auth, getProjects } from '../services/firebase'
+import { getProjects } from '../services/firebase'
+import { toast } from 'react-toastify'
 
 export const ContextProvider = ({ children }) => {
   const userState = localStorage.getItem('user')
   const [userIsLogged, setuserIsLogged] = useState(userState || false)
   const [hiddenBar, setHiddenBar] = useState(false)
-  const [error, setError] = useState()
   const [formData, setFormData] = useState({})
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [projects, setProjects] = useState([])
@@ -21,6 +21,10 @@ export const ContextProvider = ({ children }) => {
   const logOutUser = () => {
     setuserIsLogged(false)
     localStorage.setItem('user', false)
+    toast.info('Logging out', {
+      position: 'bottom-center',
+      theme: 'colored'
+    })
   }
 
   useEffect(() => {
@@ -36,18 +40,8 @@ export const ContextProvider = ({ children }) => {
       setLoading(false)
     } catch (error) {
       console.error('Error fetching projects:', error)
-      setError(error)
     }
   }
-
-  const onAuthStateChanged = (auth, (user) => {
-    if (user) {
-      console.log('CHANGE TO DEV')
-      setuserIsLogged(true)
-    } else {
-      console.log('user not login')
-    }
-  })
 
   const changeNavBar = (type) => {
     if (type === 'show') {
@@ -86,11 +80,8 @@ export const ContextProvider = ({ children }) => {
       selectedFilter,
       filteredProjects,
       changeSelectedFilter,
-      onAuthStateChanged,
       formData,
       setFormData,
-      error,
-      setError,
       projects,
       logInUser,
       logOutUser,
