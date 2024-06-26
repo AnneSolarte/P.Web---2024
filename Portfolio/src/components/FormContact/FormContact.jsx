@@ -29,8 +29,6 @@ export const FormContact = ({ dataForm, submitText }) => {
 
     console.log(formData)
 
-    // Aquí puedes enviar los datos del formulario al servidor o realizar otras acciones necesarias
-
     e.target.reset()
 
     toast.success('Message sent', {

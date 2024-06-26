@@ -10,14 +10,6 @@ export const FormAddProject = ({ submitText, dataForm }) => {
   const { formData, setFormData, fetchProjects } = useContextHook()
   const [selectedFiles, setSelectedFiles] = useState({})
 
-  const onFileChange = (e) => {
-    const { name, files } = e.target
-    setSelectedFiles(prevState => ({
-      ...prevState,
-      [name]: files[0].name
-    }))
-  }
-
   const onSubmit = async (e) => {
     e.preventDefault()
 
@@ -25,13 +17,10 @@ export const FormAddProject = ({ submitText, dataForm }) => {
 
     try {
       const urlImages = await uploadImages(e)
-
-      // Verificar que todos los campos requeridos estén presentes
       const requiredFields = ['title', 'description', 'project', 'behanceLink']
       const missingFields = requiredFields.filter(field => !data[field].value.trim())
 
       if (missingFields.length > 0) {
-        // Mostrar un toast con los campos que faltan
         toast.error(`Missing fields: ${missingFields.join(', ')}`, {
           position: 'bottom-center',
           theme: 'colored'
@@ -72,6 +61,14 @@ export const FormAddProject = ({ submitText, dataForm }) => {
     }
   }
 
+  const onFileChange = (e) => {
+    const { name, files } = e.target
+    setSelectedFiles(prevState => ({
+      ...prevState,
+      [name]: files[0].name
+    }))
+  }
+
   const uploadImages = async (e) => {
     const data = e.target
     const imageNames = ['image1', 'image2', 'image3', 'image4']
@@ -92,6 +89,7 @@ export const FormAddProject = ({ submitText, dataForm }) => {
       [name]: value
     }))
   }
+
   const onChangeCheckbox = (e) => {
     const { name, checked } = e.target
     setFormData(prevState => ({
@@ -137,7 +135,10 @@ export const FormAddProject = ({ submitText, dataForm }) => {
                 {dataForm.map((field, index) => (
                   field.type === 'checkbox'
                     ? (
-                      <label key={index} className={`filter-label-b ${field.value ? 'selected' : ''}`}>
+                      <label
+                        key={index}
+                        className={`filter-label-b ${field.value ? 'selected' : ''}`}
+                      >
                         <input
                           type='checkbox'
                           name={field.name}
@@ -161,7 +162,10 @@ export const FormAddProject = ({ submitText, dataForm }) => {
               {dataForm.map((field, index) => (
                 field.type === 'image'
                   ? (
-                    <div className='container-input' key={index}>
+                    <div
+                      className='container-input'
+                      key={index}
+                    >
                       <input
                         type='file'
                         name={field.name}
